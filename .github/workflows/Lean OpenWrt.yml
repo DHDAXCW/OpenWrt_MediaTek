@@ -10,11 +10,12 @@ name: Lean OpenWrt
 
 on:
   repository_dispatch:
+    types: [lean, r4s]
   workflow_dispatch:
   schedule:
-    - cron: 0 17 * * *
-  # watch:
-  #   types: started
+    - cron: 38 17 * * *
+#  watch:
+#    types: started
 
 env:
   REPO_URL: https://github.com/coolsnowwolf/lede
@@ -31,7 +32,7 @@ env:
 jobs:
   Build:
     runs-on: ubuntu-18.04
-    if: github.repository == 'LewiVir/NanoPi-R4S'
+    if: github.repository == 'DHDAXCW/R4S-2021'
     outputs:
       OPENWRTROOT: ${{ steps.update.outputs.OPENWRTROOT }}
       PLATFORM: ${{ steps.compile.outputs.PLATFORM }}
@@ -168,7 +169,7 @@ jobs:
   Upload:
     needs: [Build]
     runs-on: ubuntu-18.04
-    if: github.repository == 'LewiVir/NanoPi-R4S'
+    if: github.repository == 'DHDAXCW/R4S-2021'
     steps:
       - name: Checkout
         uses: actions/checkout@main
