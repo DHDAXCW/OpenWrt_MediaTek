@@ -10,9 +10,10 @@ name: Lean OpenWrt
 
 on:
   repository_dispatch:
+    types: [lean, r4s]
   workflow_dispatch:
   schedule:
-    - cron: 0 17 * * *
+    - cron: 38 17 * * *
   # watch:
   #   types: started
 
