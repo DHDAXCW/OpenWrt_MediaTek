@@ -8,13 +8,16 @@
 
 name: Lean OpenWrt
 
+name: SSH-OpenWrt
+
 on:
   repository_dispatch:
   workflow_dispatch:
-  schedule:
-    - cron: 0 4 * * *
-  # watch:
-  #   types: started
+    inputs:
+      ssh:
+        description: 'SSH connection to Actions'
+        required: true
+        default: 'true'
 
 env:
   REPO_URL: https://github.com/coolsnowwolf/lede
@@ -31,7 +34,7 @@ env:
 jobs:
   Build:
     runs-on: ubuntu-18.04
-    if: github.repository == 'LewiVir/NanoPi-R4S'
+    if: github.repository == 'DHDAXCW/R4S-2021'
     outputs:
       OPENWRTROOT: ${{ steps.update.outputs.OPENWRTROOT }}
       PLATFORM: ${{ steps.compile.outputs.PLATFORM }}
@@ -87,6 +90,13 @@ jobs:
         ../scripts/preset-clash-core.sh armv8
         ../scripts/preset-terminal-tools.sh
 
+    - name: SSH connection to Actions
+      uses: P3TERX/ssh2actions@v1.0.0
+      if: (github.event.inputs.ssh == 'true' && github.event.inputs.ssh  != 'false') || contains(github.event.action, 'ssh')
+      env:
+        TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }
+        
     - name: Download Package
       id: package
       run: |
@@ -176,7 +186,7 @@ jobs:
   Upload:
     needs: [Build]
     runs-on: ubuntu-18.04
-    if: github.repository == 'LewiVir/NanoPi-R4S'
+    if: github.repository == 'DHDAXCW/R4S-2021'
     steps:
       - name: Checkout
         uses: actions/checkout@main
