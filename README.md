@@ -2,6 +2,8 @@
 
 使用 SSH远程 GitHub Actions 云编译Openwrt固件
 
+### NanoPi R2S 固件链接地址（https://github.com/DHDAXCW/R2S-2021）
+
 ### 默认编译
 
 - 用户名：root 密码：password 管理IP：192.168.2.1
