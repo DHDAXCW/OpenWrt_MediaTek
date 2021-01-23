@@ -28,6 +28,10 @@ cd openwrt && make menuconfig
 
 - 最新版本 跟r4s源码相似，但是插件完全跟r4s一样
 
+### Lean OpenWrt.yml r4s最新固件
+
+- 爽就好了嘿嘿
+
 ### 版本日志 1.18号
 
 -  待机超10天无法上网,需要重启才解决（已修复）
