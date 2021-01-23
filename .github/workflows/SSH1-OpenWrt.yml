@@ -6,9 +6,7 @@
 # Blog: https://p3terx.com
 #=================================================
 
-name: Lean OpenWrt
-
-name: SSH-OpenWrt
+name: SSH1-OpenWrt
 
 on:
   repository_dispatch:
