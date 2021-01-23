@@ -266,7 +266,6 @@ jobs:
           docker push ${{ secrets.DOCKERHUB_USERNAME }}/openwrt:lean
           docker tag ${{ secrets.DOCKERHUB_USERNAME }}/openwrt:lean ${{ secrets.DOCKERHUB_USERNAME }}/openwrt:latest
           docker push ${{ secrets.DOCKERHUB_USERNAME }}/openwrt:latest
-
       - name: Delete workflow runs
         uses: GitRML/delete-workflow-runs@main
         with:
