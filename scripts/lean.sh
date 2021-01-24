@@ -43,8 +43,8 @@ git clone --depth=1 -b master https://github.com/vernesong/OpenClash
 git clone --depth=1 https://github.com/rufengsuixing/luci-app-onliner
 
 # Add luci-app-adguardhome
-svn co https://github.com/project-openwrt/openwrt/trunk/package/ctcgfw/luci-app-adguardhome
-svn co https://github.com/project-openwrt/openwrt/trunk/package/ntlf9t/AdGuardHome
+svn co https://github.com/Lienol/openwrt/trunk/package/diy/luci-app-adguardhome
+svn co https://github.com/Lienol/openwrt/trunk/package/diy/adguardhome
 
 # Add luci-app-diskman
 git clone --depth=1 https://github.com/SuLingGG/luci-app-diskman
@@ -58,6 +58,9 @@ git clone --depth=1 https://github.com/lisaac/luci-lib-docker
 
 # Add luci-app-gowebdav
 git clone --depth=1 https://github.com/project-openwrt/openwrt-gowebdav
+
+# Add luci-app-jd-dailybonus
+git clone --depth=1 https://github.com/jerrykuku/luci-app-jd-dailybonus
 
 # Add luci-theme-argon
 git clone --depth=1 -b 18.06 https://github.com/jerrykuku/luci-theme-argon
@@ -86,9 +89,9 @@ popd
 
 # Mod zzz-default-settings
 pushd package/lean/default-settings/files
+sed -i "/commit luci/i\uci set luci.main.mediaurlbase='/luci-static/argon'" zzz-default-settings
 sed -i '/http/d' zzz-default-settings
-export orig_version="$(cat "zzz-default-settings" | grep DISTRIB_REVISION= | awk -F "'" '{print $2}')"
-sed -i "s/${orig_version}/${orig_version} ($(date +"%Y.%m.%d"))/g" zzz-default-settings
+sed -i '/exit/i\chmod +x /bin/ipv6-helper' zzz-default-settings
 popd
 
 # Fix libssh
@@ -111,8 +114,14 @@ popd
 
 # Fix mt76 wireless driver
 pushd package/kernel/mt76
+rm -f Makefile
+wget https://raw.githubusercontent.com/openwrt/openwrt/master/package/kernel/mt76/Makefile
 sed -i '/mt7662u_rom_patch.bin/a\\techo mt76-usb disable_usb_sg=1 > $\(1\)\/etc\/modules.d\/mt76-usb' Makefile
 popd
+
+#rtl usb wifi driver
+svn co https://github.com/project-openwrt/openwrt/branches/master/package/ctcgfw/rtl8821cu package/ctcgfw/rtl8821cu
+svn co https://github.com/project-openwrt/openwrt/branches/master/package/ctcgfw/rtl8812au-ac package/ctcgfw/rtl8812au-ac
 
 # Add po2lmo
 git clone https://github.com/openwrt-dev/po2lmo.git
@@ -128,7 +137,8 @@ sed -i 's/\/bin\/ash/\/usr\/bin\/zsh/g' package/base-files/files/etc/passwd
 # Modify default IP
 sed -i 's/192.168.1.1/192.168.2.1/g' package/base-files/files/bin/config_generate
 
-git am $GITHUB_WORKSPACE/patches/lean/*.patch
+git apply $GITHUB_WORKSPACE/patches/lean/*.patch
+cat $GITHUB_WORKSPACE/patches/kernel/kernel_mods.txt >> target/linux/rockchip/armv8/config-5.4
 echo -e " Lean's OpenWrt built on "$(date +%Y.%m.%d)"\n -----------------------------------------------------" >> package/base-files/files/etc/banner
 
 pushd package/lean
