@@ -12,7 +12,7 @@ on:
   repository_dispatch:
   workflow_dispatch:
   schedule:
-    - cron: 0 4 * * *
+    - cron: 0 5 * * *
   # watch:
   #   types: started
 
@@ -253,7 +253,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          name: ${{ steps.tag.outputs.release_date }} Lean OpenWrt
+          name: ${{ steps.tag.outputs.release_date }} lean OpenWrt
           tag_name: ${{ steps.tag.outputs.release_tag }}
           body_path: release.txt
           files: ${{ env.FIRMWARE }}/*
@@ -266,6 +266,7 @@ jobs:
           docker push ${{ secrets.DOCKERHUB_USERNAME }}/openwrt:lean
           docker tag ${{ secrets.DOCKERHUB_USERNAME }}/openwrt:lean ${{ secrets.DOCKERHUB_USERNAME }}/openwrt:latest
           docker push ${{ secrets.DOCKERHUB_USERNAME }}/openwrt:latest
+      
       - name: Delete workflow runs
         uses: GitRML/delete-workflow-runs@main
         with:
