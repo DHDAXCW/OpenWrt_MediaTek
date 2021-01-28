@@ -95,20 +95,20 @@ jobs:
         TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
         TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
         
-    - name: Download Package
-      id: package
-      run: |
-        cd $OPENWRTROOT
-        if "$KMODS_IN_FIRMWARE" = 'true'
-        then
-            echo "CONFIG_ALL_KMODS=y" >> .config
-        fi
-        make defconfig
-        ../scripts/modify_config.sh
-        cat .config
-        make download -j8
-        find dl -size -1024c -exec ls -l {} \;
-        find dl -size -1024c -exec rm -f {} \;
+   # - name: Download Package
+    #  id: package
+    #  run: |
+      #  cd $OPENWRTROOT
+      #  if "$KMODS_IN_FIRMWARE" = 'true'
+        #then
+      #      echo "CONFIG_ALL_KMODS=y" >> .config
+       # fi
+      #  make defconfig
+      #  ../scripts/modify_config.sh
+  #      cat .config
+     #   make download -j8
+     #   find dl -size -1024c -exec ls -l {} \;
+   #     find dl -size -1024c -exec rm -f {} \;
 
     - name: Compile Packages
       id: compile
