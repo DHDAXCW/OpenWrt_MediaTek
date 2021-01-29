@@ -52,4 +52,10 @@ cd openwrt && make menuconfig
 
 - 修复了其他小问题
 
-后续更新
+## 版本日志 1.29号
+
+- 增新了ipv6客户端，快速获取ipv6
+
+- 修复了adguardhome插件无法启动问题，改为Lienol源码仓库的插件
+
+## 后续更新
