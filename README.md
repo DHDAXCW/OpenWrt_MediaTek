@@ -58,4 +58,6 @@ cd openwrt && make menuconfig
 
 - 修复了adguardhome插件无法启动问题，改为Lienol源码仓库的插件
 
+- 通过本地编译增加了华为拔号仿真（华为开源挖来的）提高任何协议拔号速度
+
 ## 后续更新
