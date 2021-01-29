@@ -42,7 +42,7 @@ cd openwrt && make menuconfig
 
 - 修复了其他小问题
 
-### 版本日志 1.29号
+### 版本日志 1.30号
 
 - 增新了ipv6客户端，快速获取ipv6；
 
