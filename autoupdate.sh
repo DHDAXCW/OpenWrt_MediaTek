@@ -1,7 +1,7 @@
 #!/bin/sh
 
 cd /mnt/mmcblk0p2
-rm -rf artifact R2S*.zip FriendlyWrt*img*
+rm -rf artifact R4S*.zip openwrt-rockchip-armv8-friendlyarm_nanopi-r4s-squashfs-sysupgrade.img*
 wget https://github.com/DHDAXCW/NanoPi-R4S-2021/releases/download/(date +%Y-%m-%d)-$ Lean/openwrt-rockchip-armv8-friendlyarm_nanopi-r4s-squashfs-sysupgrade.img.gz
 if [ -f /mnt/mmcblk0p2/R4S*.gz ]; then
 	echo -e '\e[92m今天固件已下载，准备解压\e[0m'
