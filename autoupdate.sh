@@ -15,12 +15,12 @@ else
 		exit 1
 	fi
 fi
-	pv /mnt/mmcblk0p2/openwrt-rockchip-armv8-friendlyarm_nanopi-r4s-squashfs-sysupgrade.img.gz | gunzip -dc > FriendlyWrt.img
+	pv /mnt/mmcblk0p2/openwrt-rockchip-armv8-friendlyarm_nanopi-r4s-squashfs-sysupgrade.img.gz | gunzip -dc > openwrt-rockchip-armv8-friendlyarm_nanopi-r4s-squashfs-sysupgrade.img
 	echo -e '\e[92m准备解压镜像文件\e[0m'
 fi
 lodev=$(losetup -f)
 mkdir /mnt/img
-losetup -o 100663296 $lodev /mnt/mmcblk0p2/FriendlyWrt.img
+losetup -o 100663296 $lodev /mnt/mmcblk0p2/openwrt-rockchip-armv8-friendlyarm_nanopi-r4s-squashfs-sysupgrade.img
 mount $lodev /mnt/img
 echo -e '\e[92m解压已完成，准备编辑镜像文件，写入备份信息\e[0m'
 cd /mnt/img
