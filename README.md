@@ -9,7 +9,9 @@
 - 已开启SSH，可自定义选择编译，自动生成`.config`
 # 在线升级
 
-离线升级
+目前在建设中~
+
+# 离线升级
 
 ## 需要的软件
 WinScp 下载链接 https://wws.lanzous.com/ivi2ql56mod
