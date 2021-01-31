@@ -36,7 +36,7 @@ sysupgrade tmp/<你的文件名>.img
 
 如果出现各种奇奇怪怪的问题，那么我还是劝你重新卡刷，耗子尾汁，不要搞窝里斗。
  
-### (离线升级由[thomaswcy](http://forgotfun.org/2018/04/openwrt-training-2018.html "thomaswcy")提供，非常感谢！)
+### (离线升级由[thomaswcy](https://github.com/thomaswcy/op-direct-upgrade "thomaswcy")提供，非常感谢！)
 
 ### 提示
 
