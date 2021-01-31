@@ -1,8 +1,7 @@
-# Actions-OpenWrt
+# NaboPi R4S固件，自动编译更新插件和内核版本
 
 使用 SSH远程 GitHub Actions 云编译Openwrt固件
-
-### NanoPi R2S 固件链接地址（）
+（目前在建，后续开放）
 
 ### 默认编译
 
