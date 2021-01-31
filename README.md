@@ -1,4 +1,4 @@
-# NaboPi R4S固件，自动编译更新插件和内核版本
+# NanoPi R4S固件，自动编译更新插件和内核版本
 
 使用 SSH远程 GitHub Actions 云编译Openwrt固件
 （目前在建，后续开放）
