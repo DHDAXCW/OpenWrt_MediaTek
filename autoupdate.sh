@@ -1,6 +1,6 @@
 #!/bin/sh
 
-cd /mnt/mmcblk0p2
+cd /mnt
 rm -rf artifact openwrt-rockchip*.img.gz openwrt-rockchip*img*
 wget https://github.com/DHDAXCW/NanoPi-R4S-2021/releases/download/$(date +%Y.%m.%d)-Lean/openwrt-rockchip-armv8-friendlyarm_nanopi-r4s-ext4-sysupgrade.img.gz
 
