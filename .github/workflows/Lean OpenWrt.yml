@@ -58,16 +58,11 @@ jobs:
     - name: Clone Source Code
       run: |
         df -hT $PWD
-        git config --global user.email "git@github.com"
-        git config --global user.name "GitHub"
-        git clone $REPO_URL -b $REPO_BRANCH openwrt
-        cd openwrt
-        # git rebase --onto 8724adeaac58ca3543dbb768a08de3186e131d8f 2a0b915c534f61fad18fb6a665f4c71566dad979
-        rm -rf ./target/linux/rockchip
+        git clone --depth 1 $REPO_URL -b $REPO_BRANCH openwrt
         svn co https://github.com/project-openwrt/openwrt/branches/master/target/linux/rockchip target/linux/rockchip
         rm -rf ./package/boot/uboot-rockchip
-        svn co https://github.com/project-openwrt/openwrt/branches/master/package/boot/uboot-rockchip package/boot/uboot-rockchip
-    
+        svn co https://github.com/project-openwrt/openwrt/branches/master/package/boot/uboot-rockchip package/boot/uboot-rockchip  
+   
     - name: Update Feeds
       id: update
       run: |
@@ -75,6 +70,11 @@ jobs:
         echo "OPENWRTROOT=$PWD" >> $GITHUB_ENV
         echo "::set-output name=OPENWRTROOT::$(echo $PWD)"
         ./scripts/feeds update -a
+    
+    - name: Install Feeds
+      run: |
+        cd $OPENWRTROOT
+        ./scripts/feeds install -a
 
     - name: Load Custom Configuration
       run: |
