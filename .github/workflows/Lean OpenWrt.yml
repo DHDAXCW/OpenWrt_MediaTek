@@ -30,7 +30,7 @@ env:
 
 jobs:
   Build:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-18.04
     if: github.repository == 'DHDAXCW/NanoPi-R4S-2021'
     outputs:
       OPENWRTROOT: ${{ steps.update.outputs.OPENWRTROOT }}
@@ -174,7 +174,7 @@ jobs:
         
   Upload:
     needs: [Build]
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-18.04
     if: github.repository == 'DHDAXCW/NanoPi-R4S-2021'
     steps:
       - name: Checkout
