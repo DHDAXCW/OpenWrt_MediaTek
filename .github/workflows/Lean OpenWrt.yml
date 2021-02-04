@@ -12,7 +12,7 @@ on:
   repository_dispatch:
   workflow_dispatch:
   schedule:
-    - cron: 0 4 * * *
+    - cron: 0 17 * * *
   # watch:
   #   types: started
 
@@ -61,7 +61,12 @@ jobs:
         git config --global user.name "GitHub"
         git clone $REPO_URL -b $REPO_BRANCH openwrt
         cd openwrt
-        git rebase --onto 8724adeaac58ca3543dbb768a08de3186e131d8f 2a0b915c534f61fad18fb6a665f4c71566dad979
+        # git rebase --onto 8724adeaac58ca3543dbb768a08de3186e131d8f 2a0b915c534f61fad18fb6a665f4c71566dad979
+        rm -rf ./target/linux/rockchip
+        svn co https://github.com/project-openwrt/openwrt/branches/master/target/linux/rockchip target/linux/rockchip
+        rm -rf ./package/boot/uboot-rockchip
+        svn co https://github.com/project-openwrt/openwrt/branches/master/package/boot/uboot-rockchip package/boot/uboot-rockchip
+    
     - name: Update Feeds
       id: update
       run: |
@@ -168,7 +173,7 @@ jobs:
   Upload:
     needs: [Build]
     runs-on: ubuntu-18.04
-    if: github.repository == 'DHDAXCW/NanoPi-R4S-2021'
+    if: github.repository == 'MedyMa/NanoPi-R4S'
     steps:
       - name: Checkout
         uses: actions/checkout@main
@@ -198,6 +203,7 @@ jobs:
           mv server packages-server
           zip -qrm packages-server.zip packages-server
           mv packages-server.zip $OPENWRTROOT/bin/targets/$TARGET/$SUBTARGET
+      
       - name: Organize Files
         id: organize
         if: env.GENERATE_STATUS == 'success'
@@ -208,6 +214,7 @@ jobs:
           curl -fsSL git.io/file-transfer | sh
           df -hT $PWD
           echo "::set-output name=ORGANIZE_STATUS::success"
+      
       - name: Upload Firmware To WeTransfer
         id: wetransfer
         if: steps.organize.outputs.ORGANIZE_STATUS == 'success' && env.UPLOAD_WETRANSFER == 'true'
@@ -216,6 +223,7 @@ jobs:
           ./transfer wet -s -p 16 --no-progress ${FIRMWARE} 2>&1 | tee wetransfer.log
           echo "::warning file=Firmware-Wetransfer.com::$(cat wetransfer.log | grep https)"
           echo "::set-output name=url::$(cat wetransfer.log | grep https | cut -f3 -d" ")"
+
       - name: Upload Firmware To CowTransfer
         id: cowtransfer
         if: steps.organize.outputs.ORGANIZE_STATUS == 'success' && env.UPLOAD_COWTRANSFER == 'true'
@@ -224,6 +232,7 @@ jobs:
           ./transfer cow --block 2621440 -s -p 64 --no-progress ${FIRMWARE} 2>&1 | tee cowtransfer.log
           echo "::warning file=Firmware-Cowtransfer.com::$(cat cowtransfer.log | grep https)"
           echo "::set-output name=url::$(cat cowtransfer.log | grep https | cut -f3 -d" ")"
+   
       - name: Generate release tag
         id: tag
         if: env.UPLOAD_RELEASE == 'true' && !cancelled()
@@ -234,6 +243,7 @@ jobs:
           [ $UPLOAD_COWTRANSFER = true ] && echo "🔗 [Cowtransfer](${{ steps.cowtransfer.outputs.url }})" >> release.txt
           [ $UPLOAD_WETRANSFER = true ] && echo "🔗 [WeTransfer](${{ steps.wetransfer.outputs.url }})" >> release.txt
           echo "::set-output name=status::success"
+          
       - name: Upload firmware to release
         uses: softprops/action-gh-release@v1
         if: steps.tag.outputs.status == 'success' && !cancelled()
