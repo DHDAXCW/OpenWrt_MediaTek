@@ -1,8 +1,5 @@
 # NanoPi R4S固件，自动编译更新插件和内核版本
 
-使用 SSH远程 GitHub Actions 云编译Openwrt固件
-（目前在建，后续开放）
-
 ### 默认编译
 
 - 用户名：root 密码：password 管理IP：192.168.2.1
