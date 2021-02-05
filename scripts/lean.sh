@@ -43,8 +43,8 @@ git clone --depth=1 -b master https://github.com/vernesong/OpenClash
 git clone --depth=1 https://github.com/rufengsuixing/luci-app-onliner
 
 # Add luci-app-adguardhome
-svn co https://github.com/Lienol/openwrt/trunk/package/diy/luci-app-adguardhome 
-svn co https://github.com/Lienol/openwrt/trunk/package/diy/adguardhome 
+svn co https://github.com/Lienol/openwrt/trunk/package/diy/luci-app-adguardhome
+svn co https://github.com/Lienol/openwrt/trunk/package/diy/adguardhome
 
 # Add luci-app-diskman
 git clone --depth=1 https://github.com/SuLingGG/luci-app-diskman
@@ -64,9 +64,6 @@ git clone --depth=1 -b 18.06 https://github.com/jerrykuku/luci-theme-argon
 git clone --depth=1 https://github.com/jerrykuku/luci-app-argon-config
 rm -rf ../lean/luci-theme-argon
 
-# Add luci-app-oaf	
-git clone --depth=1 https://github.com/Lienol/openwrt/tree/main/package/diy/OpenAppFilter
-
 # Add tmate
 git clone --depth=1 https://github.com/project-openwrt/openwrt-tmate
 
@@ -83,10 +80,10 @@ svn co https://github.com/project-openwrt/openwrt/trunk/package/ntlf9t/luci-app-
 # Add luci-udptools
 git clone --depth=1 https://github.com/zcy85611/openwrt-luci-kcp-udp
 
-# Add OpenAppFilter 
-git clone --depth=1 https://github.com/destan19/OpenAppFilter 
-popd 
- 
+# Add OpenAppFilter
+git clone --depth=1 https://github.com/destan19/OpenAppFilter
+popd
+
 # Mod zzz-default-settings
 pushd package/lean/default-settings/files
 sed -i '/http/d' zzz-default-settings
