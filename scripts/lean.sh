@@ -31,7 +31,7 @@ git clone --depth=1 https://github.com/KyleRicardo/MentoHUST-OpenWrt-ipk
 
 # Add minieap & luci-proto-minieap
 git clone --depth=1 https://github.com/ysc3839/luci-proto-minieap
-svn co https://github.com/project-openwrt/openwrt/trunk/package/ntlf9t/minieap
+svn co https://github.com/immortalwrt/immortalwrt/trunk/package/ntlf9t/minieap
 
 # Add ServerChan
 git clone --depth=1 https://github.com/tty228/luci-app-serverchan
@@ -57,7 +57,7 @@ git clone --depth=1 https://github.com/KFERMercer/luci-app-dockerman
 git clone --depth=1 https://github.com/lisaac/luci-lib-docker
 
 # Add luci-app-gowebdav
-git clone --depth=1 https://github.com/project-openwrt/openwrt-gowebdav
+git clone --depth=1 https://github.com/immortalwrt/openwrt-gowebdav
 
 # Add luci-theme-argon
 git clone --depth=1 -b 18.06 https://github.com/jerrykuku/luci-theme-argon
@@ -66,19 +66,20 @@ rm -rf ../lean/luci-theme-argon
 
 #Add luci-app-wireguard
 svn co https://github.com/coolsnowwolf/luci/trunk/applications/luci-app-wireguard
+svn co https://github.com/coolsnowwolf/luci/trunk/protocols/luci-proto-wireguard
 
 # Add tmate
-git clone --depth=1 https://github.com/project-openwrt/openwrt-tmate
+git clone --depth=1 https://github.com/immortalwrt/openwrt-tmate
 
 # Add subconverter
 git clone --depth=1 https://github.com/tindy2013/openwrt-subconverter
 
 # Add gotop
-svn co https://github.com/project-openwrt/openwrt/trunk/package/ctcgfw/gotop
+svn co https://github.com/immortalwrt/immortalwrt/trunk/package/ctcgfw/gotop
 
 # Add smartdns
 svn co https://github.com/pymumu/smartdns/trunk/package/openwrt ../smartdns
-svn co https://github.com/project-openwrt/openwrt/trunk/package/ntlf9t/luci-app-smartdns ../luci-app-smartdns
+svn co https://github.com/immortalwrt/immortalwrt/trunk/package/ntlf9t/luci-app-smartdns ../luci-app-smartdns
 
 # Add luci-udptools
 git clone --depth=1 https://github.com/zcy85611/openwrt-luci-kcp-udp
@@ -137,5 +138,5 @@ echo -e " Lean's OpenWrt built on "$(date +%Y.%m.%d)"\n ------------------------
 pushd package/lean
 # Add Project OpenWrt's autocore
 rm -rf autocore
-svn co https://github.com/project-openwrt/openwrt/branches/master/package/lean/autocore
+svn co https://github.com/immortalwrt/immortalwrt/branches/master/package/lean/autocore
 popd
