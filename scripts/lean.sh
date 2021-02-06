@@ -64,6 +64,9 @@ git clone --depth=1 -b 18.06 https://github.com/jerrykuku/luci-theme-argon
 git clone --depth=1 https://github.com/jerrykuku/luci-app-argon-config
 rm -rf ../lean/luci-theme-argon
 
+#Add luci-app-wireguard
+svn co https://github.com/coolsnowwolf/luci/trunk/applications/luci-app-wireguard
+
 # Add tmate
 git clone --depth=1 https://github.com/project-openwrt/openwrt-tmate
 
