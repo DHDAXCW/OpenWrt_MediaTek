@@ -78,11 +78,7 @@ jobs:
       run: |
         cd $OPENWRTROOT
         ./scripts/feeds install -a
-    - name: Install Mods
-      run: |
-        cd openwrt
-        sed -i '/Load Average/i\\t\t<tr><td width="33%"><%:CPU温度🔥%></td><td><%=luci.sys.exec("cut -c1-2 /sys/class/thermal/thermal_zone0/temp")%><span>&#8451;</span></td></tr>' openwrt/feeds/luci/modules/luci-mod-admin-full/luasrc/view/admin_status/index.htm
-        sed -i 's/pcdata(boardinfo.system or "?")/"ARMv8"/' openwrt/feeds/luci/modules/luci-mod-admin-full/luasrc/view/admin_status/index.htm      
+      
     - name: Load Custom Configuration
       run: |
         [ -e files ] && mv files $OPENWRTROOT/files
@@ -106,7 +102,11 @@ jobs:
         make download -j8
         find dl -size -1024c -exec ls -l {} \;
         find dl -size -1024c -exec rm -f {} \;
-  
+    - name: Install Mods
+      run: |
+        cd openwrt
+        sed -i '/Load Average/i\\t\t<tr><td width="33%"><%:CPU温度🔥%></td><td><%=luci.sys.exec("cut -c1-2 /sys/class/thermal/thermal_zone0/temp")%><span>&#8451;</span></td></tr>' openwrt/feeds/luci/modules/luci-mod-admin-full/luasrc/view/admin_status/index.htm
+        sed -i 's/pcdata(boardinfo.system or "?")/"ARMv8"/' openwrt/feeds/luci/modules/luci-mod-admin-full/luasrc/view/admin_status/index.htm
     - name: Compile Packages
       id: compile
       run: |
