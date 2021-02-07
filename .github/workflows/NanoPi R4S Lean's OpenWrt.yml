@@ -81,8 +81,8 @@ jobs:
     - name: Install Mods
       run: |
         cd code
-        sed -i '/Load Average/i\\t\t<tr><td width="33%"><%:CPU温度🔥%></td><td><%=luci.sys.exec("cut -c1-2 /sys/class/thermal/thermal_zone0/temp")%><span>&#8451;</span></td></tr>' feeds/luci/modules/luci-mod-admin-full/luasrc/view/admin_status/index.htm
-        sed -i 's/pcdata(boardinfo.system or "?")/"ARMv8"/' feeds/luci/modules/luci-mod-admin-full/luasrc/view/admin_status/index.htm        
+        sed -i '/Load Average/i\\t\t<tr><td width="33%"><%:CPU温度🔥%></td><td><%=luci.sys.exec("cut -c1-2 /sys/class/thermal/thermal_zone0/temp")%><span>&#8451;</span></td></tr>' package/lean/autocore/files/index.htm
+        sed -i 's/pcdata(boardinfo.system or "?")/"ARMv8"/' package/lean/autocore/files/index.htm        
     - name: Load Custom Configuration
       run: |
         [ -e files ] && mv files $OPENWRTROOT/files
