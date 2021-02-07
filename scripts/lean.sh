@@ -130,6 +130,8 @@ popd
 # Change default shell to zsh
 sed -i 's/\/bin\/ash/\/usr\/bin\/zsh/g' package/base-files/files/etc/passwd
 
+# wendu
+sed -i "/<%:Load Average%>/i\\\t\t<tr><td width="33%"><%:CPU Temperature%></td><td><%=luci.sys.exec(\"cut -c1-3 /sys/class/thermal/thermal_zone0/temp | awk '{print \$1/10.0}'\")%>℃</td></tr>" /usr/lib/lua/luci/view/admin_status/index.htm
 
 # Custom configs
 # Modify default IP
@@ -137,9 +139,6 @@ sed -i 's/192.168.1.1/192.168.2.1/g' package/base-files/files/bin/config_generat
 
 git am $GITHUB_WORKSPACE/patches/lean/*.patch
 echo -e " Lean's OpenWrt built on "$(date +%Y.%m.%d)"\n -----------------------------------------------------" >> package/base-files/files/etc/banner
-
-# wendu
-sed -i "/<%:Load Average%>/i\\\t\t<tr><td width="33%"><%:CPU Temperature%></td><td><%=luci.sys.exec(\"cut -c1-3 /sys/class/thermal/thermal_zone0/temp | awk '{print \$1/10.0}'\")%>℃</td></tr>" /usr/lib/lua/luci/view/admin_status/index.htm
 
 pushd package/lean
 # Add Project OpenWrt's autocore
