@@ -132,6 +132,7 @@ sed -i 's/\/bin\/ash/\/usr\/bin\/zsh/g' package/base-files/files/etc/passwd
 
 # wendu
 sed -i "/<%:Load Average%>/i\\\t\t<tr><td width="33%"><%:CPU Temperature%></td><td><%=luci.sys.exec(\"cut -c1-3 /sys/class/thermal/thermal_zone0/temp | awk '{print \$1/10.0}'\")%>℃</td></tr>" /usr/lib/lua/luci/view/admin_status/index.htm
+rm /lib/preinit/82_show_temp
 
 # Custom configs
 # Modify default IP
