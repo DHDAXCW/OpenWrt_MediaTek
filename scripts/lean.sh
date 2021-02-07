@@ -64,10 +64,6 @@ git clone --depth=1 -b 18.06 https://github.com/jerrykuku/luci-theme-argon
 git clone --depth=1 https://github.com/jerrykuku/luci-app-argon-config
 rm -rf ../lean/luci-theme-argon
 
-#Add luci-app-wireguard
-svn co https://github.com/coolsnowwolf/luci/trunk/applications/luci-app-wireguard
-svn co https://github.com/coolsnowwolf/luci/trunk/protocols/luci-proto-wireguard
-
 # Add tmate
 git clone --depth=1 https://github.com/immortalwrt/openwrt-tmate
 
@@ -84,12 +80,16 @@ svn co https://github.com/immortalwrt/immortalwrt/trunk/package/ntlf9t/luci-app-
 # Add luci-udptools
 git clone --depth=1 https://github.com/zcy85611/openwrt-luci-kcp-udp
 
-# Add Pandownload
-svn co https://github.com/immortalwrt/immortalwrt/branches/master/package/lean/pandownload-fake-server package/lean/pandownload-fake-server
-
 # Add OpenAppFilter
 git clone --depth=1 https://github.com/destan19/OpenAppFilter
 popd
+
+# Add Pandownload
+svn co https://github.com/immortalwrt/immortalwrt/branches/master/package/lean/pandownload-fake-server
+
+# wendu
+sed -i "/<%:Load Average%>/i\\\t\t<tr><td width="33%"><%:CPU Temperature%></td><td><%=luci.sys.exec(\"cut -c1-3 /sys/class/thermal/thermal_zone0/temp | awk '{print \$1/10.0}'\")%>℃</td></tr>" /usr/lib/lua/luci/view/admin_status/index.htm
+rm /lib/preinit/82_show_temp
 
 # Mod zzz-default-settings
 pushd package/lean/default-settings/files
