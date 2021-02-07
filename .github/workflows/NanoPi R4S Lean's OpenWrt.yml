@@ -6,13 +6,13 @@
 # Blog: https://p3terx.com
 #=================================================
 
-name: Lean OpenWrt
+name: NanoPi R4S Lean's OpenWrt
 
 on:
   repository_dispatch:
   workflow_dispatch:
   schedule:
-    - cron: 0 17 * * *
+    - cron: 0 18 * * *
   # watch:
   #   types: started
 
@@ -233,7 +233,7 @@ jobs:
         uses: softprops/action-gh-release@v1
         if: steps.tag.outputs.status == 'success' && !cancelled()
         env:
-          GITHUB_TOKEN: ${{ secrets.RELEASES_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           name: ${{ steps.tag.outputs.release_date }} Lean OpenWrt
           tag_name: ${{ steps.tag.outputs.release_tag }}
@@ -253,7 +253,7 @@ jobs:
           keep_latest: 2
           delete_tags: true
         env:
-          GITHUB_TOKEN: ${{ secrets.RELEASES_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Delete Artifacts
         uses: geekyeggo/delete-artifact@v1
