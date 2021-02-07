@@ -87,10 +87,6 @@ popd
 # Add Pandownload
 svn co https://github.com/immortalwrt/immortalwrt/branches/master/package/lean/pandownload-fake-server
 
-# wendu
-sed -i "/<%:Load Average%>/i\\\t\t<tr><td width="33%"><%:CPU Temperature%></td><td><%=luci.sys.exec(\"cut -c1-3 /sys/class/thermal/thermal_zone0/temp | awk '{print \$1/10.0}'\")%>℃</td></tr>" /usr/lib/lua/luci/view/admin_status/index.htm
-rm /lib/preinit/82_show_temp
-
 # Mod zzz-default-settings
 pushd package/lean/default-settings/files
 sed -i '/http/d' zzz-default-settings
