@@ -84,8 +84,15 @@ git clone --depth=1 https://github.com/zcy85611/openwrt-luci-kcp-udp
 git clone --depth=1 https://github.com/destan19/OpenAppFilter
 popd
 
+# Add CPUInfo
+pushd feeds/luci/modules/luci-mod-admin-full/luasrc/view/admin_status
+sed -i '/Load Average/i\\t\t<tr><td width="33%"><%:CPU温度%></td><td><%=luci.sys.exec("cut -c1-2 /sys/class/thermal/thermal_zone0/temp")%><span>&#8451;</span></td></tr>' index.htm
+popd
+
 # Add Pandownload
-svn co https://github.com/immortalwrt/immortalwrt/branches/master/package/lean/pandownload-fake-server
+pushd package/lean
+svn co https://github.com/immortalwrt/immortalwrt/trunk/package/lean/pandownload-fake-server
+popd
 
 # Mod zzz-default-settings
 pushd package/lean/default-settings/files
@@ -129,12 +136,11 @@ sed -i 's/\/bin\/ash/\/usr\/bin\/zsh/g' package/base-files/files/etc/passwd
 # Custom configs
 # Modify default IP
 sed -i 's/192.168.1.1/192.168.2.1/g' package/base-files/files/bin/config_generate
-
 git am $GITHUB_WORKSPACE/patches/lean/*.patch
 echo -e " Lean's OpenWrt built on "$(date +%Y.%m.%d)"\n -----------------------------------------------------" >> package/base-files/files/etc/banner
 
-pushd package/lean
 # Add Project OpenWrt's autocore
+pushd package/lean
 rm -rf autocore
 svn co https://github.com/immortalwrt/immortalwrt/branches/master/package/lean/autocore
 popd
