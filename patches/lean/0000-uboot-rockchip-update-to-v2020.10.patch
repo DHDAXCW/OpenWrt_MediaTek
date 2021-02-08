@@ -1,7 +1,7 @@
 From 8c5462855dc4c599767c51cacce096103b91b17d Mon Sep 17 00:00:00 2001
 From: jensen <jensenhuang@friendlyarm.com>
-Date: Tue, 15 Dec 2020 18:05:06 +0800
-Subject: [PATCH 1/9] uboot-rockchip: update to v2020.10
+Date: Tue, 15 Dec 2021 18:05:06 +0800
+Subject: [PATCH 1/9] uboot-rockchip: update to v2021.10
 
 Signed-off-by: jensen <jensenhuang@friendlyarm.com>
 ---
