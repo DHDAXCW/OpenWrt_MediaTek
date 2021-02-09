@@ -6,13 +6,13 @@
 # Blog: https://p3terx.com
 #=================================================
 
-name: NanoPi R4S Lean's OpenWrt
+name: Lean OpenWrt
 
 on:
   repository_dispatch:
   workflow_dispatch:
   schedule:
-    - cron: 0 18 * * *
+    - cron: 0 17 * * *
   # watch:
   #   types: started
 
@@ -60,11 +60,12 @@ jobs:
         git config --global user.email "git@github.com"
         git config --global user.name "GitHub"
         git clone $REPO_URL -b $REPO_BRANCH openwrt
-        cd openwrt
-        rm -rf ./target/linux/rockchip
-        svn co https://github.com/immortalwrt/immortalwrt/branches/master/target/linux/rockchip target/linux/rockchip
-        rm -rf ./package/boot/uboot-rockchip
-        svn co https://github.com/immortalwrt/immortalwrt/branches/master/package/boot/uboot-rockchip package/boot/uboot-rockchip
+        #cd openwrt
+        #git rebase --onto 8724adeaac58ca3543dbb768a08de3186e131d8f 2a0b915c534f61fad18fb6a665f4c71566dad979
+        #rm -rf ./target/linux/rockchip
+        #svn co https://github.com/immortalwrt/immortalwrt/branches/master/target/linux/rockchip target/linux/rockchip
+        #rm -rf ./package/boot/uboot-rockchip
+        #svn co https://github.com/immortalwrt/immortalwrt/branches/master/package/boot/uboot-rockchip package/boot/uboot-rockchip
     
     - name: Update Feeds
       id: update
@@ -100,7 +101,7 @@ jobs:
         make download -j8
         find dl -size -1024c -exec ls -l {} \;
         find dl -size -1024c -exec rm -f {} \;
-   
+  
     - name: Compile Packages
       id: compile
       run: |
@@ -241,6 +242,14 @@ jobs:
           body_path: release.txt
           files: ${{ env.FIRMWARE }}/*
 
+      - name: Build & Push Docker Image To Dockerhub
+        run: |
+          cd openwrt/bin/targets/$TARGET/$SUBTARGET/
+          docker import openwrt-rockchip-armv8-friendlyarm_nanopi-r4s-rootfs.tar.gz ${{ secrets.DOCKERHUB_USERNAME }}/openwrt:lean
+          docker login -u ${{ secrets.DOCKERHUB_USERNAME }} -p ${{ secrets.DOCKERHUB_TOKEN }}
+          docker push ${{ secrets.DOCKERHUB_USERNAME }}/openwrt:lean
+          docker tag ${{ secrets.DOCKERHUB_USERNAME }}/openwrt:lean ${{ secrets.DOCKERHUB_USERNAME }}/openwrt:latest
+          docker push ${{ secrets.DOCKERHUB_USERNAME }}/openwrt:latest
       - name: Delete workflow runs
         uses: GitRML/delete-workflow-runs@main
         with:
