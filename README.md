@@ -32,7 +32,7 @@
 
 - 优化CPU在限制的时候频率降最低4OOMHz引起死机问题，改为当前频率1200MHz
 
-
+![Alt text](data/cpu.jpg?raw=true "Title")
 
 ### 版本日志 2.9版
 
