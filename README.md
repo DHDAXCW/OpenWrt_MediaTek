@@ -30,7 +30,7 @@
 
 - 更新补丁，解除对CPU的限制，最大A72 1.8GHz/A53 1.4GHz，最低400MHz，当前主频1.2GHz
 
-- 优化CPU在限制的时候频率降最低4OOMHz引起死机问题，改为当前频率1200MHz
+- 优化CPU在闲置的时候频率降最低4OOMHz引起死机问题，改为闲置频率1200MHz，但不会用到最低400MHz
 
 ![Alt text](data/cpu.jpg?raw=true "Title")
 
