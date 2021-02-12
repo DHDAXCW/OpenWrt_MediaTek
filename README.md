@@ -9,6 +9,12 @@
 
 - 已开启SSH，可自定义选择编译，自动生成`.config`
 
+## 基于FriendlyWRT
+
+- 如果你们多拨，nat什么的有问题就去https://github.com/DHDAXCW/FriendlyWRT-R4S
+
+- 这个FriendlyWRT开源比较稳定。可以离线升级，东西没这里多，不过后期会增加的。我会努力的
+
 ## 目前的编译已修复卡刷无法开机的问题。
 
 我的固件很挑卡。不过目前已解决了卡刷不开机的问题。
