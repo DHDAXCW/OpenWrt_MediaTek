@@ -107,6 +107,11 @@ pushd package/lean
 git clone —depth=1 https://github.com/drwatson32/openwrt-feeds-driver-ext
 popd
 
+# rtl88x2bu
+pushd package/lean
+svn co https://github.com/gogogojason/oppackages/tree/rtl88x2bu
+popd
+
 # Mod zzz-default-settings
 pushd package/lean/default-settings/files
 sed -i '/http/d' zzz-default-settings
