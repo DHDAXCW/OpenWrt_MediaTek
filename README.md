@@ -33,13 +33,15 @@
 
 - 增加CPU调节控制。
 
-- passwall和SSRP中的去掉v2ray协议 Xray正在取代v2ray的位置
+- passwall和SSRP中的去掉v2ray协议,Xray正在取代v2ray的位置。
+
+- 增新螃蟹网卡驱动 rtl88**BU系列
 
 ### 版本日志 2.11版
 
 - 修改错别字
 
-- 增加螃蟹网卡驱动，8811-88**usb
+- 增加螃蟹网卡驱动，rtwl8811-88**usb CU系列
 
 ### 版本日志 2.10版
 
