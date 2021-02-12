@@ -109,7 +109,7 @@ popd
 
 # rtl88x2bu
 pushd package/lean
-git clone —depth=1 https://github.com/gogogojason/oppackages/tree/master/rtl88x2bu
+svn co https://github.com/gogogojason/oppackages/branches/master/rtl88x2bu
 popd
 
 # Mod zzz-default-settings
