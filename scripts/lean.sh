@@ -80,25 +80,31 @@ svn co https://github.com/immortalwrt/immortalwrt/trunk/package/ntlf9t/luci-app-
 # Add luci-udptools
 git clone --depth=1 https://github.com/zcy85611/openwrt-luci-kcp-udp
 
-pushd package/lean
-git clone —depth=1 https://github.com/drwatson32/openwrt-feeds-driver-ext
-popd
-
 # Add OpenAppFilter
 git clone --depth=1 https://github.com/destan19/OpenAppFilter
 popd
 
 # Add CPUInfo
 pushd feeds/luci/modules/luci-mod-admin-full/luasrc/view/admin_status
-sed -i '/Load Average/i\\t\t<tr><td width="33%"><%:CPU Temperature%></td><td><%=luci.sys.exec("cut -c1-2 /sys/class/thermal/thermal_zone0/temp")%><span>&#8451;</span></td></tr>' index.htm
+sed -i '/Load Average/i\\t\t<tr><td width="33%"><%:CPU 温度🍦%></td><td><%=luci.sys.exec("cut -c1-2 /sys/class/thermal/thermal_zone0/temp")%><span>&#8451;</span></td></tr>' index.htm
 sed -i '/Load Average/i\\t\t<tr><td width="33%"><%:欢迎订阅 Youtube 频道%></td><td><a href="https://www.youtube.com/c/BIGdongdong/videos">BIGDONGDONG</a></td></tr>' index.htm
 sed -i 's/pcdata(boardinfo.system or "?")/"ARMv8"/' index.htm
-sed -i 's/<%=luci.sys.exec("cat \/etc\/bench.log") or " "%>//' index.htm
 popd
 
 # Add Pandownload
 pushd package/lean
 svn co https://github.com/immortalwrt/immortalwrt/trunk/package/lean/pandownload-fake-server
+popd
+
+# Add driver for rtl8821cu & rtl8812au-ac
+pushd package/lean
+svn co https://github.com/immortalwrt/immortalwrt/branches/master/package/ctcgfw/rtl8812au-ac
+svn co https://github.com/immortalwrt/immortalwrt/branches/master/package/ctcgfw/rtl8821cu
+popd
+
+#Add penwrt-feeds-driver-ext
+pushd package/lean
+git clone —depth=1 https://github.com/drwatson32/openwrt-feeds-driver-ext
 popd
 
 # Mod zzz-default-settings
@@ -108,21 +114,27 @@ export orig_version="$(cat "zzz-default-settings" | grep DISTRIB_REVISION= | awk
 sed -i "s/${orig_version}/${orig_version} ($(date +"%Y.%m.%d"))/g" zzz-default-settings
 popd
 
+# Fix libssh
+pushd feeds/packages/libs
+rm -rf libssh
+svn co https://github.com/coolsnowwolf/packages/trunk/libs/libssh
+popd
+
 # Use Lienol's https-dns-proxy package
 pushd feeds/packages/net
 rm -rf https-dns-proxy
 svn co https://github.com/Lienol/openwrt-packages/trunk/net/https-dns-proxy
 popd
 
+# Use snapshots syncthing package
+pushd feeds/packages/utils
+rm -rf syncthing
+svn co https://github.com/coolsnowwolf/packages/trunk/utils/syncthing
+popd
+
 # Fix mt76 wireless driver
 pushd package/kernel/mt76
 sed -i '/mt7662u_rom_patch.bin/a\\techo mt76-usb disable_usb_sg=1 > $\(1\)\/etc\/modules.d\/mt76-usb' Makefile
-popd
-
-# Add driver for rtl8821cu & rtl8812au-ac
-pushd package/lean
-svn co https://github.com/immortalwrt/immortalwrt/branches/master/package/ctcgfw/rtl8812au-ac
-svn co https://github.com/immortalwrt/immortalwrt/branches/master/package/ctcgfw/rtl8821cu
 popd
 
 # Add po2lmo
