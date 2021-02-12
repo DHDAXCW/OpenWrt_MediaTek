@@ -9,6 +9,8 @@
 
 - 已开启SSH，可自定义选择编译，自动生成`.config`
 
+- 下载地址：https://github.com/DHDAXCW/NanoPi-R4S-2021/releases
+
 ## 基于FriendlyWRT
 
 - 如果你们多拨，nat什么的有问题就去https://github.com/DHDAXCW/FriendlyWRT-R4S
