@@ -92,11 +92,6 @@ pushd feeds/luci/modules/luci-mod-admin-full/luasrc/view/admin_status
 #sed -i '/Load Average/i\\t\t<tr><td width="33%"><%:CPU 温度🍦%></td><td><%=luci.sys.exec("cut -c1-2 /sys/class/thermal/thermal_zone0/temp")%><span>&#8451;</span></td></tr>' index.htm
 sed -i '/Load Average/i\\t\t<tr><td width="33%"><%:欢迎订阅 Youtube 频道%></td><td><a href="https://www.youtube.com/c/BIGdongdong/videos">BIGDONGDONG</a></td></tr>' index.htm
 
-#Add CUPInfo
-pushd package/lean/autocore/files/arm/sbin
-cp -f $GITHUB_WORKSPACE/scripts/cpuinfo cpuinfo
-popd
-
 # Add Pandownload
 pushd package/lean
 svn co https://github.com/immortalwrt/immortalwrt/trunk/package/lean/pandownload-fake-server
@@ -163,4 +158,9 @@ echo -e " Lean's OpenWrt built on "$(date +%Y.%m.%d)"\n ------------------------
 pushd package/lean
 rm -rf autocore
 svn co https://github.com/immortalwrt/immortalwrt/branches/master/package/lean/autocore
+popd
+
+#Add CUPInfo
+pushd package/lean/autocore/files/arm/sbin
+cp -f $GITHUB_WORKSPACE/scripts/cpuinfo cpuinfo
 popd
