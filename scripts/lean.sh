@@ -94,8 +94,7 @@ sed -i '/Load Average/i\\t\t<tr><td width="33%"><%:欢迎订阅 Youtube 频道%>
 
 #Add CUPInfo
 pushd package/lean/autocore/files/arm/sbin
-rm -rf cpuinfo
-cp -f $GITHUB_WORKSPACE/scripts/Show_CPU_big.LITTLE_FREQ cpuinfo
+cp -f $GITHUB_WORKSPACE/scripts/cpuinfo cpuinfo
 popd
 
 # Add Pandownload
