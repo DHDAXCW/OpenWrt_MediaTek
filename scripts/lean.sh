@@ -114,7 +114,7 @@ popd
 
 # rtl88x2bu
 pushd package/lean
-svn co https://github.com/gogogojason/oppackages/trunk/rtl88x2bu
+svn co https://github.com/ulli-kroll/rtw88-usb
 popd
 
 # Mod zzz-default-settings
