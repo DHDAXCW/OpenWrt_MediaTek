@@ -107,14 +107,9 @@ svn co https://github.com/immortalwrt/immortalwrt/branches/master/package/ctcgfw
 svn co https://github.com/immortalwrt/immortalwrt/branches/master/package/ctcgfw/rtl8821cu
 popd
 
-#Add 8812bu
-#pushd package/lean	
-#git clone --depth=1 https://github.com/pyavitz/builddeb
-#popd
-
 # rtl88x2bu
 pushd package/lean
-svn co https://github.com/ulli-kroll/rtw88-usb
+git clone --depth=1 https://github.com/ulli-kroll/rtw88-usb
 popd
 
 # Mod zzz-default-settings
