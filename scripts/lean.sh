@@ -108,9 +108,9 @@ svn co https://github.com/immortalwrt/immortalwrt/branches/master/package/ctcgfw
 popd
 
 #Add 8812bu
-pushd package/lean	
-git clone --depth=1 https://github.com/pyavitz/builddeb
-popd
+#pushd package/lean	
+#git clone --depth=1 https://github.com/pyavitz/builddeb
+#popd
 
 # rtl88x2bu
 pushd package/lean
