@@ -87,13 +87,15 @@ git clone --depth=1 https://github.com/zcy85611/openwrt-luci-kcp-udp
 git clone --depth=1 https://github.com/destan19/OpenAppFilter
 popd
 
-# Add CPUInfo
+# Add CPUInfookbk
 pushd feeds/luci/modules/luci-mod-admin-full/luasrc/view/admin_status
-sed -i 's|pcdata(boardinfo.system or "?")|luci.sys.exec("uname -m") or "?"|g' index.htm
-sed -i 's/or "1"%>/or "1"%> ( <%=luci.sys.exec("expr `cat \/sys\/class\/thermal\/thermal_zone0\/temp` \/ 1000") or "?"%> \&#8451; ) /g' index.htm
 #sed -i '/Load Average/i\\t\t<tr><td width="33%"><%:CPU 温度🍦%></td><td><%=luci.sys.exec("cut -c1-2 /sys/class/thermal/thermal_zone0/temp")%><span>&#8451;</span></td></tr>' index.htm
 sed -i '/Load Average/i\\t\t<tr><td width="33%"><%:欢迎订阅 Youtube 频道%></td><td><a href="https://www.youtube.com/c/BIGdongdong/videos">BIGDONGDONG</a></td></tr>' index.htm
-#sed -i 's/pcdata(boardinfo.system or "?")/"ARMv8"/' index.htm
+
+#Add CUPInfo
+pushd package/lean/autocore/files/arm/sbin
+rm -rf cpuinfo
+cp -f $GITHUB_WORKSPACE/scripts/Show_CPU_big.LITTLE_FREQ cpuinfo
 popd
 
 # Add Pandownload
