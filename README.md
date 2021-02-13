@@ -42,12 +42,12 @@
 - 系统→CPU Freq（CPU调节优化控制）里面默认频率都是400，如果感觉不爽的话，可以手动调整一下：
 
 - policy 0（小核） 默认平衡模式不变；
-- 调整Min Idle CPU Freq（最小空闲CPU频率）：816000  （816MHz）；
-- 调整Max Turbo Boost CPU Freq（最大Turbo加速 CPU频率）：1416000（1460MHz）；
+ 调整Min Idle CPU Freq（最小空闲CPU频率）：816000  （816MHz）；
+ 调整Max Turbo Boost CPU Freq（最大Turbo加速 CPU频率）：1416000（1460MHz）；
 
 - policy 4（大核） 默认平衡模式不变；
-- 调整Min Idle CPU Freq（最小空闲CPU频率）：816000  （816MHz）；
-- 调整Max Turbo Boost CPU Freq（最大Turbo加速 CPU频率）：1800000（1800MHz）；
+ 调整Min Idle CPU Freq（最小空闲CPU频率）：816000  （816MHz）；
+ 调整Max Turbo Boost CPU Freq（最大Turbo加速 CPU频率）：1800000（1800MHz）；
 
 以上个人用的。如果懂的话，随便弄，别把cpu搞热了就行哈
 
