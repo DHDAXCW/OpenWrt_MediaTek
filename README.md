@@ -39,13 +39,17 @@
 
 ## CPU Freq 使用说明
 
-- 系统→CPU Freq（CPU调节优化控制）里面默认频率都是400，如果感觉不爽的话，可以手动调整一下：
+- 系统→CPU Freq（CPU调节优化控制）里面默认频率powersave（省电模式），如果感觉不爽的话，可以手动调整一下：
+- CPU比例调节器：
+* powersave 省电模式（默认）
+* performance 高性能模式
+* schedutil 平衡模式
 
-- policy 0（小核） 默认平衡模式不变；
+- policy 0（小核） 默认省电模式不变；
  * 调整Min Idle CPU Freq（最小空闲CPU频率）：816000  （816MHz）；
  * 调整Max Turbo Boost CPU Freq（最大Turbo加速 CPU频率）：1416000（1460MHz）；
 
-- policy 4（大核） 默认平衡模式不变；
+- policy 4（大核） 默认省电模式不变；
  * 调整Min Idle CPU Freq（最小空闲CPU频率）：816000  （816MHz）；
  * 调整Max Turbo Boost CPU Freq（最大Turbo加速 CPU频率）：1800000（1800MHz）；
 
