@@ -161,6 +161,6 @@ svn co https://github.com/immortalwrt/immortalwrt/branches/master/package/lean/a
 popd
 
 #Add CUPInfo
-pushd package/lean/autocore/files/arm/sbin
-cp -f $GITHUB_WORKSPACE/scripts/cpuinfo cpuinfo
-popd
+#pushd package/lean/autocore/files/arm/sbin
+#cp -f $GITHUB_WORKSPACE/scripts/cpuinfo cpuinfo
+#popd
