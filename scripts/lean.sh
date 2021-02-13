@@ -109,12 +109,12 @@ popd
 
 #Add penwrt-feeds-driver-ext
 pushd package/lean
-git clone —depth=1 https://github.com/drwatson32/openwrt-feeds-driver-ext
+git clone --depth=1 https://github.com/drwatson32/openwrt-feeds-driver-ext
 popd
 
 # rtl88x2bu
 pushd package/lean
-svn co svn co https://github.com/gogogojason/oppackages/trunk/rtl88x2bu
+svn co https://github.com/gogogojason/oppackages/trunk/rtl88x2bu
 popd
 
 # Mod zzz-default-settings
