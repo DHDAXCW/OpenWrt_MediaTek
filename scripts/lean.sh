@@ -107,11 +107,6 @@ svn co https://github.com/immortalwrt/immortalwrt/branches/master/package/ctcgfw
 svn co https://github.com/immortalwrt/immortalwrt/branches/master/package/ctcgfw/rtl8821cu
 popd
 
-#Add penwrt-feeds-driver-ext
-pushd package/lean
-git clone --depth=1 https://github.com/drwatson32/openwrt-feeds-driver-ext
-popd
-
 # rtl88x2bu
 pushd package/lean
 svn co https://github.com/gogogojason/oppackages/trunk/rtl88x2bu
