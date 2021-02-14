@@ -71,8 +71,6 @@
 
 - 再次更新补丁，最大A72 2.20GHz/A53 1.8GHz，最低400MHz，当前主频1.2GHz（由CPU Freq（CPU调节优化控制）不必但心发热哈）
 
-- 将温度移到cpu旁边显示，并增加核心频率（频率待定）
-
 - passwall和SSRP中的去掉v2ray协议,Xray正在取代v2ray的位置。
 
 - 增新螃蟹网卡驱动 rtl88**BU系列
