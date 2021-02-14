@@ -46,26 +46,10 @@
 先刷r2s固件再刷r4s固件，即可清除数据
 ## CPU Freq 使用说明
 
-- 系统→CPU Freq（CPU调节优化控制）里面默认频率powersave（省电模式），如果感觉不爽的话，可以手动调整一下：
-- CPU比例调节器：
-* powersave 省电模式（默认）
-* performance 高性能模式
-* schedutil 平衡模式
-
-- policy 0（小核） 默认省电模式不变；
- * 调整Min Idle CPU Freq（最小空闲CPU频率）：816000  （816MHz）；
- * 调整Max Turbo Boost CPU Freq（最大Turbo加速 CPU频率）：1416000（1460MHz）；
-
-- policy 4（大核） 默认省电模式不变；
- * 调整Min Idle CPU Freq（最小空闲CPU频率）：816000  （816MHz）；
- * 调整Max Turbo Boost CPU Freq（最大Turbo加速 CPU频率）：1800000（1800MHz）；
-
-以上个人用的。如果懂的话，随便弄，别把cpu搞热就行哈
-没事的时候别瞎开超频到2.2GHz.....
-
+该插件已除去了，99%不会调.....
 ### 版本日志 2.13
 
-- 增加CPU调节控制。教程👆
+- 增加CPU调节控制。（已移除了）
 
 - 由于源码自带u-boot和补丁不行，已移除，改为本地u-boot和补丁。
 
