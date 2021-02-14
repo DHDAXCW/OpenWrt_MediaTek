@@ -103,9 +103,9 @@ svn co https://github.com/immortalwrt/immortalwrt/branches/master/package/ctcgfw
 svn co https://github.com/immortalwrt/immortalwrt/branches/master/package/ctcgfw/rtl8821cu
 popd
 
-# rtl88x2bu
+# Add rtl88x2bu
 pushd package/lean
-git clone --depth=1 https://github.com/ulli-kroll/rtw88-usb
+svn co https://github.com/immortalwrt/immortalwrt/branches/master/package/ctcgfw/rtl88x2bu
 popd
 
 # Mod zzz-default-settings
@@ -161,6 +161,6 @@ svn co https://github.com/immortalwrt/immortalwrt/branches/master/package/lean/a
 popd
 
 #Add CUPInfo
-#pushd package/lean/autocore/files/arm/sbin
-#cp -f $GITHUB_WORKSPACE/scripts/cpuinfo cpuinfo
-#popd
+pushd package/lean/autocore/files/arm
+cp -f $GITHUB_WORKSPACE/scripts/cpuinfo cpuinfo
+popd
