@@ -154,12 +154,6 @@ sed -i 's/192.168.1.1/192.168.2.1/g' package/base-files/files/bin/config_generat
 git am $GITHUB_WORKSPACE/patches/lean/*.patch
 echo -e " Lean's OpenWrt built on "$(date +%Y.%m.%d)"\n -----------------------------------------------------" >> package/base-files/files/etc/banner
 
-# Add Project OpenWrt's autocore 👈这傻吊 专门删除温度和频率
-#pushd package/lean
-#rm -rf autocore
-#svn co https://github.com/immortalwrt/immortalwrt/branches/master/package/lean/autocore
-#popd
-
 #Add CUPInfo
 pushd package/lean/autocore/files/arm/sbin
 cp -f $GITHUB_WORKSPACE/scripts/cpuinfo cpuinfo
