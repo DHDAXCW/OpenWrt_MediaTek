@@ -89,7 +89,7 @@ popd
 
 # Add CPUInfookbk
 pushd feeds/luci/modules/luci-mod-admin-full/luasrc/view/admin_status
-sed -i '/Load Average/i\\t\t<tr><td width="33%"><%:CPU 温度🍦%></td><td><%=luci.sys.exec("cut -c1-2 /sys/class/thermal/thermal_zone0/temp")%><span>&#8451;</span></td></tr>' index.htm
+#sed -i '/Load Average/i\\t\t<tr><td width="33%"><%:CPU 温度🍦%></td><td><%=luci.sys.exec("cut -c1-2 /sys/class/thermal/thermal_zone0/temp")%><span>&#8451;</span></td></tr>' index.htm
 sed -i '/Load Average/i\\t\t<tr><td width="33%"><%:欢迎订阅 Youtube 频道%></td><td><a href="https://www.youtube.com/c/BIGdongdong/videos">BIGDONGDONG</a></td></tr>' index.htm
 
 # Add Pandownload
