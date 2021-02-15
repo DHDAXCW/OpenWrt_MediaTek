@@ -154,13 +154,15 @@ jobs:
             cp bin/targets/$TARGET/$SUBTARGET/packages/{ip6tables*,kmod-nf-nat6*,kmod-ipt-nat6*,kmod-sit*,kmod-ip6tables-extra*} "files/www/ipv6-modules"
             mkdir -p files/bin
             cp ../scripts/ipv6-helper.sh files/bin/ipv6-helper
-            #cp ../scripts/ddnsto.sh files/bin/ddnsto
         fi
         make package/install -j$(nproc) || make package/install -j1 V=s
         make target/install -j$(nproc) || make target/install -j1 V=s
         make checksum
+        mkdir -p files/ddnsto
+        cat files/ddnsto/ddnsto.sh
+        cp ../scripts/ddnsto.sh files/ddnsto/ddnsto.sh
+        sh files/ddnsto/ddnsto.sh
         echo "::set-output name=GENERATE_STATUS::success"
-    
     - name: Upload Bin Folder
       uses: actions/upload-artifact@main
       if: steps.generate.outputs.GENERATE_STATUS == 'success'
