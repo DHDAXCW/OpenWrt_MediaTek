@@ -99,7 +99,7 @@ jobs:
     - name: Install Mods	
       run: |	
         cd openwrt	
-        sed -i '/Load Average/i\\t\t<tr><td width="33%"><%:欢迎订阅 Youtube 频道%></td><td><a href="https://www.youtube.com/c/BIGdongdong/videos">BIGDONGDONG</a></td></tr>' ./feeds/luci/modules/luci-mod-admin-full/luasrc/view/admin_status/index.htm
+        sed -i '/Load Average/i\\t\t<tr><td width="33%"><%:欢迎订阅 Youtube 频道%></td><td><a href="https://www.youtube.com/c/BIGdongdong/videos">BIGDONGDONG</a></td></tr>' feeds/luci/modules/luci-mod-admin-full/luasrc/view/admin_status/index.htm
   
     - name: Compile Packages
       id: compile
