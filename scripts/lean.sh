@@ -80,12 +80,12 @@ svn co https://github.com/immortalwrt/immortalwrt/trunk/package/ntlf9t/luci-app-
 # Add luci-udptools
 git clone --depth=1 https://github.com/zcy85611/openwrt-luci-kcp-udp
 
+# Add luci-app-ttnode
+svn co https://github.com/281677160/openwrt-package/trunk/luci-app-ttnode
+
 # Add OpenAppFilter
 git clone --depth=1 https://github.com/destan19/OpenAppFilter
 popd
-
-# Add luci-app-ttnode
-svn co https://github.com/281677160/openwrt-package/trunk/luci-app-ttnode
 
 # Add CPUIll
 pushd feeds/luci/modules/luci-mod-admin-full/luasrc/view/admin_status
