@@ -51,7 +51,7 @@
 
 - 新增ddnsto内网穿透插件（第一次把安装包从yml加上，不知道有没有加上，看运气吧）
 
-- 更新passwall和ssrp的v2ray_plugin协议
+- 更新passwall和ssrp的v2ray_plugin协议（导致编译失败）
 
 - 优化补丁中的自动调节超频
 
