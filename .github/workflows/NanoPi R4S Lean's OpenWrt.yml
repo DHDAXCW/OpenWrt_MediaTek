@@ -158,11 +158,11 @@ jobs:
         make package/install -j$(nproc) || make package/install -j1 V=s
         make target/install -j$(nproc) || make target/install -j1 V=s
         make checksum
-        mkdir -p files/ddnsto
-        touch files/ddnsto/ddnsto.sh
-        cp ../scripts/ddnsto.sh files/ddnsto/ddnsto.sh
-        chomd +x files/ddnsto/ddnsto.sh
-        sh files/ddnsto/ddnsto.sh
+        #mkdir -p files/ddnsto
+        #touch files/ddnsto/ddnsto.sh
+        #cp ../scripts/ddnsto.sh files/ddnsto/ddnsto.sh
+        #chomd +x files/ddnsto/ddnsto.sh
+        #sh files/ddnsto/ddnsto.sh
         echo "::set-output name=GENERATE_STATUS::success"
     - name: Upload Bin Folder
       uses: actions/upload-artifact@main
