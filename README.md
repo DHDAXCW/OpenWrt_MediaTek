@@ -8,6 +8,8 @@
 
 ### DDNSTO穿透插件
 
+- 目前编译已安装上了
+
 - 如果设备上没有此插件，可以通过这此方式来安装了。下载👉[**ddnsto.sh**](https://github.com/DHDAXCW/NanoPi-R4S-2021/releases/download/ddns/ddnsto.sh)👈,软路由→系统→文件传输→上传选择刚下的ddnsto.sh，然后系统→ttyd终端命令执行 `sh /tmp/upload/ddnsto.sh` 刷新一下就出现在服务里了。不懂的话，还是[**看视频**](https://github.com/DHDAXCW/NanoPi-R4S-2021/releases/download/ddns/Video.tutorial.mp4)吧。。。（特别感谢[**linkease**](https://github.com/linkease/ddnsto-openwrt)原作者提供源码。）
 
 
