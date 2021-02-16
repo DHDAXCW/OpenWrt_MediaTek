@@ -87,11 +87,6 @@ git clone --depth=1 https://github.com/zcy85611/openwrt-luci-kcp-udp
 git clone --depth=1 https://github.com/destan19/OpenAppFilter
 popd
 
-#Add luci-app-ddnsto
-pushd package/network/services
-git clone --depth=1 https://github.com/linkease/ddnsto-openwrt
-popd
-
 # Add CPUIll
 pushd feeds/luci/modules/luci-mod-admin-full/luasrc/view/admin_status
 #sed -i '/Load Average/i\\t\t<tr><td width="33%"><%:CPU温度🌡%></td><td><%=luci.sys.exec("cut -c1-2 /sys/class/thermal/thermal_zone0/temp")%><span>&#8451;</span></td></tr>' index.htm
@@ -99,6 +94,12 @@ sed -i '/Load Average/i\\t\t<tr><td width="33%"><%:欢迎订阅 Youbube 频道%>
 #sed -i 's/pcdata(boardinfo.system or "?")/"ARMv8"/' index.htm 
 #sed -i 's/<%=luci.sys.exec("cat \/etc\/bench.log") or " "%>//' index.htm 
 popd
+
+#Add luci-app-ddnsto
+pushd package/network/services
+git clone --depth=1 https://github.com/linkease/ddnsto-openwrt
+popd
+
 
 # Add Pandownload
 pushd package/lean
