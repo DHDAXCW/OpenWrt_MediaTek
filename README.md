@@ -11,6 +11,10 @@
 
 - 下载地址：https://github.com/DHDAXCW/NanoPi-R4S-2021/releases
 
+### DDNSTO穿透插件
+
+- 没有源码编译把插件打上固件里，只能通过这此方式来安装了。下载后[**ddnsto.sh**](https://github.com/DHDAXCW/NanoPi-R4S-2021/releases/tag/ddns),软路由→系统→文件传输→上传选择刚下的ddnsto.sh，然后系统→ttyd终端命令执行 `sh /tmp/upload/ddnsto.sh` 刷新一下就出现在服务里了。不懂的话，还是看视频吧。。。
+
 ## 基于FriendlyWRT
 
 - 如果你们多拨，nat什么的有问题就去https://github.com/DHDAXCW/FriendlyWRT-R4S
