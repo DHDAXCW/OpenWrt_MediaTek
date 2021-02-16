@@ -33,7 +33,7 @@
 
 先刷r2s固件再刷r4s固件，即可清除数据
 
-### 版本日志 2.16版（晚点）
+### 版本日志 2.17版（晚点）
 
 - 新增ddnsto内网穿透插件和易有云插件2.0， ddnsto与易有云都可以借助 aria2 完成远程下载 （特别感谢[**linkease**](https://github.com/linkease/ddnsto-openwrt)原作者提供源码。）
 
