@@ -100,6 +100,10 @@ pushd package/network/services
 git clone --depth=1 https://github.com/linkease/ddnsto-openwrt
 popd
 
+# Add luci-app-linkease
+pushd package/network/services
+git clone --depth=1 https://github.com/linkease/linkease-openwrt
+popd
 
 # Add Pandownload
 pushd package/lean
