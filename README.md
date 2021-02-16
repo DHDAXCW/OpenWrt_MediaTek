@@ -35,11 +35,7 @@
 
 ### 版本日志 2.16版（晚点）
 
-- 新增甜糖插件挖矿插件（不好用，已移除）
-
 - 新增ddnsto内网穿透插件和易有云插件2.0， ddnsto与易有云都可以借助 aria2 完成远程下载 （特别感谢[**linkease**](https://github.com/linkease/ddnsto-openwrt)原作者提供源码。）
-
-- 更新passwall和ssrp的v2ray_plugin协议（导致编译失败）
 
 - 优化补丁中的自动调节超频
 
