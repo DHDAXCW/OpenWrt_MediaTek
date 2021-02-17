@@ -9,12 +9,13 @@
 ### DDNSTO穿透插件
 
 - 目前编译已安装上了
-
-- 如果设备上没有此插件，可以通过这此方式来安装了。
-- 可以直接在软路由ttyd执行```wget https://raw.githubusercontent.com/linkease/ddnsto_all_in_one_script/master/install_ddnsto.sh&& sh install_ddnsto.sh``` 
-- 刷新一下就出现在服务里了。如果还没明白，可以[**看视频**](https://github.com/DHDAXCW/NanoPi-R4S-2021/releases/download/ddns/ddnsto.mp4)如何安装就行吧。。。（特别感谢[**linkease**](https://github.com/linkease/ddnsto-openwrt)原作者提供源码。）
-- - 如果在过程中遇到安装失败，可以执行备用命令安装👇
+- 如果还是没有的话，可以直接在软路由ttyd执行，复制👇👇👇
+- ```wget https://raw.githubusercontent.com/linkease/ddnsto_all_in_one_script/master/install_ddnsto.sh&& sh install_ddnsto.sh``` 
+- 然后到ttyd终端下回车后进度结束。👇
+- 刷新一下就出现在服务里了。如果还没明白，可以[**看视频**](https://www.bilibili.com/video/BV1mo4y197jK)如何安装就行
+- 如果在过程中遇到安装失败，可以执行备用命令安装👇
 - 备用命令 ```wget https://github.com/DHDAXCW/ddnsto_all_in_one_script/releases/download/ddns/ddnsto.sh;sh ddnsto.sh```
+
 
 
 ## 基于FriendlyWRT
