@@ -11,7 +11,7 @@
 - 目前编译已安装上了
 
 - 如果设备上没有此插件，可以通过这此方式来安装了。
-- 可以直接在软路由ttyd执行```wget https://github.com/DHDAXCW/ddnsto_all_in_one_script/releases/download/ddns/ddnsto.sh;sh ddnsto.sh``` 
+- 可以直接在软路由ttyd执行```wget https://raw.githubusercontent.com/linkease/ddnsto_all_in_one_script/master/install_ddnsto.sh&& sh install_ddnsto.sh``` 
 - 刷新一下就出现在服务里了。不懂的话，还是[**看视频**](https://github.com/DHDAXCW/NanoPi-R4S-2021/releases/download/ddns/Video.tutorial.mp4)吧。。。（特别感谢[**linkease**](https://github.com/linkease/ddnsto-openwrt)原作者提供源码。）
 
 
