@@ -94,7 +94,7 @@ popd
 
 #Add luci-app-ddnsto
 pushd package/network/services
-git clone --depth=1 https://github.com/DHDAXCW/ddnsto-openwrt
+git clone --depth=1 https://github.com/linkease/ddnsto-openwrt
 popd
 
 # Add luci-app-linkease
