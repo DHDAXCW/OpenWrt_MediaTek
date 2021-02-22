@@ -59,6 +59,9 @@
 
 - openwrt-rockchip-armv8-friendlyarm_nanopi-r4s-squashfs-sysupgrade.img.gz 为R4S squashfs 格式升级专用固件。
 ### 版本日志 2.22版
+- 软件包扩容
+- 在线升级
+### 版本日志 2.22版
 - 更新cpu动态调节补丁，解决在2.2GHz模式下，小核到400MHz引起死机问题（电流1A导致）
 - 更新passwall顺序，再新增xray-plugin协议
 - 优化config顺序
