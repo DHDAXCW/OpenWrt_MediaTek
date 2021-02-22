@@ -5,6 +5,14 @@
 - 用户名：root 密码：password 管理IP：192.168.2.1
 
 - 下载地址：https://github.com/DHDAXCW/NanoPi-R4S-2021/releases
+# 在线升级
+- 进后台打开TTYD终端输入，命令复制👇👇👇
+- ```wget  https://raw.githubusercontent.com/DHDAXCW/NanoPi-R4S-2021/main/autoupdate.sh&& sh autoupdate.sh```
+- 按回车即可下载升级
+- 关于为什么升级这么慢？用GitHub下载升级包当然很慢的，直接扶墙吧，我没服务器我搞不了这么快，凑合用吧
+# 赏个鸡腿吧
+ ![Alt text](data/2.jpg?raw=true "Title")
+### 如果你觉得此项目对你有帮助，可以捐助我们，以鼓励项目能持续发展，更加完善
 
 ### DDNSTO穿透插件
 
@@ -30,9 +38,6 @@
 - ext4这个格式貌似不需要吧，直接卡刷。但是这个不能捅Reset
 - 还有一件事 我的固件加了动态超频，不管热不热这是取决后台运行程序在跑什么。
 - 感觉很热  就加风扇，推荐 风扇6cm×6cm，薄1cm，usb也行 或者端子线zh1.5
-# 赏个鸡腿吧
- ![Alt text](data/2.jpg?raw=true "Title")
-### 如果你觉得此项目对你有帮助，可以捐助我们，以鼓励项目能持续发展，更加完善
 
 # 注意！注意！注意！💀💀💀👇👇🏿👇🏾👇🏽👇🏼👇🏻
 
