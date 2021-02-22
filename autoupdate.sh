@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/sh --Created by DHDAXCW
 opkg update
 opkg install zstd
 opkg install libzstd
