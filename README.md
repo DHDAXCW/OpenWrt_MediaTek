@@ -10,6 +10,7 @@
 - ```wget  https://raw.githubusercontent.com/DHDAXCW/NanoPi-R4S-2021/main/autoupdate.sh&& sh autoupdate.sh```
 - 按回车即可下载升级
 - 关于为什么升级这么慢？用GitHub下载升级包当然很慢的，直接扶墙吧，我没服务器我搞不了这么快，凑合用吧
+- 如果升级失败，我今天（2.22）把包改了过渡包，再次卡刷即可可以
 # 赏个鸡腿吧
  ![Alt text](data/2.jpg?raw=true "Title")
 ### 如果你觉得此项目对你有帮助，可以捐助我们，以鼓励项目能持续发展，更加完善
