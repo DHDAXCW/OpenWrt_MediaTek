@@ -18,5 +18,5 @@ else
 	fi
 fi
 cd /tmp/upload
-md5sum -c md5sums 2> /dev/null | grep OK
-sysupgrade -v openwrt-rockchip-armv8-friendlyarm_nanopi-r4s-ext4-sysupgrade.img.gz
+sha256sum -c sha256sums 2> /dev/null | grep OK
+--sysupgrade -v openwrt-rockchip-armv8-friendlyarm_nanopi-r4s-ext4-sysupgrade.img.gz
