@@ -5,15 +5,7 @@
 - 用户名：root 密码：password 管理IP：192.168.2.1
 
 - 下载地址：https://github.com/DHDAXCW/NanoPi-R4S-2021/releases
-### 在线升级```注意在线升级适用于20日之后的固件```有问题，先暂停
-- 进后台打开TTYD终端输入，命令复制👇👇👇
-- ```wget  https://raw.githubusercontent.com/DHDAXCW/NanoPi-R4S-2021/main/autoupdate.sh&& sh autoupdate.sh```
-- 按回车即可下载升级
-- 关于为什么升级这么慢？用GitHub下载升级包当然很慢的，直接扶墙吧，我没服务器我搞不了这么快，凑合用吧
-- 如果是sq格式请不要用此方法。卡刷ext4再用吧
-- 如果升级失败，我今天（2.22）把包改了过渡包，还要等明天才可以.
-- 如果软件包低于固件包的大小，请再次用卡刷后就可以用此方法来升级
-# 赏个鸡腿吧
+
  ![Alt text](data/2.jpg?raw=true "Title")
 ### 如果你觉得此项目对你有帮助，可以捐助我们，以鼓励项目能持续发展，更加完善
 
