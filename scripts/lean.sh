@@ -84,10 +84,10 @@ git clone --depth=1 https://github.com/zcy85611/openwrt-luci-kcp-udp
 git clone --depth=1 https://github.com/destan19/OpenAppFilter
 popd
 
-# Add CPUIll
-pushd openwrt/package/lean/autocore/files/arm/index.htm
-sed -i '/Load Average/i\\t\t<tr><td width="33%"><%:欢迎订阅 Youbube 频道%></td><td><%=< a href="https://www.youtube.com/c/BIGdongdong">BIGDONGDONG</ a></td></tr>' index.htm
-popd
+# Add CPUIll 
+pushd package/lean/autocore/files/arm
+sed -i '/Load Average/i\\t\t<tr><td width="33%"><%:欢迎订阅 Youbube 频道%></td><td><%=< a href="https://www.youtube.com/c/BIGdongdong">BIGDONGDONG</ a></td></tr>' index.htm 
+popd 
 
 #Add luci-app-ddnsto
 pushd package/network/services
