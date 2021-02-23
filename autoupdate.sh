@@ -1,10 +1,8 @@
 #!/bin/sh --Created by DHDAXCW
 opkg update
-opkg install zstd
-opkg install libzstd
 mkdir /mnt/mmcblk0p2
 cd /mnt/mmcblk0p2
-rm -rf artifact openwrt-rockchip*.img.gz openwrt-rockchip*img*
+rm -rf /mnt/mmcblk0p2/openwrt-rockchip*.img.gz 
 wget https://github.com/DHDAXCW/NanoPi-R4S-2021/releases/download/$(date +%Y.%m.%d)-Lean/openwrt-rockchip-armv8-friendlyarm_nanopi-r4s-ext4-sysupgrade.img.gz
 
 if [ -f /mnt/mmcblk0p2/openwrt-rockchip*.img.gz	]; then
