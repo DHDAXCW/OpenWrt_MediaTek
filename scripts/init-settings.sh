@@ -1,10 +1,4 @@
 #!/bin/bash
-#=================================================
-# File name: init-settings.sh
-# Description: This script will be execute during the first boot
-# Author: SuLingGG
-# Blog: https://mlapp.cn
-#=================================================
 
 # Set default theme to luci-theme-argon
 uci set luci.main.mediaurlbase='/luci-static/argon'
