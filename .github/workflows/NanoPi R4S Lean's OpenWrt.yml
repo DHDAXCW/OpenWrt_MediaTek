@@ -80,7 +80,10 @@ jobs:
         ../$DIY_SH
         ../scripts/preset-clash-core.sh armv8
         ../scripts/preset-terminal-tools.sh
-    
+    - name: HTML Mod
+      run: |
+        cd $OPENWRTROOT/package/lean/autocore/files/arm
+        sed -i '/Load Average/i\\t\t<tr><td width="33%"><%:欢迎订阅 Youbube 频道%></td><td><a href="https://www.youtube.com/c/BIGdongdong"><%:BIGDONGDONG%></a></td></tr>' index.htm   
     - name: Download Package
       id: package
       run: |
