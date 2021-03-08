@@ -32,7 +32,7 @@
 - 升级或者卡刷数据依然存在，但是没变化，如果是sq格式，就先卡刷然后再按系统→备份/升级→重置，就可以变了
 - ext4这个格式貌似不需要吧，直接卡刷。但是这个不能捅Reset
 - 还有一件事 我的固件加了动态超频，不管热不热这是取决后台运行程序在跑什么。
-- 感觉很热  就加风扇，推荐 风扇6cm×6cm，薄1cm，usb也行 或者端子线zh1.5
+- 感觉很热  就加风扇，推荐 风扇6cm×6cm，薄1cm，usb也行 或者端子线zh1.5 
 
 # 注意！注意！注意！💀💀💀👇👇🏿👇🏾👇🏽👇🏼👇🏻
 
@@ -51,6 +51,13 @@
 - openwrt-rockchip-armv8-friendlyarm_nanopi-r4s-ext4-factory.img.gz 为R4S ext4 格式全新安装固件；
 
 - openwrt-rockchip-armv8-friendlyarm_nanopi-r4s-squashfs-sysupgrade.img.gz 为R4S squashfs 格式升级专用固件。
+### 版本日志 3.9
+- 移除docker （后期会加上）
+- 修复内存泄漏
+- 修复udp失效问题
+- 其他docker相关内核和依赖全打掉,后期加上
+- 修复其他问题
+如果明天passwall依然不行，用第二个方案。
 
 ### 版本日志 2.22版
 - 软件包扩容
