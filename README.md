@@ -51,6 +51,10 @@
 - openwrt-rockchip-armv8-friendlyarm_nanopi-r4s-ext4-factory.img.gz 为R4S ext4 格式全新安装固件；
 
 - openwrt-rockchip-armv8-friendlyarm_nanopi-r4s-squashfs-sysupgrade.img.gz 为R4S squashfs 格式升级专用固件。
+### 版本日志 3.10
+- 归回v2ray协议
+- 优化passwall完整全协议
+- 优化ssr完整全协议
 ### 版本日志 3.9
 - 移除docker （后期会加上）
 - 修复内存泄漏
