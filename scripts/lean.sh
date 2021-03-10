@@ -40,6 +40,9 @@ git clone --depth=1 https://github.com/rufengsuixing/luci-app-onliner
 svn co https://github.com/Lienol/openwrt/trunk/package/diy/luci-app-adguardhome
 svn co https://github.com/Lienol/openwrt/trunk/package/diy/adguardhome
 
+# Add luci-app-aliddns
+svn co https://github.com/281677160/openwrt-package/trunk/luci-app-aliddns
+
 # Add luci-app-diskman
 git clone --depth=1 https://github.com/SuLingGG/luci-app-diskman
 mkdir parted
