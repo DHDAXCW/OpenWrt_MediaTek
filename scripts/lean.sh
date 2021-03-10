@@ -40,9 +40,6 @@ git clone --depth=1 https://github.com/rufengsuixing/luci-app-onliner
 svn co https://github.com/Lienol/openwrt/trunk/package/diy/luci-app-adguardhome
 svn co https://github.com/Lienol/openwrt/trunk/package/diy/adguardhome
 
-# Add luci-app-aliddns
-svn co https://github.com/281677160/openwrt-package/trunk/luci-app-aliddns
-
 # Add luci-app-diskman
 git clone --depth=1 https://github.com/SuLingGG/luci-app-diskman
 mkdir parted
@@ -73,6 +70,9 @@ svn co https://github.com/immortalwrt/immortalwrt/trunk/package/ctcgfw/gotop
 # Add smartdns
 svn co https://github.com/pymumu/smartdns/trunk/package/openwrt ../smartdns
 svn co https://github.com/immortalwrt/immortalwrt/trunk/package/ntlf9t/luci-app-smartdns ../luci-app-smartdns
+
+# Add luci-app-aliddns
+svn co https://github.com/281677160/openwrt-package/trunk/luci-app-aliddns
 
 # Add luci-udptools
 git clone --depth=1 https://github.com/zcy85611/openwrt-luci-kcp-udp
