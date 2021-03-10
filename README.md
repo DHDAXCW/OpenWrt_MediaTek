@@ -52,6 +52,7 @@
 
 - openwrt-rockchip-armv8-friendlyarm_nanopi-r4s-squashfs-sysupgrade.img.gz 为R4S squashfs 格式升级专用固件。
 ### 版本日志 3.10
+- 新增阿里云插件
 - 归回v2ray协议
 - 优化passwall完整全协议
 - 优化ssr完整全协议
