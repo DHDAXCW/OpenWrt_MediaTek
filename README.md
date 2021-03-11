@@ -51,7 +51,7 @@
 - openwrt-rockchip-armv8-friendlyarm_nanopi-r4s-ext4-factory.img.gz 为R4S ext4 格式全新安装固件；
 
 - openwrt-rockchip-armv8-friendlyarm_nanopi-r4s-squashfs-sysupgrade.img.gz 为R4S squashfs 格式升级专用固件。
-### 版本日志 3.11
+### 版本日志 3.12
 - ARMv8 设备，新增 mbedTLS ARMv8-CE 加密扩展支持以大幅提升 AES 运算效率（约 4～10 倍），使得 Shadowsocks 等使用其加密库的软件获得巨大的性能优化。r2s引入了这个东西，r4s照样也能加
 - 修复其他问题
 ### 版本日志 3.10
