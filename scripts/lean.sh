@@ -162,9 +162,3 @@ echo -e " DHDAXCW's OpenWrt built on "$(date +%Y.%m.%d)"\n ---------------------
 pushd package/lean/autocore/files/arm/sbin
 cp -f $GITHUB_WORKSPACE/scripts/cpuinfo cpuinfo
 popd
-
-#Add Aes-evo
-sed -i 's,-mcpu=generic,-march=armv8-a+crypto+crc -mabi=lp64,g' include/target.mk
-pushd package/libs/mbedtls/patches
-cp -f $GITHUB_WORKSPACE/patches/lean/extra/0111-AES-and-GCM-with-ARMv8.patch 0111-AES-and-GCM-with-ARMv8.patch
-popd
