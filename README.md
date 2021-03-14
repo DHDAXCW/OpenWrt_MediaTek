@@ -52,8 +52,8 @@
 - openwrt-rockchip-armv8-friendlyarm_nanopi-r4s-ext4-factory.img.gz 为R4S ext4 格式全新安装固件；
 
 - openwrt-rockchip-armv8-friendlyarm_nanopi-r4s-squashfs-sysupgrade.img.gz 为R4S squashfs 格式升级专用固件。
-### 版本日志 待定（估计明天吧）
-- 为我脚本框架编译环境的Ubuntu18.04更新到Ubuntu20.04
+### 版本日志 3.15
+- 为我脚本框架编译环境的Ubuntu18.04更新到Ubuntu20.04(已改为内部测试。。)
 - 支持全新的 SS-RUST ，替代 SS
 - UU加速器更新到 2.7.8
 - 内核更新到 5.4.105
