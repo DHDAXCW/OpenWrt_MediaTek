@@ -1,5 +1,3 @@
-#!/bin/bash
-
 # Add luci-app-ssr-plus
 pushd package/lean
 git clone --depth=1 https://github.com/fw876/helloworld
@@ -26,6 +24,10 @@ git clone --depth=1 https://github.com/KyleRicardo/MentoHUST-OpenWrt-ipk
 # Add minieap & luci-proto-minieap
 git clone --depth=1 https://github.com/ysc3839/luci-proto-minieap
 svn co https://github.com/immortalwrt/immortalwrt/trunk/package/ntlf9t/minieap
+
+#Add luci-app-netdata
+rm -rf ../lean/luci-app-netdata
+svn co https://github.com/281677160/openwrt-package/trunk/luci-app-netdata
 
 # Add ServerChan
 git clone --depth=1 https://github.com/tty228/luci-app-serverchan
@@ -71,27 +73,32 @@ svn co https://github.com/immortalwrt/immortalwrt/trunk/package/ctcgfw/gotop
 svn co https://github.com/pymumu/smartdns/trunk/package/openwrt ../smartdns
 svn co https://github.com/immortalwrt/immortalwrt/trunk/package/ntlf9t/luci-app-smartdns ../luci-app-smartdns
 
-# Add luci-app-aliddns
-svn co https://github.com/281677160/openwrt-package/trunk/luci-app-aliddns
-
 # Add luci-udptools
 git clone --depth=1 https://github.com/zcy85611/openwrt-luci-kcp-udp
+
+# Add luci-app-wireguard
+svn co https://github.com/openwrt/luci/trunk/applications/luci-app-wireguard
 
 # Add OpenAppFilter
 git clone --depth=1 https://github.com/destan19/OpenAppFilter
 popd
 
-# Add CPUIll 
-#pushd package/lean/autocore/files/arm
-#sed -i '/Load Average/i\\t\t<tr><td width="33%"><%:欢迎订阅 Youbube 频道%></td><td><%=< a href="https://www.youtube.com/c/BIGdongdong">BIGDONGDONG</ a></td></tr>' index.htm 
-#popd 
+# Add CPUInfo
+#pushd feeds/luci/modules/luci-mod-admin-full/luasrc/view/admin_status
+#sed -i '/Load Average/i\\t\t<tr><td width="33%"><%:CPU Temperature%></td><td><%=luci.sys.exec("cut -c1-2 /sys/class/thermal/thermal_zone0/temp")%><span>&#8451;</span></td></tr>' index.htm
+#sed -i '/Load Average/i\\t\t<tr><td width="33%"><%:欢迎订阅 Youbube 频道%></td><td><a href="https://www.youtube.com"><%:YOURENAME%></a></td></tr>' index.htm
+#sed -i 's/pcdata(boardinfo.system or "?")/"ARMv8"/' index.htm
+#sed -i 's/<%=luci.sys.exec("cat \/etc\/bench.log") or " "%>//' index.htm
+#sed -i 's|pcdata(boardinfo.system or "?")|luci.sys.exec("uname -m") or "?"|g' index.htm
+#sed -i 's/or "1"%>/or "1"%> ( <%=luci.sys.exec("expr `cat \/sys\/class\/thermal\/thermal_zone0\/temp` \/ 1000") or "?"%> \&#8451; ) /g' index.htm
+#popd
 
 #Add luci-app-ddnsto
 pushd package/network/services
-git clone --depth=1 https://github.com/DHDAXCW/ddnsto-openwrt
+git clone --depth=1 https://github.com/linkease/ddnsto-openwrt
 popd
 
-# Add luci-app-linkease
+#Add luci-app-linkease
 pushd package/network/services
 git clone --depth=1 https://github.com/linkease/linkease-openwrt
 popd
@@ -122,7 +129,7 @@ popd
 # Fix libssh
 pushd feeds/packages/libs
 rm -rf libssh
-svn co https://github.com/coolsnowwolf/packages/trunk/libs/libssh
+svn co https://github.com/openwrt/packages/trunk/libs/libssh
 popd
 
 # Use Lienol's https-dns-proxy package
@@ -134,7 +141,7 @@ popd
 # Use snapshots syncthing package
 pushd feeds/packages/utils
 rm -rf syncthing
-svn co https://github.com/coolsnowwolf/packages/trunk/utils/syncthing
+svn co https://github.com/openwrt/packages/trunk/utils/syncthing
 popd
 
 # Fix mt76 wireless driver
@@ -153,6 +160,10 @@ sed -i 's/\/bin\/ash/\/usr\/bin\/zsh/g' package/base-files/files/etc/passwd
 
 # Modify default IP
 sed -i 's/192.168.1.1/192.168.2.1/g' package/base-files/files/bin/config_generate
+
+#Swap LAN WAN
+sed -i 's,"eth1" "eth0","eth0" "eth1",g' target/linux/rockchip/armv8/base-files/etc/board.d/02_network
+sed -i "s,'eth1' 'eth0','eth0' 'eth1',g" target/linux/rockchip/armv8/base-files/etc/board.d/02_network
 
 # Custom configs
 git am $GITHUB_WORKSPACE/patches/lean/*.patch
