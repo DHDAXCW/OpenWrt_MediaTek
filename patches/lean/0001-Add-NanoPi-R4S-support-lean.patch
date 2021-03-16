@@ -1769,7 +1769,7 @@ index 7b4dc09c6..28bf9e988 100644
 -  DEVICE_MODEL := NanoPi R4S
 -  SOC := rk3399
 -  IMAGE/sysupgrade.img.gz := boot-common | boot-script nanopi-r4s | pine64-img | gzip | append-metadata
--  DEVICE_PACKAGES := kmod-r8168
+-  DEVICE_PACKAGES := kmod-r8169
 -endef
 -
 -define Device/friendlyarm_nanopi-r4s-1gb
