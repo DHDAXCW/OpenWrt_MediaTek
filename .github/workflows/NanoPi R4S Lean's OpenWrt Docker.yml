@@ -1,10 +1,10 @@
 name: NanoPi R4S Lean's OpenWrt Docker
 
 on:
-  repository_dispatch:
-  workflow_dispatch:
-  schedule:
-    - cron: 0 17 * * *
+  #repository_dispatch:
+  #workflow_dispatch:
+  #schedule:
+    #- cron: 0 17 * * *
   # watch:
   #   types: started
 
