@@ -54,8 +54,9 @@ jobs:
         cd openwrt
         rm -rf ./target/linux/rockchip
         svn co https://github.com/DHDAXCW/NanoPi-R4S-2021/trunk/target-bate/linux/rockchip target/linux/rockchip
+        rm -rf ./target/linux/rockchip/patches-5.10
         rm -rf ./package/boot/uboot-rockchip
-        svn co https://github.com/DHDAXCW/NanoPi-R4S-2021/trunk/package-bate/boot package/boot/uboot-rockchip
+        svn co https://github.com/DHDAXCW/NanoPi-R4S-2021/trunk/package-bate/boot/uboot-rockchip package/boot/uboot-rockchip
     - name: Update Feeds
       id: update
       run: |
