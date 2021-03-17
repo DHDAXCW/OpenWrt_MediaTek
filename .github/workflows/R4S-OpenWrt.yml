@@ -51,15 +51,15 @@ jobs:
         df -h
     - name: Prepare Mixedwrt
       run: |
-        sudo chown -R runner:runner /home/runner/work/DHDAXCW/NanoPi-R4S-2021
+        sudo chown -R runner:runner /home/runner/work/openwrt_build_r4s
         rm -rf openwrt
     - name: Compile Openwrt
       id: compileopenwrt
       continue-on-error: true
       run: |
         df -h
-        curl -s https://www.cooluc.com/openwrt-5.10/github-actions-build.sh > /home/runner/work/DHDAXCW/NanoPi-R4S-2021/bash.sh
-        bash /home/runner/work/DHDAXCW/NanoPi-R4S-2021/bash.sh
+        curl -s https://www.cooluc.com/openwrt-5.10/github-actions-build.sh > /home/runner/work/openwrt_build_r4s/bash.sh
+        bash /home/runner/work/openwrt_build_r4s/bash.sh
         echo $?
     - name: Assemble Artifact
       id: assemble_artifact
