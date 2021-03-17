@@ -84,7 +84,7 @@ jobs:
       id: upload-release-asset-ext4
       uses: actions/upload-release-asset@main
       env:
-        GITHUB_TOKEN: ${{ secrets.workflow_token }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         upload_url: ${{ steps.create_release.outputs.upload_url }}
         asset_path: ./FriendlyElec_NanoPi_R4S/openwrt-rockchip-armv8-friendlyarm_nanopi-r4s-ext4-sysupgrade.img.gz
@@ -95,7 +95,7 @@ jobs:
       id: upload-release-asset-squashfs
       uses: actions/upload-release-asset@main
       env:
-        GITHUB_TOKEN: ${{ secrets.workflow_token }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         upload_url: ${{ steps.create_release.outputs.upload_url }}
         asset_path: ./FriendlyElec_NanoPi_R4S/openwrt-rockchip-armv8-friendlyarm_nanopi-r4s-squashfs-sysupgrade.img.gz
