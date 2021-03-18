@@ -67,7 +67,7 @@ jobs:
         rm -rf ./FriendlyElec_NanoPi_R4S
         mkdir -p ./FriendlyElec_NanoPi_R4S/
         cp -a openwrt/bin/targets/rockchip/armv8/*.img.gz ./FriendlyElec_NanoPi_R4S/
-        release_tag="OpenWrt-NanoPi-R4S-$(date +%Y-%m-%d)"
+        release_tag="官方原生op-插件少-养老备用-OpenWrt-NanoPi-R4S-$(date +%Y-%m-%d)"
         echo "##[set-output name=release_tag;]$release_tag"
     - name: Create Release
       id: create_release
