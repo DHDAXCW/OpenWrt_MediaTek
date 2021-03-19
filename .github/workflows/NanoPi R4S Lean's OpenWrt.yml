@@ -51,6 +51,9 @@ jobs:
         git config --global user.email "git@github.com"
         git config --global user.name "GitHub"
         git clone $REPO_URL -b $REPO_BRANCH openwrt
+        cd openwrt
+        chmod +x ./target/linux/rockchip/armv8/base-files/etc/board.d/01_leds
+        chmod +x ./target/linux/rockchip/armv8/base-files/etc/board.d/02_network
         
     - name: Update Feeds
       id: update
