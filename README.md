@@ -52,13 +52,13 @@
 - openwrt-rockchip-armv8-friendlyarm_nanopi-r4s-ext4-factory.img.gz 为R4S ext4 格式全新安装固件；
 
 - openwrt-rockchip-armv8-friendlyarm_nanopi-r4s-squashfs-sysupgrade.img.gz 为R4S squashfs 格式升级专用固件。
-### 版本日志 3.16
+### 版本日志 3.20
+- 已解决r4s互换问题，正常lan进后台。
 - 新增passwall和ssrp的Shadowsocks_Rust。
 - 支持全新的 SS-RUST ，替代 SS
 - UU加速器更新到 2.7.8
 - 内核更新到 5.4.105
 - 修复R4S的一些TF卡兼容性问题（不能启动/重启死机等）
-- 出包时间估计明天吧，由于编译环境导致配置无法正常编译，我也太难了
 ### 版本日志 3.12
 - ARMv8 设备，新增 mbedTLS ARMv8-CE 加密扩展支持以大幅提升 AES 运算效率（约 4～10 倍），使得 Shadowsocks 等使用其加密库的软件获得巨大的性能优化。r2s引入了这个东西，r4s照样也能加（如果aes解密测试数据还是很低，请换TF卡，我和群里4人同时测试过，有的190，210，270 他们TF卡分别是8GB 16GB 64GB等。）
 - 修复其他问题
