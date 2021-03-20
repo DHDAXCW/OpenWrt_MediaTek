@@ -53,7 +53,7 @@
 
 - openwrt-rockchip-armv8-friendlyarm_nanopi-r4s-squashfs-sysupgrade.img.gz 为R4S squashfs 格式升级专用固件。
 ### 版本日志 3.20
-- 已解决r4s互换问题，正常lan进后台。
+- 已解决r4s互换问题，并取消互换，正常lan进后台。
 - 新增passwall和ssrp的Shadowsocks_Rust。
 - 支持全新的 SS-RUST ，替代 SS
 - UU加速器更新到 2.7.8
