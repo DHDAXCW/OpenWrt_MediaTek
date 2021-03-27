@@ -52,3 +52,15 @@
 - openwrt-rockchip-armv8-friendlyarm_nanopi-r4s-ext4-factory.img.gz 为R4S ext4 格式全新安装固件；
 
 - openwrt-rockchip-armv8-friendlyarm_nanopi-r4s-squashfs-sysupgrade.img.gz 为R4S squashfs 格式升级专用固件。
+### 更新日志 3.28
+- 解禁R4S的GPU
+- 添加了 R2S/R4S 的硬件转码，可以用 Jellyfin， 1080p HEVC 10bit 60fps 无需 CPU 参与
+- 更新内核 5.4.106
+- 移除多线多拨，负载均衡；这两个插件移除，不会在某个情况下频繁掉线
+- 再次修复R4S的一些TF卡兼容性问题（不能启动/重启死机等）
+- 支持全新的 SS-RUST ，替代 SS
+- UU加速器更新到 2.7.8
+- 性能再提升20%
+- 优化开机加载
+- 优化超频稳定性
+- 新增cpu优化调节器（3.29才有，刷上默认是内核默认的，需要手动去调一下才生效）
