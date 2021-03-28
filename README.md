@@ -54,7 +54,18 @@
 - openwrt-rockchip-armv8-friendlyarm_nanopi-r4s-squashfs-sysupgrade.img.gz 为R4S squashfs 格式升级专用固件。
 ### 更新日志 3.28
 - 解禁R4S的GPU
-- 添加了 R2S/R4S 的硬件转码，可以用 Jellyfin， 1080p HEVC 10bit 60fps 无需 CPU 参与
+- 添加了 R2S/R4S 的硬件转码，可以用 Jellyfin， 1080p HEVC 10bit 60fps 无需 CPU 参与 
+``` 
+docker run -d --name jellyfin
+-v /mnt/sda/video:/video
+-p 8096:8096
+-p 8920:8920
+--user 1000:1000
+--device /dev/dri/renderD128:/dev/dri/renderD128
+--device /dev/dri/card0:/dev/dri/card0
+--restart unless-stopped
+jellyfin/jellyfin 
+```
 - 更新内核 5.4.106
 - 移除多线多拨，负载均衡；这两个插件移除，不会在某个情况下频繁掉线
 - 再次修复R4S的一些TF卡兼容性问题（不能启动/重启死机等）
