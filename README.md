@@ -54,7 +54,7 @@
 - openwrt-rockchip-armv8-friendlyarm_nanopi-r4s-squashfs-sysupgrade.img.gz 为R4S squashfs 格式升级专用固件。
 ### 更新日志 3.28
 - 解禁R4S的GPU
-- 添加了 R2S/R4S 的硬件转码，可以用 Jellyfin， 1080p HEVC 10bit 60fps 无需 CPU 参与 
+- 添加了 R2S/R4S 的硬件转码，可以用 Jellyfin， 1080p HEVC 10bit 60fps 无需 CPU 参与.如何使用？R4S→服务→Docker→容器→新建→第一个蓝色按钮输入命令，下面全复制到输入命令框里，然后点击提交。等他进度完了，再去容器里打勾启用它，再点端口那个，随便一个就进去了，剩下自己搞吧。。。
 ``` 
 docker run -d --name jellyfin
 -v /mnt/sda/video:/video
@@ -74,4 +74,4 @@ jellyfin/jellyfin
 - 性能再提升20%
 - 优化开机加载
 - 优化超频稳定性
-- 新增cpu优化调节器，提高网络波动稳定性（今天在编译，等6小时吧，刷上默认是内核默认的，需要手动去调一下才生效）
+- 新增cpu优化调节器，提高网络波动稳定性（今天在编译，等6小时吧，刷上是内核默认的，需要手动去调一下才生效）
