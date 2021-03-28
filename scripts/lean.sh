@@ -63,7 +63,7 @@ git clone --depth=1 https://github.com/jerrykuku/luci-app-argon-config
 rm -rf ../lean/luci-theme-argon
 
 # Add tmate
-git clone --depth=1 https://github.com/immortalwrt/openwrt-tmate
+# git clone --depth=1 https://github.com/immortalwrt/openwrt-tmate
 
 # Add subconverter
 git clone --depth=1 https://github.com/tindy2013/openwrt-subconverter
