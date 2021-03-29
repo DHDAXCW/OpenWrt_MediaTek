@@ -1,4 +1,10 @@
 #!/bin/bash
+#=================================================
+# Description: DIY script
+# Lisence: MIT
+# Author: P3TERX
+# Blog: https://p3terx.com
+#=================================================
 
 # Add luci-app-ssr-plus
 pushd package/lean
@@ -63,20 +69,23 @@ git clone --depth=1 https://github.com/jerrykuku/luci-app-argon-config
 rm -rf ../lean/luci-theme-argon
 
 # Add tmate
-# git clone --depth=1 https://github.com/immortalwrt/openwrt-tmate
+#git clone --depth=1 https://github.com/immortalwrt/openwrt-tmate
+svn co https://github.com/immortalwrt/immortalwrt/branches/openwrt-19.07/package/ctcgfw/tmate
 
 # Add subconverter
 git clone --depth=1 https://github.com/tindy2013/openwrt-subconverter
 
 # Add gotop
-svn co https://github.com/immortalwrt/immortalwrt/trunk/package/ctcgfw/gotop
+svn co https://github.com/immortalwrt/packages/trunk/admin/gotop
 
 # Add smartdns
 svn co https://github.com/pymumu/smartdns/trunk/package/openwrt ../smartdns
 svn co https://github.com/immortalwrt/immortalwrt/trunk/package/ntlf9t/luci-app-smartdns ../luci-app-smartdns
 
-# Add CPU cpufreq
+# Add dafeiji
 svn co https://github.com/immortalwrt/immortalwrt/branches/master/package/lean/luci-app-cpufreq
+svn co https://github.com/immortalwrt/immortalwrt/branches/master/package/ntlf9t/cpulimit
+svn co https://github.com/281677160/openwrt-package/trunk/luci-app-cpulimit
 
 # Add luci-udptools
 git clone --depth=1 https://github.com/zcy85611/openwrt-luci-kcp-udp
@@ -92,11 +101,6 @@ popd
 #pushd feeds/luci/modules/luci-mod-admin-full/luasrc/view/admin_status
 #sed -i '/Load Average/i\\t\t<tr><td width="33%"><%:CPU Temperature%></td><td><%=luci.sys.exec("cut -c1-2 /sys/class/thermal/thermal_zone0/temp")%><span>&#8451;</span></td></tr>' index.htm
 #sed -i '/Load Average/i\\t\t<tr><td width="33%"><%:欢迎订阅 Youbube 频道%></td><td><a href="https://www.youtube.com"><%:YOURENAME%></a></td></tr>' index.htm
-#sed -i 's/pcdata(boardinfo.system or "?")/"ARMv8"/' index.htm
-#sed -i 's/<%=luci.sys.exec("cat \/etc\/bench.log") or " "%>//' index.htm
-#sed -i 's|pcdata(boardinfo.system or "?")|luci.sys.exec("uname -m") or "?"|g' index.htm
-#sed -i 's/or "1"%>/or "1"%> ( <%=luci.sys.exec("expr `cat \/sys\/class\/thermal\/thermal_zone0\/temp` \/ 1000") or "?"%> \&#8451; ) /g' index.htm
-#popd
 
 # Add luci-app-ddnsto
 pushd package/network/services
@@ -115,13 +119,13 @@ popd
 
 # Add driver for rtl8821cu & rtl8812au-ac
 pushd package/lean
-svn co https://github.com/immortalwrt/immortalwrt/branches/master/package/ctcgfw/rtl8812au-ac
-svn co https://github.com/immortalwrt/immortalwrt/branches/master/package/ctcgfw/rtl8821cu
+svn co https://github.com/immortalwrt/immortalwrt/trunk/package/kernel/rtl8812au-ac
+svn co https://github.com/immortalwrt/immortalwrt/trunk/package/kernel/rtl8821cu
 popd
 
 # Add rtl88x2bu
 pushd package/lean
-svn co https://github.com/immortalwrt/immortalwrt/branches/master/package/ctcgfw/rtl88x2bu
+svn co https://github.com/immortalwrt/immortalwrt/trunk/package/kernel/rtl88x2bu
 popd
 
 # Mod zzz-default-settings
@@ -168,7 +172,7 @@ sed -i 's/192.168.1.1/192.168.2.1/g' package/base-files/files/bin/config_generat
 
 # Custom configs
 git am $GITHUB_WORKSPACE/patches/lean/*.patch
-echo -e " DHDAXCW's OpenWrt built on "$(date +%Y.%m.%d)"\n -----------------------------------------------------" >> package/base-files/files/etc/banner
+echo -e " Lean's OpenWrt built on "$(date +%Y.%m.%d)"\n -----------------------------------------------------" >> package/base-files/files/etc/banner
 
 # Add CUPInfo
 pushd package/lean/autocore/files/arm/sbin
