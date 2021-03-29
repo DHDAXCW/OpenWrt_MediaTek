@@ -70,7 +70,7 @@ rm -rf ../lean/luci-theme-argon
 
 # Add tmate
 #git clone --depth=1 https://github.com/immortalwrt/openwrt-tmate
-svn co https://github.com/immortalwrt/immortalwrt/branches/openwrt-19.07/package/ctcgfw/tmate
+#svn co https://github.com/immortalwrt/immortalwrt/branches/openwrt-19.07/package/ctcgfw/tmate
 
 # Add subconverter
 git clone --depth=1 https://github.com/tindy2013/openwrt-subconverter
