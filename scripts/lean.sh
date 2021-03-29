@@ -76,7 +76,7 @@ rm -rf ../lean/luci-theme-argon
 git clone --depth=1 https://github.com/tindy2013/openwrt-subconverter
 
 # Add gotop
-svn co https://github.com/immortalwrt/packages/trunk/admin/gotop
+#svn co https://github.com/immortalwrt/packages/trunk/admin/gotop
 
 # Add smartdns
 svn co https://github.com/pymumu/smartdns/trunk/package/openwrt ../smartdns
