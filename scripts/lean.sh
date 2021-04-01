@@ -29,9 +29,8 @@ git clone --depth=1 https://github.com/jerrykuku/luci-app-vssr
 git clone --depth=1 https://github.com/BoringCat/luci-app-mentohust
 git clone --depth=1 https://github.com/KyleRicardo/MentoHUST-OpenWrt-ipk
 
-# Add minieap & luci-proto-minieap
+# Add luci-proto-minieap
 git clone --depth=1 https://github.com/ysc3839/luci-proto-minieap
-svn co https://github.com/immortalwrt/immortalwrt/trunk/package/ntlf9t/minieap
 
 # Add luci-app-netdata
 rm -rf ../lean/luci-app-netdata
@@ -60,27 +59,20 @@ rm -rf ../lean/luci-app-docker
 git clone --depth=1 https://github.com/KFERMercer/luci-app-dockerman
 git clone --depth=1 https://github.com/lisaac/luci-lib-docker
 
-# Add luci-app-gowebdav
-git clone --depth=1 https://github.com/immortalwrt/openwrt-gowebdav
-
 # Add luci-theme-argon
 git clone --depth=1 -b 18.06 https://github.com/jerrykuku/luci-theme-argon
 git clone --depth=1 https://github.com/jerrykuku/luci-app-argon-config
 rm -rf ../lean/luci-theme-argon
 
-# Add tmate
-#git clone --depth=1 https://github.com/immortalwrt/openwrt-tmate
-#svn co https://github.com/immortalwrt/immortalwrt/branches/openwrt-19.07/package/ctcgfw/tmate
-
 # Add subconverter
 git clone --depth=1 https://github.com/tindy2013/openwrt-subconverter
 
-# Add gotop
-#svn co https://github.com/immortalwrt/packages/trunk/admin/gotop
+# Add driver for rtl8821cu & rtl8812au-ac
+svn co https://github.com/immortalwrt/immortalwrt/branches/openwrt-18.06-k5.4/package/kernel/rtl8812au-ac
+svn co https://github.com/immortalwrt/immortalwrt/branches/openwrt-18.06-k5.4/package/kernel/rtl8821cu
 
-# Add smartdns
-svn co https://github.com/pymumu/smartdns/trunk/package/openwrt ../smartdns
-svn co https://github.com/immortalwrt/immortalwrt/trunk/package/ntlf9t/luci-app-smartdns ../luci-app-smartdns
+# Add rtl88x2bu
+svn co https://github.com/immortalwrt/immortalwrt/branches/openwrt-18.06-k5.4/package/kernel/rtl88x2bu
 
 # Add dafeiji
 svn co https://github.com/immortalwrt/immortalwrt/branches/master/package/lean/luci-app-cpufreq
@@ -113,17 +105,6 @@ popd
 # Add Pandownload
 pushd package/lean
 svn co https://github.com/immortalwrt/immortalwrt/trunk/package/lean/pandownload-fake-server
-popd
-
-# Add driver for rtl8821cu & rtl8812au-ac
-pushd package/lean
-svn co https://github.com/immortalwrt/immortalwrt/trunk/package/kernel/rtl8812au-ac
-svn co https://github.com/immortalwrt/immortalwrt/trunk/package/kernel/rtl8821cu
-popd
-
-# Add rtl88x2bu
-pushd package/lean
-svn co https://github.com/immortalwrt/immortalwrt/trunk/package/kernel/rtl88x2bu
 popd
 
 # Mod zzz-default-settings
