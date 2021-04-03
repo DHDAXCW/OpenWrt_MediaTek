@@ -54,6 +54,10 @@
 - openwrt-rockchip-armv8-friendlyarm_nanopi-r4s-ext4-factory.img.gz 为R4S ext4 格式全新安装固件；
 
 - openwrt-rockchip-armv8-friendlyarm_nanopi-r4s-squashfs-sysupgrade.img.gz 为R4S squashfs 格式升级专用固件。
+### 更新日志 4.3
+-  新增cpu优化调节器（CPU Freq），提高网络波动稳定性（后期加上）需要手动去调才生效。系统→CPU Freq
+-  新增cpu限制。利用cpulimit限制应用程序的CPU使用率。系统→cpu限制
+-  将实时监控改为中文，日志报错别管他就行了，不影响使用
 ### 更新日志 4.2
 - 修复所有网卡驱动失效问题
 - 归回smartdns插件
