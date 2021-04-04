@@ -1,8 +1,8 @@
-name: R4S-OpenWrt
+#name: R4S-OpenWrt
 
-on:
-  repository_dispatch:
-  workflow_dispatch:
+#on:
+  #repository_dispatch:
+  #workflow_dispatch:
   # schedule:
     # - cron: 0 16 * * *
   watch:
