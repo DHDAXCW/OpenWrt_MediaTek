@@ -55,6 +55,14 @@
 - openwrt-rockchip-armv8-friendlyarm_nanopi-r4s-ext4-factory.img.gz 为R4S ext4 格式全新安装固件；
 
 - openwrt-rockchip-armv8-friendlyarm_nanopi-r4s-squashfs-sysupgrade.img.gz 为R4S squashfs 格式升级专用固件。
+### 更新日志 4.9
+- 修复断网异常
+- 修复后台崩溃
+- 修复在下载pt或者游戏的时候，12小时内必断网（代码改为我本地镜像，防止炒作）
+- 优化性能，改为平衡模式，移除CPU优化调节器（用着必死机）
+- 优化其他启动速度
+- 今天最后一个版本了，下个版本，还要等我有电脑才可以。✘他小气不给借个电脑给我用用...
+- 感谢大家长期以来支持，谢谢哦，江湖有缘再会👊🏻
 ### 更新日志 4.6
 - 新增qbittorrent插件，提高种子下载方便
 - 修复实时监控改中文时，系统日志满都是报错问题。
