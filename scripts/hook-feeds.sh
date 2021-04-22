@@ -12,9 +12,6 @@ pushd customfeeds
 svn co https://github.com/immortalwrt/luci/trunk/applications/luci-app-gowebdav luci/applications/luci-app-gowebdav
 svn co https://github.com/immortalwrt/packages/trunk/net/gowebdav packages/net/gowebdav
 
-# Add libfido2 & libcbor
-svn co https://github.com/immortalwrt/packages/branches/openwrt-18.06/libs/libfido2 packages/libs/libfido2
-svn co https://github.com/immortalwrt/packages/branches/openwrt-18.06/libs/libcbor packages/libs/libcbor
 # Add tmate
 git clone --depth=1 https://github.com/immortalwrt/openwrt-tmate
 
