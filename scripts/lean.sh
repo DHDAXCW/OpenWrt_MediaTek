@@ -64,6 +64,9 @@ rm -rf ../lean/luci-theme-argon
 svn co https://github.com/281677160/openwrt-package/trunk/luci-app-smartdns
 svn co https://github.com/281677160/openwrt-package/trunk/smartdns
 
+# Add luci-app-aliddns
+svn co https://github.com/281677160/openwrt-package/trunk/luci-app-aliddns
+
 # Add subconverter
 git clone --depth=1 https://github.com/tindy2013/openwrt-subconverter
 
