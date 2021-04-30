@@ -5,7 +5,7 @@
 # System Required: OpenWrt
 # Version: 1.0
 # Lisence: MIT
-# Author: SuLingGG
+# Author: DHDAXCW
 # Blog: https://mlapp.cn
 #=================================================
 
