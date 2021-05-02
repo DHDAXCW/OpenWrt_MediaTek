@@ -10,7 +10,7 @@ mkdir package/community
 pushd package/community
 
 # Add Lienol's Packages
-git clone --depth=1 https://github.com/Lienol/openwrt-package
+# git clone --depth=1 https://github.com/Lienol/openwrt-package
 
 # Add luci-app-passwall
 #git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall
@@ -126,10 +126,10 @@ svn co https://github.com/openwrt/packages/trunk/libs/libssh
 popd
 
 # Use Lienol's https-dns-proxy package
-pushd feeds/packages/net
-rm -rf https-dns-proxy
-svn co https://github.com/Lienol/openwrt-packages/trunk/net/https-dns-proxy
-popd
+# pushd feeds/packages/net
+#rm -rf https-dns-proxy
+#svn co https://github.com/Lienol/openwrt-packages/trunk/net/https-dns-proxy
+#popd
 
 # Use snapshots syncthing package
 pushd feeds/packages/utils
