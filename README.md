@@ -9,6 +9,7 @@
 - 用户名：root 密码：password 管理IP：192.168.2.1
 
 - 下载地址： https://github.com/DHDAXCW/NanoPi-R4S-2021/releases
+- Docker版：https://github.com/DHDAXCW/NanoPi-R4S-2022/releases
 - 电报群：https://t.me/DHDAXCW
 # 赏个鸡腿吧
  ![Alt text](data/2.jpg?raw=true "Title")
