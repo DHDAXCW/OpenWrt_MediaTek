@@ -1,4 +1,4 @@
-name: NanoPi R4S Docker OpenWrt
+name: NanoPi R4S Lean's OpenWrt
 on:
   repository_dispatch:
   workflow_dispatch:
@@ -228,7 +228,7 @@ jobs:
         id: tag
         if: env.UPLOAD_RELEASE == 'true' && !cancelled()
         run: |
-          echo "::set-output name=release_tag::$(date +"%Y.%m.%d")-R4S DOCKER"
+          echo "::set-output name=release_tag::$(date +"%Y.%m.%d")-R4S-Docker"
           echo "::set-output name=release_date::$(date +"%Y.%m.%d")"
           touch release.txt
           [ $UPLOAD_COWTRANSFER = true ] && echo "🔗 [Cowtransfer](${{ steps.cowtransfer.outputs.url }})" >> release.txt
@@ -240,7 +240,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          name: ${{ steps.tag.outputs.release_date }} NanoPi R4S dockers版
+          name: ${{ steps.tag.outputs.release_date }} NanoPi R4S Docker版 OpenWrt
           tag_name: ${{ steps.tag.outputs.release_tag }}
           body_path: release.txt
           files: ${{ env.FIRMWARE }}/*
