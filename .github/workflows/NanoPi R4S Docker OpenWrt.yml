@@ -1,4 +1,4 @@
-name: NanoPi R4S Lean's OpenWrt
+name: NanoPi R4S Docker OpenWrt
 on:
   repository_dispatch:
   workflow_dispatch:
