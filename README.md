@@ -8,6 +8,8 @@
 ### 默认编译 
 
 - 用户名：root 密码：password 管理IP：192.168.2.1
+- 对于不折腾的，最好去刷不带超频的固件。
+- 超频固件需要升电压，就算是3a或4a也不一定稳定。。(我目前用的是switch的电源适配器供电昂)
 
 - 下载地址： https://github.com/DHDAXCW/NanoPi-R4S-2021/releases
 - Docker版：在上面链接👆看到看到Docker版就是带有docker插件。（对passwall的udp要求很高，不要刷docker版本）
