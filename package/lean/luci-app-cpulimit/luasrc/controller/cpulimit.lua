@@ -2,7 +2,7 @@
 module("luci.controller.cpulimit", package.seeall)
 
 function index()
-	if not nixio.fs.access("/etc/config/cpulimit") then
+	if not nixio.fs.access("/etc/config/cpulimit") then 
 		return
 	end
 	
