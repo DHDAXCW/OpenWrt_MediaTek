@@ -240,7 +240,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          name: ${{ steps.tag.outputs.release_date }} R4S 无超频 OpenWrt
+          name: ${{ steps.tag.outputs.release_date }} R4S （默认版）无超频 OpenWrt
           tag_name: ${{ steps.tag.outputs.release_tag }}
           body_path: release.txt
           files: ${{ env.FIRMWARE }}/*
