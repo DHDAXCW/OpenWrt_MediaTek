@@ -31,12 +31,6 @@ git clone --depth=1 https://github.com/KyleRicardo/MentoHUST-OpenWrt-ipk
 # Add luci-proto-minieap
 git clone --depth=1 https://github.com/ysc3839/luci-proto-minieap
 
-# Add luci-app-netdata
-rm -rf ../lean/luci-app-netdata
-svn co https://github.com/281677160/openwrt-package/trunk/luci-app-netdata
-rm -rf ../../customfeeds/packages/admin/netdata
-svn co https://github.com/281677160/openwrt-package/trunk/netdata
-
 # Add ServerChan
 git clone --depth=1 https://github.com/tty228/luci-app-serverchan
 
@@ -64,10 +58,6 @@ git clone --depth=1 https://github.com/lisaac/luci-lib-docker
 git clone --depth=1 -b 18.06 https://github.com/jerrykuku/luci-theme-argon
 git clone --depth=1 https://github.com/jerrykuku/luci-app-argon-config
 rm -rf ../lean/luci-theme-argon
-
-# Add luci-app-smartdns & smartdns
-svn co https://github.com/281677160/openwrt-package/trunk/luci-app-smartdns
-svn co https://github.com/281677160/openwrt-package/trunk/smartdns
 
 # Add luci-app-aliddns
 svn co https://github.com/281677160/openwrt-package/trunk/luci-app-aliddns
