@@ -59,6 +59,10 @@ git clone --depth=1 -b 18.06 https://github.com/jerrykuku/luci-theme-argon
 git clone --depth=1 https://github.com/jerrykuku/luci-app-argon-config
 rm -rf ../lean/luci-theme-argon
 
+# Add luci-app-smartdns & smartdns
+svn co https://github.com/281677160/openwrt-package/trunk/luci-app-smartdns
+svn co https://github.com/281677160/openwrt-package/trunk/smartdns
+
 # Add luci-app-aliddns
 svn co https://github.com/281677160/openwrt-package/trunk/luci-app-aliddns
 
