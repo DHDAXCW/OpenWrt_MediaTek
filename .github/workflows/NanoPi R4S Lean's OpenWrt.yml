@@ -2,8 +2,8 @@ name: NanoPi R4S Lean's OpenWrt
 on:
   repository_dispatch:
   workflow_dispatch:
-  #schedule:
-    #- cron: 0 23 * * *
+  schedule:
+    - cron: 0 00 * * *
   # watch:
   #   types: started
 
