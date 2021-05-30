@@ -10,7 +10,7 @@
 - 精简版 我不说了哈  就保留了helloworld passwall ssrp uu加速器等。。。
 ### 注：不要用恢复备份。。不保证某个插件是否正常运行。。。建议重新设置贼好！！！
 这一个月我没电脑都在讨乞（求电脑中~）。。。需要一个WiFi模块，工业级WiFi模块MiniPCIe高通QCA9984芯片compex wle1216vx 在x86上做测试。淘宝商铺都没有货了。谁有此模块，请加入电报群找💀谢谢
-### 默认编译 
+### 默认编译  
 
 - 用户名：root 密码：password 管理IP：192.168.2.1
 - 下载地址： https://github.com/DHDAXCW/NanoPi-R4S-2021/releases
