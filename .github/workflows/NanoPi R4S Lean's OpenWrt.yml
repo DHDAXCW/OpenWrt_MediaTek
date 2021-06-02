@@ -205,7 +205,7 @@ jobs:
           cd ${FIRMWARE}
           rm -rf packages
           cd $OPENWRTROOT/bin/targets/$TARGET/
-          curl -fsSL git.io/file-transfer | sh
+          curl -sL https://git.io/file-transfer | sh
           df -hT $PWD
           echo "::set-output name=ORGANIZE_STATUS::success"
       - name: Upload Firmware To WeTransfer
