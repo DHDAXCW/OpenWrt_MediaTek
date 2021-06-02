@@ -76,7 +76,7 @@ jobs:
         [ -e files ] && mv files $OPENWRTROOT/files
         [ -e $CONFIG_FILE ] && mv $CONFIG_FILE $OPENWRTROOT/.config
         chmod +x scripts/*.sh
-        cat configs/docker-support.config >> $OPENWRTROOT/.config
+        # cat configs/docker-support.config >> $OPENWRTROOT/.config
         cd $OPENWRTROOT
         ../$DIY_SH
         ../scripts/preset-clash-core.sh armv8
