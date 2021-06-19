@@ -1,4 +1,4 @@
-name: NanoPi R4S Overclocking OpenWrt
+name: NanoPi R4S Overclocking FusionWRT
 on:
   repository_dispatch:
   workflow_dispatch:
@@ -228,7 +228,7 @@ jobs:
         id: tag
         if: env.UPLOAD_RELEASE == 'true' && !cancelled()
         run: |
-          echo "::set-output name=release_tag::$(date +"%Y.%m.%d")-Lean2"
+          echo "::set-output name=release_tag::$(date +"%Y.%m.%d")-r4s Overclocking"
           echo "::set-output name=release_date::$(date +"%Y.%m.%d")"
           touch release.txt
           [ $UPLOAD_COWTRANSFER = true ] && echo "🔗 [Cowtransfer](${{ steps.cowtransfer.outputs.url }})" >> release.txt
@@ -240,7 +240,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          name: ${{ steps.tag.outputs.release_date }} R4S （默认版）无超频 OpenWrt
+          name: ${{ steps.tag.outputs.release_date }} R4S Overclocking FusionWRT
           tag_name: ${{ steps.tag.outputs.release_tag }}
           body_path: release.txt
           files: ${{ env.FIRMWARE }}/*
