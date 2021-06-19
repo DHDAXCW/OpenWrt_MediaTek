@@ -14,10 +14,9 @@
 
 - 用户名：root 密码：password  管理IP：192.168.2.1
 - 下载地址： https://github.com/DHDAXCW/NanoPi-R4S-2021/releases
-# - Docker版：在上面链接👆看到看到Docker版就是带有docker插件。（对passwall的udp要求很高，不要刷docker版本）
-# - Docker：正式版带docker，有超频
-# - Overclocking：默认版，无超频
-# - formal edition：正式版，有超频
+### - Docker：正式版带docker，有超频，带有docker插件。（对passwall的udp要求很高，不要刷docker版本）
+### - Overclocking：默认版，无超频
+### - formal edition：正式版，有超频
 - 精简版 ：https://github.com/DHDAXCW/NanoPi-R2S-R4S-2021-mini/releases
 - 电报群：https://t.me/DHDAXCW
 - X86固件 ：[点击链接下载](https://github.com/DHDAXCW/lede/releases)
