@@ -14,6 +14,7 @@
 
 - 用户名：root 密码：password  管理IP：192.168.2.1
 - 下载地址： https://github.com/DHDAXCW/NanoPi-R4S-2021/releases
+- x86_64固件下载 谷歌网盘 https://drive.google.com/file/d/11Qit2AAupTXkUnG66LHK550UADmTkb-R/view
 ### - Docker：正式版带docker，有超频，带有docker插件。（对passwall的udp要求很高，不要刷docker版本）
 ### - Overclocking：默认版，无超频
 ### - formal edition：正式版，有超频
