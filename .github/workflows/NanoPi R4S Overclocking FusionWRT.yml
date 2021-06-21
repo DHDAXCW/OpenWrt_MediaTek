@@ -244,7 +244,7 @@ jobs:
         uses: softprops/action-gh-release@v1
         if: steps.tag.outputs.status == 'success' && !cancelled()
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.RELEASES_TOKEN }}
         with:
           name: ${{ steps.tag.outputs.release_date }} r4s overcking_默认无超频_高大全
           tag_name: ${{ steps.tag.outputs.release_tag }}
@@ -264,7 +264,7 @@ jobs:
           keep_latest: 20
           delete_tags: true
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.RELEASES_TOKEN }}
 
       - name: Delete Artifacts
         uses: geekyeggo/delete-artifact@v1
