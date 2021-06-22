@@ -84,7 +84,7 @@ jobs:
     - name: MOD index file
       run: |
          cd $OPENWRTROOT/package/lean/autocore/files/arm
-         sed -i '/Load Average/i\\t\t<tr><td width="33%"><%:YouTube%></td><td><a href="https://www.youtube.com/c/BIGdongdong/featured"><%:BIGDONGDONG%></a></td></tr>' index.htm
+         sed -i '/Load Average/i\\t\t<tr><td width="33%"><%:YouTube 频道%></td><td><a href="https://www.youtube.com/c/BIGdongdong/featured"><%:BIGDONGDONG%></a></td></tr>' index.htm
          
     - name: Install Feeds
       run: |
