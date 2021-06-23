@@ -23,7 +23,7 @@
 - X86固件 ：[点击链接下载](https://github.com/DHDAXCW/lede/releases)
 # 在线升级
 
-- 复制以下代码，在TTYD终端执行，过程中不得离开，否则还得重新下载
+- 复制以下代码，在TTYD终端执行，过程中不得离开，否则还得重新下载，请刷ext4格式明天再升级
 - formal edition：正式版，有超频 👇
 ```
 wget https://raw.githubusercontent.com/DHDAXCW/NanoPi-R4S-2021/main/scripts/autoupdate3.sh && sh autoupdate3.sh
