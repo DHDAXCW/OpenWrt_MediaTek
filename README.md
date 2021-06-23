@@ -21,7 +21,22 @@
 - 精简版 ：https://github.com/DHDAXCW/NanoPi-R2S-R4S-2021-mini/releases
 - 电报群：https://t.me/DHDAXCW
 - X86固件 ：[点击链接下载](https://github.com/DHDAXCW/lede/releases)
+# 在线升级
 
+- 复制以下代码，在TTYD终端执行，过程中不得离开，否则还得重新下载，请刷ext4格式明天再升级
+- 注意 只合适4G版 只合适4G版 只合适4G版，因为tmp空间不足导致无法升级，4G是没问题的。不过放心，1G我会想办法如何分配到tf卡上升级哈
+- formal edition：正式版，有超频 👇
+```
+wget https://raw.githubusercontent.com/DHDAXCW/NanoPi-R4S-2021/main/scripts/autoupdate3.sh && sh autoupdate3.sh
+```
+- Overclocking：默认版，无超频 👇 
+```
+wget https://raw.githubusercontent.com/DHDAXCW/NanoPi-R4S-2021/main/scripts/autoupdate2.sh && sh autoupdate2.sh
+```
+- Docker：正式版带docker，有超频，带有docker插件。👇
+```
+wget https://raw.githubusercontent.com/DHDAXCW/NanoPi-R4S-2021/main/scripts/autoupdate1.sh && sh autoupdate1.sh
+```
 # 赏个鸡腿吧
  ![Alt text](data/2.jpg?raw=true "Title")
 ### 如果你觉得此项目对你有帮助，可以捐助我们，以鼓励项目能持续发展，更加完善
