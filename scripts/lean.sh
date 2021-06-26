@@ -139,7 +139,7 @@ sed -i 's/\/bin\/ash/\/usr\/bin\/zsh/g' package/base-files/files/etc/passwd
 # Modify default IP
 sed -i 's/192.168.1.1/192.168.2.1/g' package/base-files/files/bin/config_generate
 sed -i '/uci commit system/i\uci set system.@system[0].hostname='FusionWrt'' package/lean/default-settings/files/zzz-default-settings
-sed -i "s/OpenWrt /DHDAXCW build $(TZ=UTC-8 date "+%Y.%m.%d") @ FusionWrt /g" package/lean/default-settings/files/zzz-default-settings
+sed -i "s/OpenWrt /DHDAXCW @ FusionWrt /g" package/lean/default-settings/files/zzz-default-settings
 
 # Test kernel 5.10
 #sed -i 's/5.4/5.10/g' target/linux/rockchip/Makefile
