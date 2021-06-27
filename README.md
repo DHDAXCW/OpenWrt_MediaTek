@@ -55,4 +55,4 @@ wget https://raw.githubusercontent.com/DHDAXCW/NanoPi-R4S-2021/main/scripts/auto
 - 将性能改为平衡模式，高性能容易死机
 - 将Docker改为独立菜单，并且更新版本
 - 修复bug
-
+ting
