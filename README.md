@@ -46,7 +46,7 @@ wget https://raw.githubusercontent.com/DHDAXCW/NanoPi-R4S-2021/main/scripts/auto
  - 我的固件加了动态超频，不管热不热这是取决后台运行程序在跑什么。
  - 感觉很热  就加风扇，推荐 风扇6cm×6cm，薄1cm，usb也行 或者端子线zh1.5
 
-### 更新日志 6.23
+### 更新日志 4号后更新
 - 为了更好的支持r4S 1GB正常启动，我们移除了lean源码自带uboot，改为第三方uboot
 - 新增ARMv8 硬件AEM解密补丁，提高翻墙速度
 - 修复动态dns缺失部分域名
