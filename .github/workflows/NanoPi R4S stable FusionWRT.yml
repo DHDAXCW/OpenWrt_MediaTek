@@ -6,7 +6,7 @@
 # Blog: https://p3terx.com
 #=================================================
 
-name: NanoPi R4S Docker FusionWRT
+name: NanoPi R4S stable FusionWRT
 
 on:
   repository_dispatch:
