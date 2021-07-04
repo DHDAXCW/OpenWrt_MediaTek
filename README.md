@@ -47,12 +47,7 @@ wget https://raw.githubusercontent.com/DHDAXCW/NanoPi-R4S-2021/main/scripts/auto
  - 感觉很热  就加风扇，推荐 风扇6cm×6cm，薄1cm，usb也行 或者端子线zh1.5
 
 ### 更新日志 4号后更新
-- 为了更好的支持r4S 1GB正常启动，我们移除了lean源码自带uboot，改为第三方uboot
-- 新增ARMv8 硬件AEM解密补丁，提高翻墙速度
-- 修复动态dns缺失部分域名
-- 更新代理协议
-- 内核从5.10退回5.4（因boot无法写入成功）
-- 将性能改为平衡模式，高性能容易死机
-- 将Docker改为独立菜单，并且更新版本
-- 修复bug
-ting
+- 修复网口降速问题
+- 解决cpu在平衡模式下导致重启
+- 解决硬盘无法挂载
+- 剩下懒得说，键盘都打破了
