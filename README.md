@@ -51,3 +51,4 @@ wget https://raw.githubusercontent.com/DHDAXCW/NanoPi-R4S-2021/main/scripts/auto
 - 解决cpu在平衡模式下导致重启
 - 解决硬盘无法挂载
 - 剩下懒得说，键盘都打破了
+- 以后每周日编译
