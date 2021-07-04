@@ -60,7 +60,8 @@ jobs:
         rm -rf ./package/boot/boot/arm-trusted-firmware-rk3328
         svn co https://github.com/immortalwrt/immortalwrt/branches/master/package/boot/uboot-rockchip package/boot/uboot-rockchip
         svn co https://github.com/immortalwrt/immortalwrt/branches/master/package/boot/arm-trusted-firmware-rk3328 package/boot/arm-trusted-firmware-rk3328
-    
+        rm -rf ./package/kernel/mac80211
+        svn co https://github.com/immortalwrt/immortalwrt/branches/master/package/kernel/mac80211 package/kernel/mac80211
     - name: Update Feeds
       id: update
       run: |
