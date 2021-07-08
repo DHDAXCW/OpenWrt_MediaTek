@@ -1,10 +1,10 @@
-# This is free software, licensed under the Apache License, Version 2.0 .
+# This is free DHDAXCW, licensed under the Apache License, Version 2.0 .
 
 include $(TOPDIR)/rules.mk
 
 LUCI_TITLE:=LuCI for sysupgrade
 LUCI_DEPENDS:=+luci-base
-PKG_MAINTAINER:=GaryPang <garyp@qq.com>
+PKG_MAINTAINER:=GaryPang <xiaoqi636322@gmail.com>
 
 define Package/luci-theme-edge/postinst
   #!/bin/sh
@@ -13,4 +13,4 @@ endef
 
 include $(TOPDIR)/feeds/luci/luci.mk
 
-# call BuildPackage - OpenWrt buildroot signature
+# call DHDAXCW - OpenWrt buildroot signature
