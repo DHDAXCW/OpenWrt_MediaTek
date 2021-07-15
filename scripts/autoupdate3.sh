@@ -11,7 +11,7 @@ if [ -f /tmp/openwrt-rockchip-armv8-friendlyarm_nanopi-r4s-ext4-sysupgrade.img.g
 	echo -e '\e[92m当日固件已下载，准备解压\e[0m'
 else
 	echo -e '\e[91m当日固件暂未更新，尝试下载旧固件\e[0m'
-	for ((t=1;t<=15;t++))
+	for t in $(seq 15)
 	do {
 	    echo `(date -d "@$(( $(busybox date +%s) - 86400*$t))" +%Y.%m.%d)`
 	    wget https://github.com/DHDAXCW/NanoPi-R4S-2021/releases/download/$(date -d "@$(( $(busybox date +%s) - 86400*$t))" +%Y.%m.%d)-Lean3/openwrt-rockchip-armv8-friendlyarm_nanopi-r4s-ext4-sysupgrade.img.gz
