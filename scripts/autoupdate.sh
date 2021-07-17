@@ -10,10 +10,10 @@ echo -e '\e[92m准备下载升级文件\e[0m'
 while true
 do
     echo "输入对应数字选择版本或退出"
-    echo "0---Exit"
-    echo "1---Docker"
-    echo "2---Overclocking"
-    echo "3---formal edition"
+    echo "0---Exit取消"
+    echo "1---Docker版"
+    echo "2---Overclocking默频版"
+    echo "3---formal edition正式版"
     read -r -p "请输入数字[0-3],回车确认 " n
     case $n in
         [1]|[1])
