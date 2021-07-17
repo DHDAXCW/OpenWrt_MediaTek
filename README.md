@@ -25,15 +25,7 @@
 ### 该升级只支持4G版，1G版不支持，请不要用此升级。1G版内存tmp分区空间不足，无法下载升级包
 - formal edition：正式版，有超频 👇
 ```
-rm autoupdate*.sh && wget https://raw.githubusercontent.com/DHDAXCW/NanoPi-R4S-2021/main/scripts/autoupdate3.sh && sh autoupdate3.sh
-```
-- Overclocking：默认版，无超频 👇 
-```
-rm autoupdate*.sh && wget https://raw.githubusercontent.com/DHDAXCW/NanoPi-R4S-2021/main/scripts/autoupdate2.sh && sh autoupdate2.sh
-```
-- Docker：正式版带docker，有超频，带有docker插件。👇
-```
-rm autoupdate*.sh && wget https://raw.githubusercontent.com/DHDAXCW/NanoPi-R4S-2021/main/scripts/autoupdate1.sh && sh autoupdate1.sh
+rm autoupdate.sh wget https://raw.githubusercontent.com/DHDAXCW/NanoPi-R4S-2021/main/scripts/autoupdate.sh && sh autoupdate.sh
 ```
 # 赏个鸡腿吧
  ![Alt text](data/2.jpg?raw=true "Title")
