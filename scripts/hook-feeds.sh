@@ -18,6 +18,10 @@ svn co https://github.com/281677160/openwrt-package/trunk/feeds/packages/net/net
 rm -rf ../package/lean/luci-app-netdata
 svn co https://github.com/281677160/openwrt-package/trunk/feeds/luci/applications/luci-app-netdata luci/applications/luci-app-netdata
 
+# Add luci-app-smartdns
+cp -r temp/luci/applications/luci-app-smartdns luci/applications/luci-app-smartdns
+cp -r temp/packages/net/smartdns packages/net/smartdns
+
 # Add tmate
 git clone --depth=1 https://github.com/immortalwrt/openwrt-tmate
 
