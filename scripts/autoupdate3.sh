@@ -5,27 +5,41 @@ opkg install gzip
 cd /tmp
 rm -rf artifact openwrt-rockchip*.img.gz openwrt-rockchip*img*
 echo -e '\e[92m准备下载升级文件\e[0m'
-echo `(date +%Y.%m.%d)`
-wget https://github.com/DHDAXCW/NanoPi-R4S-2021/releases/download/$(date +%Y.%m.%d)-Lean3/openwrt-rockchip-armv8-friendlyarm_nanopi-r4s-ext4-sysupgrade.img.gz
-if [ -f /tmp/openwrt-rockchip-armv8-friendlyarm_nanopi-r4s-ext4-sysupgrade.img.gz	]; then
-	echo -e '\e[92m当日固件已下载，准备解压\e[0m'
-else
-	echo -e '\e[91m当日固件暂未更新，尝试下载旧固件\e[0m'
-	for t in $(seq 15)
-	do {
-	    echo `(date -d "@$(( $(busybox date +%s) - 86400*$t))" +%Y.%m.%d)`
-	    wget https://github.com/DHDAXCW/NanoPi-R4S-2021/releases/download/$(date -d "@$(( $(busybox date +%s) - 86400*$t))" +%Y.%m.%d)-Lean3/openwrt-rockchip-armv8-friendlyarm_nanopi-r4s-ext4-sysupgrade.img.gz
-	    if [ -f /tmp/openwrt-rockchip-armv8-friendlyarm_nanopi-r4s-ext4-sysupgrade.img.gz ]; then
-		    echo -e '\e[92m旧版固件已下载，准备解压\e[0m'
-		    break;
-	    else
-		    echo -e '\e[91m当前固件不存在，继续寻找前一天的固件\e[0m'
-		fi
-	}
-	done
+for t in $(seq 0 14)
+do {
+    echo `(date -d "@$(( $(busybox date +%s) - 86400*$t))" +%Y.%m.%d)`
+    wget https://github.com/DHDAXCW/NanoPi-R4S-2021/releases/download/$(date -d "@$(( $(busybox date +%s) - 86400*$t))" +%Y.%m.%d)-Lean3/openwrt-rockchip-armv8-friendlyarm_nanopi-r4s-ext4-sysupgrade.img.gz
+    if [ -f /tmp/openwrt-rockchip-armv8-friendlyarm_nanopi-r4s-ext4-sysupgrade.img.gz ]; then
+        echo -e '\e[92m固件已下载\e[0m'
+        echo `(date -d "@$(( $(busybox date +%s) - 86400*$t))" +%Y.%m.%d)`-Lean3
+        while true
+        do
+            read -r -p "是否使用此固件? [Y/N] " input
+            case $input in
+                [yY][eE][sS]|[yY])
+                    echo "已确认"
+		            break 2;
+		            ;;
+		        [nN][oO]|[nN])
+		            echo -e '\e[91m继续寻找前一天的固件\e[0m'
+		            rm -rf artifact openwrt-rockchip*.img.gz openwrt-rockchip*img*
+		            continue 2;
+		            ;;
+		       *)
+		            echo "请输入[Y/N]进行确认"
+		            ;;
+		    esac
+		 done 
+	else
+		echo -e '\e[91m当前固件不存在，继续寻找前一天的固件\e[0m'
+	fi
+}
+done
+if [ ! -f /tmp/openwrt-rockchip-armv8-friendlyarm_nanopi-r4s-ext4-sysupgrade.img.gz ]; then
+    echo -e '\e[91m没有可以使用的固件，脚本结束\e[0m'
+    exit;
 fi
-cd /tmp
-echo -e '\e[92m准备解压镜像文件\e[0m'
+echo -e '\e[92m准备解压固件\e[0m'
 pv openwrt-rockchip-armv8-friendlyarm_nanopi-r4s-ext4-sysupgrade.img.gz | gunzip -dc > openwrt-rockchip-armv8-friendlyarm_nanopi-r4s-ext4-sysupgrade.img
 if [ -f /tmp/openwrt-rockchip-armv8-friendlyarm_nanopi-r4s-ext4-sysupgrade.img	]; then
 	echo -e '\e[92m删除已下载文件\e[0m'
