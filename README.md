@@ -25,15 +25,15 @@
 ### 该升级只支持4G版，1G版不支持，请不要用此升级。1G版内存tmp分区空间不足，无法下载升级包
 - formal edition：正式版，有超频 👇
 ```
-wget https://raw.githubusercontent.com/DHDAXCW/NanoPi-R4S-2021/main/scripts/autoupdate3.sh && sh autoupdate3.sh
+rm autoupdate*.sh && wget https://raw.githubusercontent.com/DHDAXCW/NanoPi-R4S-2021/main/scripts/autoupdate3.sh && sh autoupdate3.sh
 ```
 - Overclocking：默认版，无超频 👇 
 ```
-wget https://raw.githubusercontent.com/DHDAXCW/NanoPi-R4S-2021/main/scripts/autoupdate2.sh && sh autoupdate2.sh
+rm autoupdate*.sh && wget https://raw.githubusercontent.com/DHDAXCW/NanoPi-R4S-2021/main/scripts/autoupdate2.sh && sh autoupdate2.sh
 ```
 - Docker：正式版带docker，有超频，带有docker插件。👇
 ```
-wget https://raw.githubusercontent.com/DHDAXCW/NanoPi-R4S-2021/main/scripts/autoupdate1.sh && sh autoupdate1.sh
+rm autoupdate*.sh && wget https://raw.githubusercontent.com/DHDAXCW/NanoPi-R4S-2021/main/scripts/autoupdate1.sh && sh autoupdate1.sh
 ```
 # 赏个鸡腿吧
  ![Alt text](data/2.jpg?raw=true "Title")
@@ -44,9 +44,9 @@ wget https://raw.githubusercontent.com/DHDAXCW/NanoPi-R4S-2021/main/scripts/auto
  - 我的固件加了动态超频，不管热不热这是取决后台运行程序在跑什么。
  - 感觉很热  就加风扇，推荐 风扇6cm×6cm，薄1cm，usb也行 或者端子线zh1.5
 
-### 更新日志 4号后更新
-- 修复网口降速问题
-- 解决cpu在平衡模式下导致重启
-- 解决硬盘无法挂载
-- 剩下懒得说，键盘都打破了
-- 看到你们不想天天刷，那以后每周日编译😲🐔⑧开
+### 更新日志7.18
+- 修复smartdns插件在重启情况下自动关闭问题
+- 修复hello woreld插件在一段时间里自动崩溃问题
+- 优化opkg地址源snapshot改成18.0x/release
+- 优化升级脚本，跳过某一天的固件的选项，简化脚本，优化提示。（非常感谢@lone_wind对升级脚本优化）
+- 优化其他插件
