@@ -2,6 +2,7 @@
 opkg update
 opkg install pv
 opkg install gzip
+rm autoupdate.sh
 cd /tmp
 rm -rf artifact openwrt-rockchip*.img.gz openwrt-rockchip*img*
 echo -e '\e[92m准备下载升级文件\e[0m'
@@ -79,4 +80,3 @@ fi
 echo -e '\e[92m开始升级固件\e[0m'
 sleep 3s
 sysupgrade -v /tmp/openwrt-rockchip-armv8-friendlyarm_nanopi-r4s-ext4-sysupgrade.img
-rm -rf autoupdate.sh
