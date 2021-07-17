@@ -23,7 +23,7 @@
 # 在线升级
 - 复制以下代码，在TTYD终端执行，过程中不得离开，否则还得重新下载，请刷ext4格式明天再升级
 ### 该升级只支持4G版，1G版不支持，请不要用此升级。1G版内存tmp分区空间不足，无法下载升级包
-- formal edition：正式版，有超频 👇
+- 多版本在里面，自己选 👇
 ```
 rm autoupdate.sh wget https://raw.githubusercontent.com/DHDAXCW/NanoPi-R4S-2021/main/scripts/autoupdate.sh && sh autoupdate.sh
 ```
