@@ -69,6 +69,21 @@ svn co https://github.com/immortalwrt/immortalwrt/branches/openwrt-18.06-k5.4/pa
 svn co https://github.com/immortalwrt/immortalwrt/branches/openwrt-18.06-k5.4/package/kernel/rtl8192du
 svn co https://github.com/immortalwrt/immortalwrt/branches/openwrt-18.06-k5.4/package/kernel/rtl88x2bu
 
+# 动态DNS
+git clone --depth 1 https://github.com/small-5/ddns-scripts-dnspod package/lean/ddns-scripts_dnspod
+git clone --depth 1 https://github.com/small-5/ddns-scripts-aliyun package/lean/ddns-scripts_aliyun
+svn co https://github.com/openwrt/packages/branches/openwrt-18.06/net/ddns-scripts feeds/packages/net/ddns-scripts
+svn co https://github.com/openwrt/luci/branches/openwrt-18.06/applications/luci-app-ddns feeds/luci/applications/luci-app-ddns
+svn co https://github.com/QiuSimons/OpenWrt_luci-app/trunk/others/luci-app-tencentddns package/lean/luci-app-tencentddns
+svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-app-aliddns feeds/luci/applications/luci-app-aliddns
+ln -sf ../../../feeds/luci/applications/luci-app-aliddns ./package/feeds/luci/luci-app-aliddns
+
+# Smartdns
+rm -rf ./feeds/packages/net/smartdns
+svn co https://github.com/Lienol/openwrt-packages/trunk/net/smartdns feeds/packages/net/smartdns
+rm -rf ./feeds/luci/applications/luci-app-smartdns
+svn co https://github.com/immortalwrt/luci/branches/openwrt-18.06/applications/luci-app-smartdns feeds/luci/applications/luci-app-smartdns
+
 # Add apk (Apk Packages Manager)
 svn co https://github.com/openwrt/packages/trunk/utils/apk
 
