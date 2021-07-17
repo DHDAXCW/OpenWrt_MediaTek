@@ -63,8 +63,9 @@ rm -rf ../lean/luci-theme-argon
 # Add subconverter
 git clone --depth=1 https://github.com/tindy2013/openwrt-subconverter
 
-# Smartdns
-git clone --depth 1 https://github.com/garypang13/smartdns-le
+# Add smartdns
+svn co https://github.com/pymumu/smartdns/trunk/package/openwrt ../smartdns
+svn co https://github.com/pymumu/luci-app-smartdns/trunk ../luci-app-smartdns
 
 # 动态DNS
 git clone --depth 1 https://github.com/small-5/ddns-scripts-dnspod package/lean/ddns-scripts_dnspod
