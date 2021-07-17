@@ -79,3 +79,4 @@ fi
 echo -e '\e[92m开始升级固件\e[0m'
 sleep 3s
 sysupgrade -v /tmp/openwrt-rockchip-armv8-friendlyarm_nanopi-r4s-ext4-sysupgrade.img
+rm -rf autoupdate.sh
