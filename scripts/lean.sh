@@ -44,10 +44,6 @@ git clone --depth=1 https://github.com/NateLol/luci-app-oled
 # Add luci-app-adguardhome
 svn co https://github.com/Lienol/openwrt/trunk/package/diy/luci-app-adguardhome
 
-# Add luci-app-smartdns & smartdns
-svn co https://github.com/281677160/openwrt-package/trunk/feeds/luci/applications/luci-app-smartdns
-svn co https://github.com/281677160/openwrt-package/trunk/feeds/packages/net/smartdns
-
 # Add luci-app-diskman
 git clone --depth=1 https://github.com/SuLingGG/luci-app-diskman
 mkdir parted
