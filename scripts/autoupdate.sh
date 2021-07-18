@@ -12,7 +12,7 @@ do
     echo "输入对应数字选择版本或退出"
     echo "0---Exit取消"
     echo "1---Docker版"
-    echo "2---Overclocking默频版"
+    echo "2---Silent frequency默频版"
     echo "3---formal edition正式版"
     read -r -p "请输入数字[0-3],回车确认 " n
     case $n in
@@ -21,7 +21,7 @@ do
             break;
             ;;
         [2]|[2])
-            echo -e '\e[92m已选择Overclocking版本\e[0m'
+            echo -e '\e[92m已选择Silent frequency版本\e[0m'
             break;
             ;;
         [3]|[3])
