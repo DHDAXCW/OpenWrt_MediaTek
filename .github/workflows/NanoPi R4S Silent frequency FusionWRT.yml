@@ -1,4 +1,4 @@
-name: NanoPi R4S Overclocking FusionWRT
+name: NanoPi R4S Silent frequency FusionWRT
 on:
   repository_dispatch:
   workflow_dispatch:
@@ -253,7 +253,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.RELEASES_TOKEN }}
         with:
-          name: ${{ steps.tag.outputs.release_date }} r4s overcking_默认无超频_高大全
+          name: ${{ steps.tag.outputs.release_date }} r4s Silent frequency_默认无超频_高大全
           tag_name: ${{ steps.tag.outputs.release_tag }}
           body_path: release.txt
           files: ${{ env.FIRMWARE }}/*
