@@ -2,6 +2,8 @@
 opkg update
 opkg install pv
 opkg install gzip
+wget 'https://git.openwrt.org/?p=keyring.git;a=blob_plain;f=usign/1035ac73cc4e59e3' -O 1035ac73cc4e59e3 && 
+opkg-key add 1035ac73cc4e59e3
 rm -rf autoupdate.sh*
 cd /tmp
 rm -rf artifact openwrt-rockchip*.img.gz openwrt-rockchip*img* sha256sums*
