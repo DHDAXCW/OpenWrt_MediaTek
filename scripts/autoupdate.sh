@@ -1,6 +1,6 @@
 #!/bin/sh --Created by DHDAXCW
 opkg update
-opkg install pv
+# opkg install pv
 opkg install gzip 
 rm -rf autoupdate.sh*
 cd /tmp
