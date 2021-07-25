@@ -1,106 +1,151 @@
 #!/bin/sh --Created by DHDAXCW
 
-rm -rf autoupdate.sh*
-cd /tmp
-rm -rf artifact openwrt-rockchip*.img.gz openwrt-rockchip*img* sha256sums*
+#---Edit by lone_wind
 
-echo -e '\e[92m准备下载升级文件\e[0m'
-while true
-do
-    echo "输入对应数字选择版本或退出"
-    echo "0---Exit取消"
+#检查更新
+check_update () {
+    opkg update && opkg install gzip
+}
+#清理文件
+clean_up() {
+    rm -rf artifact openwrt-rockchip*.img.gz openwrt-rockchip*img* sha256sums* autoupdate.sh*
+}
+#版本选择
+version_choose () {
+    echo -e '\e[92m输入对应数字选择版本或退出\e[0m'
+    echo "0---Exit退出"
     echo "1---Docker版"
     echo "2---Silent frequency默频版"
     echo "3---formal edition正式版"
-    read -r -p "请输入数字[0-3],回车确认 " n
-    case $n in
-        [1]|[1])
-            echo -e '\e[92m已选择Docker版本\e[0m'
-            break;
-            ;;
-        [2]|[2])
-            echo -e '\e[92m已选择Silent frequency版本\e[0m'
-            break;
-            ;;
-        [3]|[3])
-            echo -e '\e[92m已选择formal edition版本\e[0m'
-            break;
-            ;;
-        [0]|[0])
+    read -p "请输入数字[0-3],回车确认 " choose
+    case $choose in
+        0)
             echo -e '\e[91m退出脚本，升级结束\e[0m'
-            exit 1;
+            exit;
+            ;;
+        1)
+            echo -e '\e[92m已选择Docker版本\e[0m'
+            ;;
+        2)
+            echo -e '\e[92m已选择Silent frequency默频版\e[0m'
+            ;;
+        3)
+            echo -e '\e[92m已选择formal edition正式版\e[0m'
             ;;
         *)
             echo -e '\e[91m非法输入,请输入数字[0-3]\e[0m'
+            version_choose
             ;;
     esac
-done
-
-for t in $(seq 0 14)
-do {
-    echo `(date -d "@$(( $(busybox date +%s) - 86400*$t))" +%Y.%m.%d)`
-    wget https://github.com/DHDAXCW/NanoPi-R4S-2021/releases/download/$(date -d "@$(( $(busybox date +%s) - 86400*$t))" +%Y.%m.%d)-Lean$n/openwrt-rockchip-armv8-friendlyarm_nanopi-r4s-ext4-sysupgrade.img.gz
-    wget https://github.com/DHDAXCW/NanoPi-R4S-2021/releases/download/$(date -d "@$(( $(busybox date +%s) - 86400*$t))" +%Y.%m.%d)-Lean$n/sha256sums
+}
+#固件下载
+download_file () {
+    cd /tmp && clean_up
+    days=$(($days+1))
+    echo `(date -d "@$(($(busybox date +%s) - 86400*($days-1)))" +%Y.%m.%d)`
+    wget https://github.com/DHDAXCW/NanoPi-R4S-2021/releases/download/$(date -d "@$(($(busybox date +%s) - 86400*($days-1)))" +%Y.%m.%d)-Lean$choose/openwrt-rockchip-armv8-friendlyarm_nanopi-r4s-ext4-sysupgrade.img.gz
+    wget https://github.com/DHDAXCW/NanoPi-R4S-2021/releases/download/$(date -d "@$(($(busybox date +%s) - 86400*($days-1)))" +%Y.%m.%d)-Lean$choose/sha256sums
+    exist_judge
+}
+#存在判断
+exist_judge () {
     if [ -f /tmp/openwrt-rockchip-armv8-friendlyarm_nanopi-r4s-ext4-sysupgrade.img.gz ]; then
         echo -e '\e[92m固件已下载\e[0m'
-        echo `(date -d "@$(( $(busybox date +%s) - 86400*$t))" +%Y.%m.%d)`-Lean$n
-        while true
-        do
-            read -r -p "是否使用此固件? [Y/N] " input
-            case $input in
-                [yY][eE][sS]|[yY])
-                    echo "已确认"
-                    break 2;
-                    ;;
-                [nN][oO]|[nN])
-                    echo -e '\e[91m继续寻找前一天的固件\e[0m'
-                    rm -rf artifact openwrt-rockchip*.img.gz openwrt-rockchip*img* sha256sums*
-                    continue 2;
-                    ;;
-                *)
-                    echo -e '\e[91m请输入[Y/N]进行确认\e[0m'
-                    ;;
-            esac
-        done 
+        echo `(date -d "@$(($(busybox date +%s) - 86400*($days-1)))" +%Y.%m.%d)`-Lean$choose
+        version_skip
+    elif [ $days == 21 ]; then
+        echo -e '\e[91m未找到合适固件，脚本退出\e[0m'
+        exit;
     else
-        echo -e '\e[91m当前固件不存在，继续寻找前一天的固件\e[0m'
+        echo -e '\e[91m当前固件不存在，寻找前一天的固件\e[0m'
+        download_file
     fi
 }
-done
-
-if [ ! -f /tmp/openwrt-rockchip-armv8-friendlyarm_nanopi-r4s-ext4-sysupgrade.img.gz ]; then
-    echo -e '\e[91m没有可以使用的固件，脚本结束\e[0m'
-    exit;
-fi
-echo -e '\e[92m计算固件的sha256sum值\e[0m'
-sha256sum openwrt-rockchip-armv8-friendlyarm_nanopi-r4s-ext4-sysupgrade.img.gz
-echo -e '\e[92m请检验固件是否下载完整\e[0m'
-grep ext4-sysupgrade sha256sums
-
-while true
-do
-    read -r -p "是否确认升级? [Y/N] " confirm
+#跳过固件
+version_skip () {
+    read -r -p "是否使用此固件? [Y/N]确认 [E]退出 " skip
+    case $skip in
+        [yY][eE][sS]|[yY])
+            echo "已确认"
+            ;;
+        [nN][oO]|[nN])
+            echo -e '\e[91m寻找前一天的固件\e[0m'
+            download_file
+            ;;
+        [eE][xX][iI][tT]|[eE])
+            echo -e '\e[91m取消固件下载，退出升级\e[0m'
+            clean_up
+            exit;
+            ;;
+        *)
+            echo -e '\e[91m请输入[Y/N]进行确认，输入[E]退出\e[0m'
+            version_skip
+            ;;
+    esac
+}
+#固件验证
+firmware_check () {
+    if [ -f /tmp/openwrt-rockchip-armv8-friendlyarm_nanopi-r4s-ext4-sysupgrade.img	]; then
+        echo -e '\e[92m检查升级文件大小\e[0m'
+        du -h /tmp/openwrt-rockchip-armv8-friendlyarm_nanopi-r4s-ext4-sysupgrade.img
+    elif [ -f /tmp/openwrt-rockchip-armv8-friendlyarm_nanopi-r4s-ext4-sysupgrade.img.gz	]; then
+        echo -e '\e[92m计算固件的sha256sum值\e[0m'
+        sha256sum openwrt-rockchip-armv8-friendlyarm_nanopi-r4s-ext4-sysupgrade.img.gz
+        echo -e '\e[92m对比下列sha256sum值，检查固件是否完整\e[0m'
+        grep ext4-sysupgrade sha256sums
+    else
+        echo -e '\e[91m没有相关升级文件，请检查网络\e[0m'
+        clean_up
+        exit;
+    fi
+    version_confirm
+}
+#版本确认
+version_confirm () {
+    read -p "是否确认升级? [Y/N] " confirm
     case $confirm in
         [yY][eE][sS]|[yY])
             echo -e '\e[92m已确认升级\e[0m'
-            break;
             ;;
         [nN][oO]|[nN])
-            echo -e '\e[91m已退出升级\e[0m'
+            echo -e '\e[91m已确认退出\e[0m'
+            clean_up
             exit;
             ;;
         *)
             echo -e '\e[91m请输入[Y/N]进行确认\e[0m'
+            version_confirm
             ;;
     esac
-done
+}
+#解压固件
+unzip_fireware () {
+    rm -rf /tmp/openwrt-rockchip-armv8-friendlyarm_nanopi-r4s-ext4-sysupgrade.img
+    echo -e '\e[92m开始解压固件\e[0m'
+    gunzip openwrt-rockchip-armv8-friendlyarm_nanopi-r4s-ext4-sysupgrade.img.gz
+    if [ -f /tmp/openwrt-rockchip-armv8-friendlyarm_nanopi-r4s-ext4-sysupgrade.img	]; then
+        echo -e '\e[92m已解压出升级文件\e[0m'
+        firmware_check
+    else
+        echo -e '\e[91m解压固件失败，再次解压\e[0m'
+        unzip_fireware
+    fi
+}
+#升级系统
+update_system () {
+    echo -e '\e[92m开始升级系统\e[0m'
+    sleep 3s
+    sysupgrade -v /tmp/openwrt-rockchip-armv8-friendlyarm_nanopi-r4s-ext4-sysupgrade.img
+}
+#系统更新
+update_firmware () {
+    check_update    #检查更新
+    clean_up        #清理文件
+    version_choose  #版本选择
+    download_file   #固件下载
+    firmware_check  #固件验证
+    unzip_fireware  #解压固件
+    update_system   #升级系统
+}
 
-echo -e '\e[92m开始解压固件\e[0m'
-gunzip openwrt-rockchip-armv8-friendlyarm_nanopi-r4s-ext4-sysupgrade.img.gz
-if [ -f /tmp/openwrt-rockchip-armv8-friendlyarm_nanopi-r4s-ext4-sysupgrade.img	]; then
-    echo -e '\e[92m删除已下载文件\e[0m'
-    rm -rf openwrt-rockchip-armv8-friendlyarm_nanopi-r4s-ext4-sysupgrade.img.gz
-fi
-echo -e '\e[92m开始升级固件\e[0m'
-sleep 3s
-sysupgrade -v /tmp/openwrt-rockchip-armv8-friendlyarm_nanopi-r4s-ext4-sysupgrade.img
+update_firmware
