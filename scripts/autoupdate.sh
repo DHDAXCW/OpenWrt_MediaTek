@@ -2,7 +2,6 @@
 opkg update
 opkg install pv
 opkg install gzip 
-opkg-key add 1035ac73cc4e59e3
 rm -rf autoupdate.sh*
 cd /tmp
 rm -rf artifact openwrt-rockchip*.img.gz openwrt-rockchip*img* sha256sums*
