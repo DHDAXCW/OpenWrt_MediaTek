@@ -6,9 +6,9 @@ git clone --depth=1 https://github.com/fw876/helloworld
 popd
 
 # Add luci-app-smartdns & smartdns
-pushd package/lean
-git clone --depth 1 https://github.com/DHDAXCW/smartdns-le.git
-popd
+#pushd package/lean
+#git clone --depth 1 https://github.com/DHDAXCW/smartdns-le.git
+#popd
 
 # Clone community packages to package/community
 mkdir package/community
@@ -75,8 +75,8 @@ svn co https://github.com/immortalwrt/immortalwrt/branches/openwrt-18.06-k5.4/pa
 svn co https://github.com/immortalwrt/immortalwrt/branches/openwrt-18.06-k5.4/package/kernel/rtl88x2bu
 
 # Add luci-app-smartdns & smartdns
-# svn co https://github.com/281677160/openwrt-package/trunk/feeds/luci/applications/luci-app-smartdns
-# svn co https://github.com/281677160/openwrt-package/trunk/feeds/packages/net/smartdns
+svn co https://github.com/281677160/openwrt-package/trunk/feeds/luci/applications/luci-app-smartdns
+svn co https://github.com/281677160/openwrt-package/trunk/feeds/packages/net/smartdns
 
 # 动态DNS
 git clone --depth 1 https://github.com/small-5/ddns-scripts-dnspod package/lean/ddns-scripts_dnspod
