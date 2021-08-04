@@ -1,13 +1,4 @@
 #!/usr/bin/env ash
-#=================================================
-# File name: ipv6-helper
-# Description: Install IPV6 Modules On OpenWrt
-# System Required: OpenWrt
-# Version: 1.0
-# Lisence: MIT
-# Author: SuLingGG
-# Blog: https://mlapp.cn
-#=================================================
 
 Green_font_prefix="\033[32m"
 Red_font_prefix="\033[31m"
