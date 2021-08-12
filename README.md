@@ -36,9 +36,12 @@ wget https://raw.githubusercontent.com/DHDAXCW/NanoPi-R4S-2021/main/scripts/auto
  - 我的固件加了动态超频，不管热不热这是取决后台运行程序在跑什么。
  - 感觉很热  就加风扇，推荐 风扇6cm×6cm，薄1cm，usb也行 或者端子线zh1.5
 
-### 更新日志7.18
-- 修复smartdns插件在重启情况下自动关闭问题
-- 修复hello woreld插件在一段时间里自动崩溃问题
-- 优化opkg地址源snapshot改成18.0x/release
-- 优化升级脚本，跳过某一天的固件的选项，简化脚本，优化提示。（非常感谢@lone_wind对升级脚本优化）
-- 优化其他插件
+### 更新日志 8.12
+- 针对r4s超频补丁进行优化
+- 更改内核对低速TF卡的优化支持
+- 修复passwall全协议缺失问题等
+- 修复asswall在Simple-Obfs的编译问题。
+- 再次优化r4s在低速TF卡，防止启动DOCKER写入导致崩  我建议最好换高速卡。。。比如三星，海康等
+- 优化多拨在低速卡情况下写入缓存导致灯全亮 还是建议换最牛B高速卡解愁。。
+- 移除bypass，会导致杀死smartdns
+- 其他编译流程修复和优化。
