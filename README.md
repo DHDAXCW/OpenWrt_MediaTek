@@ -40,7 +40,7 @@ wget https://raw.githubusercontent.com/DHDAXCW/NanoPi-R4S-2021/main/scripts/auto
 - 针对r4s超频补丁进行优化
 - 更改内核对低速TF卡的优化支持
 - 修复passwall全协议缺失问题等
-- 修复asswall在Simple-Obfs的编译问题。
+- 修复passwall在Simple-Obfs的编译问题。
 - 再次优化r4s在低速TF卡，防止启动DOCKER写入导致崩  我建议最好换高速卡。。。比如三星，海康等
 - 优化多拨在低速卡情况下写入缓存导致灯全亮 还是建议换最牛B高速卡解愁。。
 - 移除bypass，会导致杀死smartdns
