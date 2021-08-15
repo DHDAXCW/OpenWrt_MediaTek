@@ -37,6 +37,7 @@ wget https://raw.githubusercontent.com/DHDAXCW/NanoPi-R4S-2021/main/scripts/auto
  - 感觉很热  就加风扇，推荐 风扇6cm×6cm，薄1cm，usb也行 或者端子线zh1.5
 
 ### 更新日志 8.12
+- 新增cpu控制器，方便调整频率
 - 针对r4s超频补丁进行优化
 - 更改内核对低速TF卡的优化支持
 - 修复passwall全协议缺失问题等
