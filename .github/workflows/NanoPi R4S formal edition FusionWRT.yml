@@ -256,7 +256,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.RELEASES_TOKEN }}
         with:
-          name: ${{ steps.tag.outputs.release_date }} r4s fdrmal edition_正式版_高大全
+          name: ${{ steps.tag.outputs.release_date }} r4s formal edition_正式版_高大全
           tag_name: ${{ steps.tag.outputs.release_tag }}
           body_path: release.txt
           files: ${{ env.FIRMWARE }}/*
