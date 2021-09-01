@@ -46,6 +46,9 @@ git clone --depth=1 https://github.com/NateLol/luci-app-oled
 # Add luci-app-adguardhome
 svn co https://github.com/Lienol/openwrt/trunk/package/diy/luci-app-adguardhome
 
+# Add ServerChan
+git clone --depth=1 https://github.com/tty228/luci-app-serverchan
+
 # Add luci-app-diskman
 git clone --depth=1 https://github.com/SuLingGG/luci-app-diskman
 mkdir parted
