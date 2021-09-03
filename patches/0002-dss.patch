@@ -9,7 +9,6 @@ Subject: [PATCH] dss
 
 diff --git a/package/lean/default-settings/files/zzz-default-settings b/package/lean/default-settings/files/zzz-default-settings
 index bc1e8f8..ff3ab0c 100755
---- a/package/lean/default-settings/files/zzz-default-settings
 +++ b/package/lean/default-settings/files/zzz-default-settings
 @@ -40,6 +40,10 @@ echo 'iptables -t nat -A PREROUTING -p udp --dport 53 -j REDIRECT --to-ports 53'
  echo 'iptables -t nat -A PREROUTING -p tcp --dport 53 -j REDIRECT --to-ports 53' >> /etc/firewall.user
