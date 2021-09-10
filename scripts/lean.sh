@@ -188,3 +188,5 @@ echo 'net.bridge.bridge-nf-filter-vlan-tagged=0' >> package/base-files/files/etc
 pushd package/lean/autocore/files/arm/sbin
 cp -f $GITHUB_WORKSPACE/scripts/cpuinfo cpuinfo
 popd
+# Modify the default theme
+sed -i 's/$(eval $(call theme,Bootstrap,material,argon Theme (default)))/$(eval $(call theme,Bootstrap,material,argon (default)))/g' feeds/luci/contrib/package/luci/Makefile
