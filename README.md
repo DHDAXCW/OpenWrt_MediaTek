@@ -49,3 +49,22 @@ wget https://raw.githubusercontent.com/DHDAXCW/NanoPi-R4S-2021/main/scripts/auto
 - 优化多拨在低速卡情况下写入缓存导致灯全亮 还是建议换最牛B高速卡解愁。。
 - 移除bypass，会导致杀死smartdns
 - 其他编译流程修复和优化。
+## 鸣谢
+
+特别感谢以下项目：
+
+Openwrt 官方项目：
+
+<https://github.com/openwrt/openwrt>
+
+Lean 大的 Openwrt 项目：
+
+<https://github.com/coolsnowwolf/lede>
+
+immortalwrt 的 OpenWrt 项目：
+
+<https://github.com/immortalwrt/immortalwrt>
+
+P3TERX 大佬的 Actions-OpenWrt 项目：
+
+<https://github.com/P3TERX/Actions-OpenWrt>
