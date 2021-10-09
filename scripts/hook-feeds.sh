@@ -28,7 +28,8 @@ svn co https://github.com/281677160/openwrt-package/trunk/feeds/luci/application
 git clone --depth=1 https://github.com/immortalwrt/openwrt-tmate
 
 # Add luci-app-passwall
-git clone -b hello https://github.com/DHDAXCW/openwrt-passwall luci/applications/openwrt-passwall
+git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall luci/applications/openwrt-passwall
+# git clone -b hello https://github.com/DHDAXCW/openwrt-passwall luci/applications/openwrt-passwall
 
 # Add gotop
 svn co https://github.com/immortalwrt/packages/branches/openwrt-18.06/admin/gotop packages/admin/gotop
