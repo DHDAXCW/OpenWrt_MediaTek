@@ -15,8 +15,6 @@
 - 下载地址： https://github.com/DHDAXCW/NanoPi-R4S-2021/releases
 - x86_64固件下载 https://github.com/DHDAXCW/lede/releases
 ### - Docker：正式版带docker，有超频，带有docker插件。（对passwall的udp要求很高，不要刷docker版本）
-
-- 精简版 ：https://github.com/DHDAXCW/NanoPi-R2S-R4S-2021-mini/releases
 - 电报群：https://t.me/DHDAXCW
 - X86固件 ：[点击链接下载](https://github.com/DHDAXCW/lede/releases)
 # 在线升级
