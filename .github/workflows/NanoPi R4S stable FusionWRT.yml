@@ -62,9 +62,6 @@ jobs:
         git config --global user.email "git@github.com"
         git config --global user.name "GitHub"
         git clone $REPO_URL -b $REPO_BRANCH openwrt
-        cd openwrt/package
-        svn co https://github.com/openwrt/packages/trunk/net/smartdns
-        svn co https://github.com/openwrt/luci/trunk/applications/luci-app-smartdns
         
     - name: Cache
       uses: klever1988/cachewrtbuild@main
@@ -87,12 +84,7 @@ jobs:
     - name: MOD index file
       run: |
          cd $OPENWRTROOT/package/lean/autocore/files/arm
-         sed -i '/Load Average/i\\t\t<tr><td width="33%"><%:Telegram %></td><td><a href="https://t.me/DHDAXCW"><%:电报交流群%></a></td></tr>' index.htm
-    - name: Modify SmartDNS
-      run: |
-         cd $OPENWRTROOT
-         find package/*/ feeds/*/ -maxdepth 6 -path "*luci-app-smartdns/luasrc/controller/smartdns.lua" | xargs -i sed -i 's/\"SmartDNS\")\, 4/\"SmartDNS\")\, 3/g' {}
-         
+         sed -i '/Load Average/i\\t\t<tr><td width="33%"><%:Telegram %></td><td><a href="https://t.me/DHDAXCW"><%:电报交流群%></a></td></tr>' index.htm      
     - name: Install Feeds
       run: |
         cd $OPENWRTROOT
