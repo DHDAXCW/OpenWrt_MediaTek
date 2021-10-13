@@ -1,0 +1,44 @@
+From 1b59c3ef75dcf00d30f336f6ce0d0a4540ace474 Mon Sep 17 00:00:00 2001
+From: wowowow <you@example.com>
+Date: Wed, 13 Oct 2021 22:44:12 +0800
+Subject: [PATCH] rockchip: add pwm-fan node for NanoPi R4S
+
+---
+ .../patches-5.4/993-rk3399-nanopi-r4s.patch   | 24 +++++++++++++++++++
+ 1 file changed, 24 insertions(+)
+ create mode 100644 target/linux/rockchip/patches-5.4/993-rk3399-nanopi-r4s.patch
+
+diff --git a/target/linux/rockchip/patches-5.4/993-rk3399-nanopi-r4s.patch b/target/linux/rockchip/patches-5.4/993-rk3399-nanopi-r4s.patch
+new file mode 100644
+index 00000000..46d8c886
+--- /dev/null
++++ b/target/linux/rockchip/patches-5.4/993-rk3399-nanopi-r4s.patch
+@@ -0,0 +1,24 @@
++---
++ arch/arm64/boot/dts/rockchip/rk3399-nanopi-r4s.dts | 8 ++++++++
++ 1 file changed, 8 insertions(+)
++
++diff --git a/arch/arm64/boot/dts/rockchip/rk3399-nanopi-r4s.dts b/arch/arm64/boot/dts/rockchip/rk3399-nanopi-r4s.dts
++index f66d0a6833e0..ce0fd25b682a 100644
++--- a/arch/arm64/boot/dts/rockchip/rk3399-nanopi-r4s.dts
+++++ b/arch/arm64/boot/dts/rockchip/rk3399-nanopi-r4s.dts
++@@ -69,6 +69,14 @@
++                regulator-always-on;
++                regulator-boot-on;
++        };
+++
+++       fan: pwm-fan {
+++               compatible = "pwm-fan";
+++               cooling-levels = <0 18 102 170 255>;
+++               #cooling-cells = <2>;
+++               fan-supply = <&vdd_5v>;
+++               pwms = <&pwm1 0 50000 0>;
+++       };
++ };
++
++ &emmc_phy {
++--
+\ No newline at end of file
+-- 
+2.25.1
+
