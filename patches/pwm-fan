@@ -10,8 +10,10 @@ while true
 do
 temp=$(cat /sys/class/thermal/thermal_zone0/temp ) #去掉了$旁的空格
 if [ $temp -gt 40000 ] ; then # 温度高于 40 风扇开始转，可修改，正常使用设置为55000
-echo 30000 > /sys/class/pwm/pwmchip1/pwm0/duty_cycle;
-elif [ $temp -le 38000 ] ; then # 温度低于 38 风扇停转，可修改
+echo 3000 > /sys/class/pwm/pwmchip1/pwm0/duty_cycle;
+elif [ $temp -le 38000 ] ; then # 温度低于 38 速度降低，可修改
+cho 35000 > /sys/class/pwm/pwmchip1/pwm0/duty_cycle;
+elif [ $temp -le 30000 ] ; then # 温度低于 30 速度停转，可修改
 echo 49990 > /sys/class/pwm/pwmchip1/pwm0/duty_cycle;
 fi #多加了fi
 sleep 1s; # 1s检测一次，正常使用设置为60s
