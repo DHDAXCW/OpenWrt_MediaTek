@@ -148,6 +148,10 @@ jobs:
         cp ../configs/opkg/distfeeds-packages-server.conf files/etc/opkg/distfeeds.conf.server
         mkdir -p files/etc/opkg/keys
         cp ../configs/opkg/1035ac73cc4e59e3 files/etc/opkg/keys/1035ac73cc4e59e3
+        mkdir -p files/etc/init.d
+        cp ../patches/pwm-fan files/etc/init.d/pwm-fan
+        chmod 777 files/etc/init.d/pwm-fan 
+        files/etc/init.d/pwm-fan enable
         if "$KMODS_IN_FIRMWARE" = 'true'
         then
             mkdir -p files/www/snapshots
