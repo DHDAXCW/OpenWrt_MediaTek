@@ -127,7 +127,7 @@ unzip_fireware () {
         firmware_check
     else
         echo -e '\e[91m解压固件失败\e[0m'
-        clean up;
+        clean_up;
         exit;
         #unzip_fireware
     fi
