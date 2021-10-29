@@ -7,6 +7,7 @@
 - Docker版 含Docker插件，会导致udp转发失效 慎用哦，只要别开passwall的udp，啥都不影响使用！
 - 稳定版 含有日常使用插件
 - 此版本取消了精简版，改为稳定版
+- 风扇链接 [点击进入](https://s.click.taobao.com/67X4ceu)  建议用这种风扇
 ### 注：不要用恢复备份。。不保证某个插件是否正常运行。。。建议重新设置贼好！！！
 ### 默认编译  
 
@@ -28,7 +29,6 @@ wget https://raw.githubusercontent.com/DHDAXCW/NanoPi-R4S-2021/main/scripts/auto
 ## 提示
  - 我的固件加了动态超频，不管热不热这是取决后台运行程序在跑什么。
  - 感觉很热  就加风扇，推荐 风扇6cm×6cm，薄1cm，usb也行 或者端子线zh1.5（风扇脚本目前在建设中）
- - 风扇链接 [点击进入](https://s.click.taobao.com/67X4ceu)
 # [赏个鸡腿吧](https://afdian.net/@dhdaxcw/plan)
 ### https://afdian.net/@dhdaxcw/plan
 ## 鸣谢
