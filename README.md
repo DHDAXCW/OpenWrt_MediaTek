@@ -22,7 +22,7 @@
 ### 该升级只支持4G版，1G版不支持，请不要用此升级。1G版内存tmp分区空间不足，无法下载升级包
 - 多版本在里面，自己选 👇
 ```
-wget https://raw.githubusercontent.com/DHDAXCW/NanoPi-R4S-2021/main/scripts/autoupdate.sh && sh autoupdate.sh
+wget https://raw.githubusercontent.com/lone-wind/scripts/main/onlineupdate.sh && sh onlineupdate.sh
 ```
 # 插件展示
  ![Alt text](data/20.jpg?raw=true "Title")
