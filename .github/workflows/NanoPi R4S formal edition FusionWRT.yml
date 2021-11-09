@@ -147,8 +147,10 @@ jobs:
         cp ../configs/opkg/distfeeds-packages-server.conf files/etc/opkg/distfeeds.conf.server
         mkdir -p files/etc/opkg/keys
         cp ../configs/opkg/1035ac73cc4e59e3 files/etc/opkg/keys/1035ac73cc4e59e3
-        mkdir -p files/etc/init.d
-        cp ../patches/pwm-fan files/etc/init.d/pwm-fan
+        mkdir -p files/etc/rc.d
+        curl -sfL https://git.io/J0kRv --create-dirs -o files/usr/bin/start-rk3399-pwm-fan.sh
+        curl -sfL https://git.io/J0kRG --create-dirs -o files/etc/init.d/fa-pwmfan
+        chmod +x files/usr/bin/start-rk3399-pwm-fan.sh files/etc/init.d/fa-pwmfan
         if "$KMODS_IN_FIRMWARE" = 'true'
         then
             mkdir -p files/www/snapshots
