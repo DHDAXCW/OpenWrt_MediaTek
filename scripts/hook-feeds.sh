@@ -1,10 +1,5 @@
 #!/bin/bash
 # Svn checkout packages from immortalwrt's repository
-mkdir -p files/etc/rc.d
-curl -sfL https://git.io/J0kRv --create-dirs -o files/usr/bin/start-rk3399-pwm-fan.sh
-curl -sfL https://git.io/J0kRG --create-dirs -o files/etc/init.d/fa-pwmfan
-chmod +x files/usr/bin/start-rk3399-pwm-fan.sh files/etc/init.d/fa-pwmfan
-
 pushd customfeeds
 
 # Add luci-app-eqos
