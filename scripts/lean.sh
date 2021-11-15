@@ -177,9 +177,9 @@ echo 'net.bridge.bridge-nf-call-ip6tables=0' >> package/base-files/files/etc/sys
 echo 'net.bridge.bridge-nf-call-arptables=0' >> package/base-files/files/etc/sysctl.conf
 echo 'net.bridge.bridge-nf-filter-vlan-tagged=0' >> package/base-files/files/etc/sysctl.conf
 # Add CUPInfo
-pushd package/lean/autocore/files/arm/sbin
-cp -f $GITHUB_WORKSPACE/scripts/cpuinfo cpuinfo
-popd
+# pushd package/lean/autocore/files/arm/sbin
+# cp -f $GITHUB_WORKSPACE/scripts/cpuinfo cpuinfo
+# popd
 # Add luci-app-adguardhome
 rm -rf package/lean/luci-app-adguardhome
 svn co https://github.com/Lienol/openwrt/trunk/package/diy/luci-app-adguardhome package/lean/luci-app-adguardhome
