@@ -9,7 +9,8 @@ on:
   #   types: started
 
 env:
-  REPO_URL: https://github.com/coolsnowwolf/lede
+  # REPO_URL: https://github.com/coolsnowwolf/lede
+  REPO_URL: https://github.com/DHDAXCW/lede
   # REPO_BRANCH: master
   REPO_BRANCH: hello
   CONFIG_FILE: configs/lean/lean_docker.config
