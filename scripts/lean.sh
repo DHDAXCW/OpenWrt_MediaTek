@@ -50,7 +50,7 @@ svn co https://github.com/linkease/nas-packages/trunk/network/services/linkease
 git clone --depth=1 https://github.com/NateLol/luci-app-oled
 
 # Add ServerChan
-git clone --depth=1 https://github.com/tty228/luci-app-serverchan
+svn co https://github.com/vernesong/OpenClash/trunk/luci-app-openclash
 
 # Add luci-app-diskman
 git clone --depth=1 https://github.com/SuLingGG/luci-app-diskman
