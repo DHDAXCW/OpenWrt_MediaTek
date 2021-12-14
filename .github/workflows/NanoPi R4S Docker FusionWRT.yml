@@ -189,7 +189,7 @@ jobs:
   Upload:
     needs: [Build]
     runs-on: ubuntu-20.04
-    if: github.repository == 'DHDAXCW/NanoPi-R4S-2021'
+    if: github.repository == 'DHDAXCW/NanoPi-R4S'
     steps:
       - name: Checkout
         uses: actions/checkout@main
