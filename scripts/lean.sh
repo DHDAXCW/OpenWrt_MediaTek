@@ -1,5 +1,8 @@
 #!/bin/bash
 
+rm -rf ./feeds/packages/utils/runc/Makefile
+svn export https://github.com/openwrt/packages/trunk/utils/runc/Makefile ./feeds/packages/utils/runc/Makefile
+
 # Clone community packages to package/community
 mkdir package/community
 pushd package/community
