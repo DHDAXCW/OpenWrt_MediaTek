@@ -170,6 +170,7 @@ jobs:
         make target/install -j$(nproc) || make target/install -j1 V=s
         make checksum
         echo "::set-output name=GENERATE_STATUS::success"
+
     - name: Upload Bin Folder
       uses: actions/upload-artifact@main
       if: steps.generate.outputs.GENERATE_STATUS == 'success'
@@ -180,7 +181,7 @@ jobs:
   Upload:
     needs: [Build]
     runs-on: ubuntu-20.04
-    if: github.repository == 'DHDAXCW/NanoPi-R4S'
+    if: github.repository == 'DHDAXCW/NanoPi-R4S-2021'
     steps:
       - name: Checkout
         uses: actions/checkout@main
@@ -200,79 +201,80 @@ jobs:
         with:
           name: bin-archive
           path: openwrt/bin
-    - name: Deploy Packages-Server
-      if: env.GENERATE_STATUS == 'success'
-      run: |
-        mkdir -p server/web/snapshots/targets/$TARGET/$SUBTARGET
-        cp -r $OPENWRTROOT/bin/packages server/web/snapshots
-        cp -r $OPENWRTROOT/bin/targets/$TARGET/$SUBTARGET/packages server/web/snapshots/targets/$TARGET/$SUBTARGET
-        mv server packages-server
-        zip -qrm packages-server.zip packages-server
-        mv packages-server.zip $OPENWRTROOT/bin/targets/$TARGET/$SUBTARGET
-    - name: Organize Files
-      id: organize
-      if: env.GENERATE_STATUS == 'success'
-      run: |
-        cd ${FIRMWARE}
-        rm -rf packages
-        cd $OPENWRTROOT/bin/targets/$TARGET/
-        curl -fsSL git.io/file-transfer | sh
-        df -hT $PWD
-        echo "::set-output name=ORGANIZE_STATUS::success"
-    - name: Upload Firmware To WeTransfer
-      id: wetransfer
-      if: steps.organize.outputs.ORGANIZE_STATUS == 'success' && env.UPLOAD_WETRANSFER == 'true'
-      run: |
-        cd $OPENWRTROOT/bin/targets/$TARGET/
-        ./transfer wet -s -p 16 --no-progress ${FIRMWARE} 2>&1 | tee wetransfer.log
-        echo "::warning file=Firmware-Wetransfer.com::$(cat wetransfer.log | grep https)"
-        echo "::set-output name=url::$(cat wetransfer.log | grep https | cut -f3 -d" ")"
-    - name: Upload Firmware To CowTransfer
-      id: cowtransfer
-      if: steps.organize.outputs.ORGANIZE_STATUS == 'success' && env.UPLOAD_COWTRANSFER == 'true'
-      run: |
-        cd $OPENWRTROOT/bin/targets/$TARGET/
-        ./transfer cow --block 2621440 -s -p 64 --no-progress ${FIRMWARE} 2>&1 | tee cowtransfer.log
-        echo "::warning file=Firmware-Cowtransfer.com::$(cat cowtransfer.log | grep https)"
-        echo "::set-output name=url::$(cat cowtransfer.log | grep https | cut -f3 -d" ")"
-    - name: Generate release tag
-      id: tag
-      if: env.UPLOAD_RELEASE == 'true' && !cancelled()
-      run: |
-        echo "::set-output name=release_tag::$(date +"%Y.%m.%d")-Lean3"
-        echo "::set-output name=release_date::$(date +"%Y.%m.%d")"
-        touch release.txt
-        [ $UPLOAD_COWTRANSFER = true ] && echo "🔗 [Cowtransfer](${{ steps.cowtransfer.outputs.url }})" >> release.txt
-        [ $UPLOAD_WETRANSFER = true ] && echo "🔗 [WeTransfer](${{ steps.wetransfer.outputs.url }})" >> release.txt
-        echo "::set-output name=status::success"
-    - name: Upload firmware to release
-      uses: softprops/action-gh-release@v1
-      if: steps.tag.outputs.status == 'success' && !cancelled()
-      env:
-        GITHUB_TOKEN: ${{ secrets.RELEASES_TOKEN }}
-      with:
-        name: ${{ steps.tag.outputs.release_date }} NanoPi-R4S formal edition_正式版_全插件
-        tag_name: ${{ steps.tag.outputs.release_tag }}
-        body_path: release.txt
-        files: ${{ env.FIRMWARE }}/*
+          
+      - name: Deploy Packages-Server
+        if: env.GENERATE_STATUS == 'success'
+        run: |
+          mkdir -p server/web/snapshots/targets/$TARGET/$SUBTARGET
+          cp -r $OPENWRTROOT/bin/packages server/web/snapshots
+          cp -r $OPENWRTROOT/bin/targets/$TARGET/$SUBTARGET/packages server/web/snapshots/targets/$TARGET/$SUBTARGET
+          mv server packages-server
+          zip -qrm packages-server.zip packages-server
+          mv packages-server.zip $OPENWRTROOT/bin/targets/$TARGET/$SUBTARGET
+      - name: Organize Files
+        id: organize
+        if: env.GENERATE_STATUS == 'success'
+        run: |
+          cd ${FIRMWARE}
+          rm -rf packages
+          cd $OPENWRTROOT/bin/targets/$TARGET/
+          curl -fsSL git.io/file-transfer | sh
+          df -hT $PWD
+          echo "::set-output name=ORGANIZE_STATUS::success"
+      - name: Upload Firmware To WeTransfer
+        id: wetransfer
+        if: steps.organize.outputs.ORGANIZE_STATUS == 'success' && env.UPLOAD_WETRANSFER == 'true'
+        run: |
+          cd $OPENWRTROOT/bin/targets/$TARGET/
+          ./transfer wet -s -p 16 --no-progress ${FIRMWARE} 2>&1 | tee wetransfer.log
+          echo "::warning file=Firmware-Wetransfer.com::$(cat wetransfer.log | grep https)"
+          echo "::set-output name=url::$(cat wetransfer.log | grep https | cut -f3 -d" ")"
+      - name: Upload Firmware To CowTransfer
+        id: cowtransfer
+        if: steps.organize.outputs.ORGANIZE_STATUS == 'success' && env.UPLOAD_COWTRANSFER == 'true'
+        run: |
+          cd $OPENWRTROOT/bin/targets/$TARGET/
+          ./transfer cow --block 2621440 -s -p 64 --no-progress ${FIRMWARE} 2>&1 | tee cowtransfer.log
+          echo "::warning file=Firmware-Cowtransfer.com::$(cat cowtransfer.log | grep https)"
+          echo "::set-output name=url::$(cat cowtransfer.log | grep https | cut -f3 -d" ")"
+      - name: Generate release tag
+        id: tag
+        if: env.UPLOAD_RELEASE == 'true' && !cancelled()
+        run: |
+          echo "::set-output name=release_tag::$(date +"%Y.%m.%d")-Lean3"
+          echo "::set-output name=release_date::$(date +"%Y.%m.%d")"
+          touch release.txt
+          [ $UPLOAD_COWTRANSFER = true ] && echo "🔗 [Cowtransfer](${{ steps.cowtransfer.outputs.url }})" >> release.txt
+          [ $UPLOAD_WETRANSFER = true ] && echo "🔗 [WeTransfer](${{ steps.wetransfer.outputs.url }})" >> release.txt
+          echo "::set-output name=status::success"
+      - name: Upload firmware to release
+        uses: softprops/action-gh-release@v1
+        if: steps.tag.outputs.status == 'success' && !cancelled()
+        env:
+          GITHUB_TOKEN: ${{ secrets.RELEASES_TOKEN }}
+        with:
+          name: ${{ steps.tag.outputs.release_date }} NanoPi-R4S formal edition_正式版_全插件
+          tag_name: ${{ steps.tag.outputs.release_tag }}
+          body_path: release.txt
+          files: ${{ env.FIRMWARE }}/*
 
-    - name: Delete workflow runs
-      uses: GitRML/delete-workflow-runs@main
-      with:
-        retain_days: 1
-        keep_minimum_runs: 1
+      - name: Delete workflow runs
+        uses: GitRML/delete-workflow-runs@main
+        with:
+          retain_days: 1
+          keep_minimum_runs: 1
 
-    - name: Remove old Releases
-      uses: dev-drprasad/delete-older-releases@v0.1.0
-      if: env.UPLOAD_RELEASE == 'true' && !cancelled()
-      with:
-        keep_latest: 20
-        delete_tags: true
-      env:
-        GITHUB_TOKEN: ${{ secrets.RELEASES_TOKEN }}
+      - name: Remove old Releases
+        uses: dev-drprasad/delete-older-releases@v0.1.0
+        if: env.UPLOAD_RELEASE == 'true' && !cancelled()
+        with:
+          keep_latest: 20
+          delete_tags: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.RELEASES_TOKEN }}
 
-    - name: Delete Artifacts
-      uses: geekyeggo/delete-artifact@v1
-      with:
-        name: |
-          bin-archive
+      - name: Delete Artifacts
+        uses: geekyeggo/delete-artifact@v1
+        with:
+          name: |
+            bin-archive
