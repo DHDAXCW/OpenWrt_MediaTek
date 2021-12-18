@@ -261,7 +261,7 @@ jobs:
         uses: softprops/action-gh-release@v1
         if: steps.tag.outputs.status == 'success' && !cancelled()
         env:
-          GITHUB_TOKEN: ${{ secrets.RELEASES_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           name: ${{ steps.tag.outputs.release_date }} NanoPi-R4S formal edition_Docker版_全插件
           tag_name: ${{ steps.tag.outputs.release_tag }}
@@ -281,7 +281,7 @@ jobs:
           keep_latest: 20
           delete_tags: true
         env:
-          GITHUB_TOKEN: ${{ secrets.RELEASES_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Delete Artifacts
         uses: geekyeggo/delete-artifact@v1
