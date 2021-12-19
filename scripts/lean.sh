@@ -3,6 +3,10 @@
 rm -rf ./feeds/packages/utils/runc/Makefile
 svn export https://github.com/openwrt/packages/trunk/utils/runc/Makefile ./feeds/packages/utils/runc/Makefile
 
+# fix netdata
+rm -rf ./feeds/packages/admin/netdata
+svn co https://github.com/WYC-2020/packages/trunk/admin/netdata ./feeds/packages/admin/netdata
+
 # Clone community packages to package/community
 mkdir package/community
 pushd package/community
@@ -41,11 +45,6 @@ git clone https://github.com/vernesong/OpenClash
 
 # Add luci-app-onliner (need luci-app-nlbwmon)
 git clone --depth=1 https://github.com/rufengsuixing/luci-app-onliner
-
-
-# Add luci-app-netdata
-rm -rf ../lean/luci-app-netdata
-git clone https://github.com/sirpdboy/luci-app-netdata
 
 # Add luci-app-adguardhome
 svn co https://github.com/Lienol/openwrt-package/branches/other/luci-app-adguardhome
