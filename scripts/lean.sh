@@ -79,6 +79,9 @@ rm -rf ../lean/luci-app-dockerman
 git clone --depth=1 https://github.com/lisaac/luci-app-dockerman
 git clone --depth=1 https://github.com/lisaac/luci-lib-docker
 
+# Add luci-app-poweroffdevice
+git clone https://github.com/sirpdboy/luci-app-poweroffdevice
+
 # Add luci-theme-argon
 git clone --depth=1 -b 18.06 https://github.com/jerrykuku/luci-theme-argon
 git clone --depth=1 https://github.com/jerrykuku/luci-app-argon-config
