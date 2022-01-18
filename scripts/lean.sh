@@ -44,9 +44,6 @@ git clone --depth=1 https://github.com/ysc3839/luci-proto-minieap
 # Add luci-app-bypass
 # git clone https://github.com/garypang13/luci-app-bypass.git
 
-# Add OpenClash
-git clone https://github.com/DHDAXCW/OpenClash
-
 # Add luci-app-onliner (need luci-app-nlbwmon)
 git clone --depth=1 https://github.com/rufengsuixing/luci-app-onliner
 
@@ -64,6 +61,7 @@ git clone --depth=1 https://github.com/NateLol/luci-app-oled
 
 # Add OpenClash
 git clone --depth=1 -b master https://github.com/vernesong/OpenClash
+# git clone https://github.com/DHDAXCW/OpenClash
 
 # Add luci-app-diskman
 # git clone --depth=1 https://github.com/SuLingGG/luci-app-diskman
