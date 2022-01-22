@@ -21,7 +21,7 @@ git clone --depth=1 https://github.com/fw876/helloworld.git
 
 # Add luci-app-unblockneteasemusic
 rm -rf ../lean/luci-app-unblockmusic
-git clone depth=1 https://github.com/UnblockNeteaseMusic/luci-app-unblockneteasemusic.git
+git clone --depth=1 https://github.com/UnblockNeteaseMusic/luci-app-unblockneteasemusic.git
 
 # Add luci-app-passwall
 #git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall
@@ -32,7 +32,7 @@ git clone --depth=1 https://github.com/jerrykuku/luci-app-vssr
 
 # Add luci-app-netdata
 rm -rf ../lean/luci-app-netdata
-git clone depth=1 https://github.com/sirpdboy/luci-app-netdata
+git clone --depth=1 https://github.com/sirpdboy/luci-app-netdata
 
 # Add mentohust & luci-app-mentohust
 git clone --depth=1 https://github.com/BoringCat/luci-app-mentohust
@@ -42,7 +42,7 @@ git clone --depth=1 https://github.com/KyleRicardo/MentoHUST-OpenWrt-ipk
 git clone --depth=1 https://github.com/ysc3839/luci-proto-minieap
 
 # Add luci-app-bypass
-# git clone https://github.com/garypang13/luci-app-bypass.git
+# git clone --depth=1 https://github.com/garypang13/luci-app-bypass.git
 
 # Add luci-app-onliner (need luci-app-nlbwmon)
 git clone --depth=1 https://github.com/rufengsuixing/luci-app-onliner
@@ -69,7 +69,7 @@ git clone --depth=1 -b master https://github.com/vernesong/OpenClash
 # cp luci-app-diskman/Parted.Makefile parted/Makefile
 
 # Add luci-app-ikoolproxy (godproxy)
-git clone depth=1 https://github.com/iwrt/luci-app-ikoolproxy.git
+git clone --depth=1 https://github.com/iwrt/luci-app-ikoolproxy.git
 
 # Add luci-app-dockerman
 rm -rf ../lean/luci-app-docker
@@ -78,7 +78,7 @@ git clone --depth=1 https://github.com/lisaac/luci-app-dockerman
 git clone --depth=1 https://github.com/lisaac/luci-lib-docker
 
 # Add luci-app-poweroff
-git clone https://github.com/esirplayground/luci-app-poweroff
+git clone --depth=1 https://github.com/esirplayground/luci-app-poweroff
 
 # Add luci-theme-argon
 git clone --depth=1 -b 18.06 https://github.com/jerrykuku/luci-theme-argon
@@ -169,7 +169,7 @@ sed -i '/mt7662u_rom_patch.bin/a\\techo mt76-usb disable_usb_sg=1 > $\(1\)\/etc\
 popd
 
 # Add po2lmo
-git clone depth=1 https://github.com/openwrt-dev/po2lmo.git
+git clone --depth=1 https://github.com/openwrt-dev/po2lmo.git
 pushd po2lmo
 make && sudo make install
 popd
