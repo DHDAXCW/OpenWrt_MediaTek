@@ -9,7 +9,7 @@ on:
   #   types: started
 
 env:
-  REPO_URL: https://github.com/DHDAXCW/RK356X
+  REPO_URL: https://github.com/DHDAXCW/lede
   REPO_BRANCH: bate
   CONFIG_FILE: configs/lean/lean.config
   DIY_SH: scripts/lean.sh
