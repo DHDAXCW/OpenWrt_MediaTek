@@ -10,6 +10,7 @@
 - 风扇链接 [点击进入](https://s.click.taobao.com/t?e=m%3D2%26s%3Dd8Ack0Lbx8McQipKwQzePOeEDrYVVa64LKpWJ%2Bin0XJRAdhuF14FMXpyNmcFd6mT8sviUM61dt2T0mcOGN1M6FAj1gqltKaEfKzCcEr0EW0YuhTK3FPxiHMT7yc3NZrQKSOkJV8harV3phaPbavinqGCwVfdcN0wcSpj5qSCmbA%3D)  建议用这种风扇
 ### 注：不要用恢复备份。。不保证某个插件是否正常运行。。。建议重新设置贼好！
 
+
 ### 默认编译  
 
 - 用户名：root 密码：password  管理IP：192.168.2.1
