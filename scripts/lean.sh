@@ -192,6 +192,10 @@ sed -i "s/OpenWrt /DHDAXCW @ FusionWrt /g" package/lean/default-settings/files/z
 # Test kernel 5.10
 # sed -i 's/5.4/5.10/g' target/linux/rockchip/Makefile
 
+pushd target/linux/rockchip/patches-5.4
+cp -f $GITHUB_WORKSPACE/scripts/patch/sd-uhs.patch sd-uhs.patch
+popd
+
 # Custom configs
 # git am $GITHUB_WORKSPACE/patches/lean/*.patch
 git am $GITHUB_WORKSPACE/patches/*.patch
