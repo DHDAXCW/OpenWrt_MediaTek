@@ -1,4 +1,4 @@
-name: NanoPi R4S stable FusionWRT
+name: NanoPi-R4S-Lite
 
 on:
   repository_dispatch:
