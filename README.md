@@ -33,6 +33,7 @@ wget https://raw.githubusercontent.com/lone-wind/scripts/main/onlineupdate.sh &&
  - 感觉很热  就加风扇，推荐 风扇6cm×6cm，薄1cm，usb也行 或者端子线zh1.5（风扇脚本目前在建设中）
 # [赏个鸡腿吧](https://afdian.net/@dhdaxcw/plan)
 ### https://afdian.net/@dhdaxcw/plan
+
 ## 鸣谢
 
 特别感谢以下项目：
