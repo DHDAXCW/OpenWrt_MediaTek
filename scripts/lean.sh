@@ -195,7 +195,7 @@ sed -i "s/OpenWrt /DHDAXCW @ FusionWrt /g" package/lean/default-settings/files/z
 # upgrade the kernel
 pushd include
 rm -rf kernel-5.4
-https://raw.githubusercontent.com/DHDAXCW/lede/master/include/kernel-5.4
+wget https://raw.githubusercontent.com/DHDAXCW/lede/master/include/kernel-5.4
 popd
 
 # pushd target/linux/rockchip/patches-5.4
