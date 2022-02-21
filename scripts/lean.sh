@@ -190,7 +190,13 @@ sed -i '/uci commit system/i\uci set system.@system[0].hostname='FusionWrt'' pac
 sed -i "s/OpenWrt /DHDAXCW @ FusionWrt /g" package/lean/default-settings/files/zzz-default-settings
 
 # Test kernel 5.10
-# sed -i 's/5.4/5.10/g' target/linux/rockchip/Makefile
+# sed -i 's/5.4/5.10/g' target/linux/rockchip/Makefile、
+
+# upgrade the kernel
+pushd include
+rm -rf kernel-5.4
+https://raw.githubusercontent.com/DHDAXCW/lede/master/include/kernel-5.4
+popd
 
 # pushd target/linux/rockchip/patches-5.4
 # cp -f $GITHUB_WORKSPACE/scripts/patch/sd-uhs.patch sd-uhs.patch
