@@ -171,6 +171,10 @@ jobs:
         fi
         make package/install -j$(nproc) || make package/install -j1 V=s
         make target/install -j$(nproc) || make target/install -j1 V=s
+        rm -rf bin/targets/rockchip/armv8/openwrt-rockchip-armv8-friendlyarm_nanopi-r4s.manifest
+        rm -rf bin/targets/rockchip/armv8/openwrt-rockchip-armv8-friendlyarm_nanopi-r4s-rootfs.tar.gz
+        rm -rf bin/targets/rockchip/armv8/config.buildinfo
+        rm -rf bin/targets/rockchip/armv8/packages-server.zip
         make checksum
         echo "::set-output name=GENERATE_STATUS::success"
 
