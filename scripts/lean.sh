@@ -7,6 +7,14 @@ svn export https://github.com/openwrt/packages/trunk/utils/runc/Makefile ./feeds
 rm -rf ./feeds/packages/admin/netdata
 svn co https://github.com/DHDAXCW/packages/branches/ok/admin/netdata ./feeds/packages/admin/netdata
 
+# Add cpufreq
+rm -rf ./feeds/luci/applications/luci-app-cpufreq 
+svn co https://github.com/immortalwrt/luci/trunk/applications/luci-app-cpufreq ./feeds/luci/applications/luci-app-cpufreq
+ln -sf ./feeds/luci/applications/luci-app-cpufreq ./package/feeds/luci/luci-app-cpufreq
+sed -i 's,1608,1800,g' feeds/luci/applications/luci-app-cpufreq/root/etc/uci-defaults/cpufreq
+sed -i 's,2016,2208,g' feeds/luci/applications/luci-app-cpufreq/root/etc/uci-defaults/cpufreq
+sed -i 's,1512,1608,g' feeds/luci/applications/luci-app-cpufreq/root/etc/uci-defaults/cpufreq
+
 # Clone community packages to package/community
 mkdir package/community
 pushd package/community
@@ -118,13 +126,6 @@ rm -rf ../../customfeeds/luci/applications/luci-app-aliyundrive-webdav
 rm -rf ../../customfeeds/luci/applications/aliyundrive-webdav
 svn co https://github.com/messense/aliyundrive-webdav/trunk/openwrt/aliyundrive-webdav
 svn co https://github.com/messense/aliyundrive-webdav/trunk/openwrt/luci-app-aliyundrive-webdav
-# Add cpufreq
-rm -rf ./../../feeds/luci/applications/luci-app-cpufreq
-svn co https://github.com/immortalwrt/luci/trunk/applications/luci-app-cpufreq feeds/luci/applications/luci-app-cpufreq
-ln -sf ../../../feeds/luci/applications/luci-app-cpufreq ./package/feeds/luci/luci-app-cpufreq
-sed -i 's,1608,1800,g' feeds/luci/applications/luci-app-cpufreq/root/etc/uci-defaults/cpufreq
-sed -i 's,2016,2208,g' feeds/luci/applications/luci-app-cpufreq/root/etc/uci-defaults/cpufreq
-sed -i 's,1512,1608,g' feeds/luci/applications/luci-app-cpufreq/root/etc/uci-defaults/cpufreq
 popd
 
 # 动态DNS
