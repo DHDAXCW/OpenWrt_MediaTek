@@ -7,6 +7,12 @@ svn export https://github.com/openwrt/packages/trunk/utils/runc/Makefile ./feeds
 rm -rf ./feeds/packages/admin/netdata
 svn co https://github.com/DHDAXCW/packages/branches/ok/admin/netdata ./feeds/packages/admin/netdata
 
+# fix r4s mac
+rm -rf target/linux/rockchip/patches-5.10/007-arm64-dts-rockchip-add-EEPROM-node-for-NanoPi-R4S.patch
+wget -P target/linux/rockchip/patches-5.10/ https://raw.githubusercontent.com/LPDDR6-10000MHz/lede/master/target/linux/rockchip/patches-5.10/007-arm64-dts-rockchip-add-EEPROM-node-for-NanoPi-R4S.patch
+rm -rf target/linux/rockchip/armv8/base-files/etc/board.d/02_network
+wget -P target/linux/rockchip/armv8/base-files/etc/board.d/ https://raw.githubusercontent.com/LPDDR6-10000MHz/lede/master/target/linux/rockchip/armv8/base-files/etc/board.d/02_network
+
 # Add cpufreq
 rm -rf ./feeds/luci/applications/luci-app-cpufreq 
 svn co https://github.com/immortalwrt/luci/trunk/applications/luci-app-cpufreq ./feeds/luci/applications/luci-app-cpufreq
