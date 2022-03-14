@@ -7,12 +7,6 @@ svn export https://github.com/openwrt/packages/trunk/utils/runc/Makefile ./feeds
 rm -rf ./feeds/packages/admin/netdata
 svn co https://github.com/DHDAXCW/packages/branches/ok/admin/netdata ./feeds/packages/admin/netdata
 
-# fix r4s mac
-rm -rf target/linux/rockchip/patches-5.10/007-arm64-dts-rockchip-add-EEPROM-node-for-NanoPi-R4S.patch
-wget -P target/linux/rockchip/patches-5.10/ https://raw.githubusercontent.com/LPDDR6-10000MHz/lede/master/target/linux/rockchip/patches-5.10/007-arm64-dts-rockchip-add-EEPROM-node-for-NanoPi-R4S.patch
-rm -rf target/linux/rockchip/armv8/base-files/etc/board.d/02_network
-wget -P target/linux/rockchip/armv8/base-files/etc/board.d/ https://raw.githubusercontent.com/LPDDR6-10000MHz/lede/master/target/linux/rockchip/armv8/base-files/etc/board.d/02_network
-
 # Add cpufreq
 rm -rf ./feeds/luci/applications/luci-app-cpufreq 
 svn co https://github.com/immortalwrt/luci/trunk/applications/luci-app-cpufreq ./feeds/luci/applications/luci-app-cpufreq
@@ -200,7 +194,7 @@ sed -i '/uci commit system/i\uci set system.@system[0].hostname='FusionWrt'' pac
 sed -i "s/OpenWrt /DHDAXCW @ FusionWrt /g" package/lean/default-settings/files/zzz-default-settings
 
 # Test kernel 5.10
-# sed -i 's/5.4/5.10/g' target/linux/rockchip/Makefile
+sed -i 's/5.15/5.4/g' target/linux/rockchip/Makefile
 
 # upgrade the kernel
 #pushd include
