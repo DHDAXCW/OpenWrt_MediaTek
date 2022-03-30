@@ -10,7 +10,7 @@ on:
 
 env:
   REPO_URL: https://github.com/LPDDR6-10000MHz/lede
-  REPO_BRANCH: ok
+  REPO_BRANCH: okok
   CONFIG_FILE: configs/lean/lean.config
   DIY_SH: scripts/lean.sh
   IPV6MOD_IN_FIRMWARE: true
