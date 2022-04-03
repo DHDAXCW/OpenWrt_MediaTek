@@ -61,7 +61,7 @@ jobs:
         echo "OPENWRTROOT=$PWD" >> $GITHUB_ENV
         echo "::set-output name=OPENWRTROOT::$(echo $PWD)"
         mkdir customfeeds
-        git clone -b openwrt-18.06-k5.4 https://github.com/immortalwrt/packages customfeeds/packages
+        git clone https://github.com/immortalwrt/packages customfeeds/packages
         git clone -b openwrt-18.06-k5.4 https://github.com/immortalwrt/luci customfeeds/luci
         chmod +x ../scripts/*.sh
 
