@@ -11,7 +11,7 @@ on:
 env:
   REPO_URL: https://github.com/immortalwrt/immortalwrt
   REPO_BRANCH: openwrt-18.06-k5.4
-  CONFIG_FILE: configs/lean/immortalwrt.config
+  CONFIG_FILE: scripts/immortalwrt.config
   DIY_SH: scripts/immortalwrt.sh
   IPV6MOD_IN_FIRMWARE: true
   KMODS_IN_FIRMWARE: true
