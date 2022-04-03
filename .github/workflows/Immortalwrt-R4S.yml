@@ -1,4 +1,4 @@
-name: NanoPi-R4S-Plus
+name: NanoPi-R4S-immortalwrt
 
 on:
   repository_dispatch:
