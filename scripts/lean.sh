@@ -24,7 +24,7 @@ rm -f ./include/kernel-defaults.mk
 rm -f ./package/base-files/image-config.in
 rm -rf ./target/linux/*
 rm -rf ./package/boot/*
-svn co https://github.com/LPDDR6-10000MHz/immortalwrt-DoorNET2/branches/openwrt-18.06-k5.4/package/base-files/image-config.in ./package/base-files/image-config.in
+wget -P  ./package/base-files/ https://raw.githubusercontent.com/LPDDR6-10000MHz/immortalwrt-DoorNET2/openwrt-18.06-k5.4/package/base-files/image-config.in
 svn co https://github.com/LPDDR6-10000MHz/immortalwrt-DoorNET2/branches/openwrt-18.06-k5.4/include/kernel-version.mk ./include/kernel-version.mk
 svn co https://github.com/LPDDR6-10000MHz/immortalwrt-DoorNET2/branches/openwrt-18.06-k5.4/include/kernel.mk ./include/kernel.mk
 scn co https://github.com/LPDDR6-10000MHz/immortalwrt-DoorNET2/branches/openwrt-18.06-k5.4/include/version.mk ./include/version.mk
