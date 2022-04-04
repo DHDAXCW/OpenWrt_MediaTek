@@ -15,10 +15,6 @@ sed -i 's,1608,1800,g' feeds/luci/applications/luci-app-cpufreq/root/etc/uci-def
 sed -i 's,2016,2208,g' feeds/luci/applications/luci-app-cpufreq/root/etc/uci-defaults/cpufreq
 sed -i 's,1512,1608,g' feeds/luci/applications/luci-app-cpufreq/root/etc/uci-defaults/cpufreq
 
-# 牛逼
-rm -rf ./target/linux/rockchip/patches-5.4
-svn co https://github.com/LPDDR6-10000MHz/immortalwrt-DoorNET2/branches/openwrt-18.06-k5.4/target/linux/rockchip/patches-5.4 ./target/linux/rockchip/patches-5.4
-
 # Clone community packages to package/community
 mkdir package/community
 pushd package/community
