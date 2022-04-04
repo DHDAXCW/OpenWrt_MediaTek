@@ -9,8 +9,8 @@ on:
   #   types: started
 
 env:
-  REPO_URL: https://github.com/coolsnowwolf/lede
-  REPO_BRANCH: master
+  REPO_URL: https://github.com/DHDAXCW/lede
+  REPO_BRANCH: ojbk
   CONFIG_FILE: configs/lean/lean.config
   DIY_SH: scripts/lean.sh
   IPV6MOD_IN_FIRMWARE: true
@@ -21,7 +21,7 @@ env:
 
 jobs:
   Build:
-    runs-on: ubuntu-20.04
+    runs-on: self-hosted
     if: github.repository == 'DHDAXCW/NanoPi-R4S'
     outputs:
       OPENWRTROOT: ${{ steps.update.outputs.OPENWRTROOT }}
@@ -182,7 +182,7 @@ jobs:
         
   Upload:
     needs: [Build]
-    runs-on: ubuntu-20.04
+    runs-on: self-hosted
     if: github.repository == 'DHDAXCW/NanoPi-R4S'
     steps:
       - name: Checkout
