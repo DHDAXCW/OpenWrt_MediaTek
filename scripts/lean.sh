@@ -14,7 +14,26 @@ ln -sf ./feeds/luci/applications/luci-app-cpufreq ./package/feeds/luci/luci-app-
 sed -i 's,1608,1800,g' feeds/luci/applications/luci-app-cpufreq/root/etc/uci-defaults/cpufreq
 sed -i 's,2016,2208,g' feeds/luci/applications/luci-app-cpufreq/root/etc/uci-defaults/cpufreq
 sed -i 's,1512,1608,g' feeds/luci/applications/luci-app-cpufreq/root/etc/uci-defaults/cpufreq
+
+# 牛逼
+rm -f ./include/version.mk
+rm -f ./include/kernel.mk
+rm -f ./include/kernel-version.mk
+rm -f ./include/toolchain-build.mk
+rm -f ./include/kernel-defaults.mk
+rm -f ./package/base-files/image-config.in
+rm -rf ./target/linux/*
+svn co https://github.com/LPDDR6-10000MHz/immortalwrt-DoorNET2/branches/openwrt-18.06-k5.4/package/base-files/image-config.in ./package/base-files/image-config.in
+svn co https://github.com/LPDDR6-10000MHz/immortalwrt-DoorNET2/branches/openwrt-18.06-k5.4/include/kernel-version.mk ./include/kernel-version.mk
+svn co https://github.com/LPDDR6-10000MHz/immortalwrt-DoorNET2/branches/openwrt-18.06-k5.4/include/kernel.mk ./include/kernel.mk
+scn co https://github.com/LPDDR6-10000MHz/immortalwrt-DoorNET2/branches/openwrt-18.06-k5.4/include/version.mk ./include/version.mk
+svn co https://github.com/LPDDR6-10000MHz/immortalwrt-DoorNET2/branches/openwrt-18.06-k5.4/include/toolchain-build.mk ./include/toolchain-build.mk
+svn co https://github.com/LPDDR6-10000MHz/immortalwrt-DoorNET2/branches/openwrt-18.06-k5.4/include/kernel-defaults.mk ./include/kernel-defaults.mk
+svn co https://github.com/LPDDR6-10000MHz/immortalwrt-DoorNET2/branches/openwrt-18.06-k5.4/target/linux/rockchip ./target/linux/rockchip
+sed -i 's/Os/O3 -funsafe-math-optimizations -funroll-loops -ffunction-sections -fdata-sections -Wl,--gc-sections/g' include/target.mk
+sed -i 's,rootwait,rootwait mitigations=off,g' target/linux/rockchip/image/nanopi-r4s.bootscript
 rm -rf ./target/linux/rockchip/armv8/base-files/etc/hotplug.d
+
 # Clone community packages to package/community
 mkdir package/community
 pushd package/community
