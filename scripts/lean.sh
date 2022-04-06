@@ -32,9 +32,6 @@ git clone --depth=1 https://github.com/fw876/helloworld.git
 rm -rf ../../customfeeds/luci/applications/luci-app-unblockmusic
 git clone --depth=1 https://github.com/UnblockNeteaseMusic/luci-app-unblockneteasemusic.git
 
-# Add luci-app-passwall
-#git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall
-
 # Add luci-app-vssr <M>
 git clone --depth=1 https://github.com/jerrykuku/lua-maxminddb.git
 git clone --depth=1 https://github.com/jerrykuku/luci-app-vssr
@@ -45,9 +42,6 @@ git clone --depth=1 https://github.com/sirpdboy/luci-app-netdata
 
 # Add luci-proto-minieap
 git clone --depth=1 https://github.com/ysc3839/luci-proto-minieap
-
-# Add luci-app-bypass
-# git clone --depth=1 https://github.com/garypang13/luci-app-bypass.git
 
 # Add luci-app-onliner (need luci-app-nlbwmon)
 git clone --depth=1 https://github.com/rufengsuixing/luci-app-onliner
@@ -97,11 +91,6 @@ cp -f $GITHUB_WORKSPACE/data/bg1.jpg luci-theme-argon/htdocs/luci-static/argon/i
 git clone --depth=1 https://github.com/tindy2013/openwrt-subconverter
 
 # Add extra wireless drivers
-# svn co https://github.com/immortalwrt/immortalwrt/branches/openwrt-18.06-k5.4/package/kernel/rtl8821cu
-# svn co https://github.com/immortalwrt/immortalwrt/branches/openwrt-18.06-k5.4/package/kernel/rtl8188eu
-# svn co https://github.com/immortalwrt/immortalwrt/branches/openwrt-18.06-k5.4/package/kernel/rtl8192du
-# svn co https://github.com/immortalwrt/immortalwrt/branches/openwrt-18.06-k5.4/package/kernel/rtl88x2bu
-
 # svn co https://github.com/immortalwrt/immortalwrt/branches/master/package/kernel/rtl8812au-ac
 # svn co https://github.com/immortalwrt/immortalwrt/branches/master/package/kernel/rtl8821cu
 # svn co https://github.com/immortalwrt/immortalwrt/branches/master/package/kernel/rtl8188eu
@@ -109,7 +98,7 @@ git clone --depth=1 https://github.com/tindy2013/openwrt-subconverter
 # svn co https://github.com/immortalwrt/immortalwrt/branches/master/package/kernel/rtl88x2bu
 
 # Add luci-app-smartdns & smartdns
-svn co https://github.com/281677160/openwrt-package/trunk/feeds/luci/applications/luci-app-smartdns
+svn co https://github.com/281677160/openwrt-package/trunk/luci-app-smartdns
 
 # Add apk (Apk Packages Manager)
 svn co https://github.com/openwrt/packages/trunk/utils/apk
@@ -179,12 +168,8 @@ pushd po2lmo
 make && sudo make install
 popd
 
-# rm -rf ./package/kernel/linux/modules/video.mk
-# wget -P package/kernel/linux/modules/ https://github.com/immortalwrt/immortalwrt/raw/master/package/kernel/linux/modules/video.mk
-
 wget -P target/linux/rockchip/armv8/base-files/etc/init.d/ https://github.com/friendlyarm/friendlywrt/raw/master-v19.07.1/target/linux/rockchip-rk3399/base-files/etc/init.d/fa-rk3399-pwmfan
 wget -P target/linux/rockchip/armv8/base-files/usr/bin/ https://github.com/friendlyarm/friendlywrt/raw/master-v19.07.1/target/linux/rockchip-rk3399/base-files/usr/bin/start-rk3399-pwm-fan.sh
-# wget -P target/linux/rockchip/patches-5.4 https://raw.githubusercontent.com/DHDAXCW/package_target/master/107-Add-support-for-off-on-delay-kernel-5.4.patch
 
 # Change default shell to zsh
 sed -i 's/\/bin\/ash/\/usr\/bin\/zsh/g' package/base-files/files/etc/passwd
@@ -195,17 +180,7 @@ sed -i '/uci commit system/i\uci set system.@system[0].hostname='FusionWrt'' pac
 sed -i "s/OpenWrt /DHDAXCW @ FusionWrt /g" package/lean/default-settings/files/zzz-default-settings
 
 # Test kernel 5.10
-sed -i 's/5.15/5.4/g' target/linux/rockchip/Makefile
-
-# upgrade the kernel
-#pushd include
-#rm -rf kernel-5.4
-#wget https://raw.githubusercontent.com/DHDAXCW/lede/master/include/kernel-5.4
-#popd
-
-# pushd target/linux/rockchip/patches-5.4
-# cp -f $GITHUB_WORKSPACE/scripts/patch/sd-uhs.patch sd-uhs.patch
-# popd
+# sed -i 's/5.15/5.4/g' target/linux/rockchip/Makefile
 
 # Custom configs
 # git am $GITHUB_WORKSPACE/patches/lean/*.patch

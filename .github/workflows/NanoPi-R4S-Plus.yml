@@ -9,11 +9,10 @@ on:
   #   types: started
 
 env:
-  REPO_URL: https://github.com/LPDDR6-10000MHz/lede
-  REPO_BRANCH: 5.4.187
+  REPO_URL: https://github.com/coolsnowwolf/lede
+  REPO_BRANCH: master
   CONFIG_FILE: configs/lean/lean.config
   DIY_SH: scripts/lean.sh
-  IPV6MOD_IN_FIRMWARE: true
   KMODS_IN_FIRMWARE: true
   UPLOAD_WETRANSFER: true
   UPLOAD_RELEASE: true
@@ -93,10 +92,6 @@ jobs:
       id: package
       run: |
         cd $OPENWRTROOT
-        if "$KMODS_IN_FIRMWARE" = 'true'
-        then
-            echo "CONFIG_ALL_NONSHARED=y" >> .config
-        fi
         ../scripts/modify_config.sh
         cat .config
         make download -j8
@@ -155,15 +150,6 @@ jobs:
         fi
         cp files/etc/opkg/distfeeds.conf.server files/etc/opkg/distfeeds.conf.mirror
         sed -i "s/http:\/\/192.168.123.100:2345\/snapshots/https:\/\/openwrt.cc\/snapshots\/$(date +"%Y-%m-%d")\/lean/g" files/etc/opkg/distfeeds.conf.mirror
-        if "$IPV6MOD_IN_FIRMWARE" = 'true'
-        then
-            mkdir -p files/www/ipv6-modules
-            cp bin/packages/$PLATFORM/luci/luci-proto-ipv6* files/www/ipv6-modules
-            cp bin/packages/$PLATFORM/base/{ipv6helper*,odhcpd-ipv6only*,odhcp6c*,6in4*} "files/www/ipv6-modules"
-            cp bin/targets/$TARGET/$SUBTARGET/packages/{ip6tables*,kmod-nf-nat6*,kmod-ipt-nat6*,kmod-sit*,kmod-ip6tables-extra*} "files/www/ipv6-modules"
-            mkdir -p files/bin
-            cp ../scripts/ipv6-helper.sh files/bin/ipv6-helper
-        fi
         make package/install -j$(nproc) || make package/install -j1 V=s
         make target/install -j$(nproc) || make target/install -j1 V=s
         rm -rf bin/targets/rockchip/armv8/openwrt-rockchip-armv8-friendlyarm_nanopi-r4s.manifest
@@ -246,7 +232,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          name: ${{ steps.tag.outputs.release_date }} NanoPi-R4S Plus_正式版_全插件
+          name: ${{ steps.tag.outputs.release_date }} NanoPi-R4S-linux-5.15_正式版_全插件
           tag_name: ${{ steps.tag.outputs.release_tag }}
           body_path: release.txt
           files: ${{ env.FIRMWARE }}/*
