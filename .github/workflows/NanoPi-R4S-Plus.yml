@@ -14,7 +14,6 @@ env:
   CONFIG_FILE: configs/lean/lean.config
   DIY_SH: scripts/lean.sh
   KMODS_IN_FIRMWARE: true
-  UPLOAD_WETRANSFER: true
   UPLOAD_RELEASE: true
   TZ: Asia/Shanghai
 
@@ -52,12 +51,7 @@ jobs:
         git config --global user.name "GitHub"
         git clone $REPO_URL -b $REPO_BRANCH openwrt
         cd openwrt
-    - name: Cache
-      uses: klever1988/cachewrtbuild@main
-      with:
-        ccache: 'true'
-        prefix: ${{ github.workspace }}/openwrt
-        clean: 'false'
+
     - name: Update Feeds
       id: update
       run: |
@@ -209,14 +203,6 @@ jobs:
           curl -fsSL git.io/file-transfer | sh
           df -hT $PWD
           echo "::set-output name=ORGANIZE_STATUS::success"
-      - name: Upload Firmware To WeTransfer
-        id: wetransfer
-        if: steps.organize.outputs.ORGANIZE_STATUS == 'success' && env.UPLOAD_WETRANSFER == 'true'
-        run: |
-          cd $OPENWRTROOT/bin/targets/$TARGET/
-          ./transfer wet -s -p 16 --no-progress ${FIRMWARE} 2>&1 | tee wetransfer.log
-          echo "::warning file=Firmware-Wetransfer.com::$(cat wetransfer.log | grep https)"
-          echo "::set-output name=url::$(cat wetransfer.log | grep https | cut -f3 -d" ")"
       - name: Generate release tag
         id: tag
         if: env.UPLOAD_RELEASE == 'true' && !cancelled()
