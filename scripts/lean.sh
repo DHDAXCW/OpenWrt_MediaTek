@@ -8,6 +8,7 @@ svn co https://github.com/DHDAXCW/packages/branches/ok/admin/netdata ./feeds/pac
 git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall ./package/lean/openwrt-passwall
 svn co https://github.com/xiaorouji/openwrt-passwall/branches/luci/luci-app-passwall ./package/lean/openwrt-passwall
 rm -rf ./package/feeds/packages/baidupcs-web
+rm -rf ./package/feeds/luci/luci-app-baidupcs-web
 pushd target/linux/rockchip/image
 rm -rf armv8.mk
 wget https://raw.githubusercontent.com/DHDAXCW/lede/master/target/linux/rockchip/image/armv8.mk
