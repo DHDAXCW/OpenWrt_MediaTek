@@ -4,6 +4,9 @@
 rm -rf ./feeds/packages/admin/netdata
 svn co https://github.com/DHDAXCW/packages/branches/ok/admin/netdata ./feeds/packages/admin/netdata
 
+# Add luci-app-passwall
+git clone --depth=1 https://github.com/DHDAXCW/openwrt-passwall-1 ./package/lean/openwrt-passwall
+
 rm -rf ./package/feeds/packages/baidupcs-web
 rm -rf ./package/feeds/luci/luci-app-baidupcs-web
 
