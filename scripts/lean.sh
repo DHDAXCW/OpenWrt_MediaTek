@@ -6,9 +6,7 @@ svn co https://github.com/DHDAXCW/packages/branches/ok/admin/netdata ./feeds/pac
 
 rm -rf ./package/feeds/packages/baidupcs-web
 rm -rf ./package/feeds/luci/luci-app-baidupcs-web
-rm -rf ./package/feeds/packages/syncthing
-rm -rf ./package/feeds/luci/luci-app-syncthing
-rm -ff ./package/community/openwrt-package/luci-app-syncthing
+
 pushd target/linux/rockchip/image
 rm -rf armv8.mk
 wget https://raw.githubusercontent.com/DHDAXCW/lede/master/target/linux/rockchip/image/armv8.mk
