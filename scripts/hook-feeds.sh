@@ -16,6 +16,9 @@ svn co https://github.com/immortalwrt/packages/trunk/net/gowebdav packages/net/g
 # Add tmate
 git clone --depth=1 https://github.com/immortalwrt/openwrt-tmate
 
+# Add luci-app-passwall
+git clone --depth=1 https://github.com/DHDAXCW/openwrt-passwall-1 ./package/lean/openwrt-passwall
+
 # Add gotop
 svn co https://github.com/immortalwrt/packages/branches/openwrt-18.06/admin/gotop packages/admin/gotop
 
