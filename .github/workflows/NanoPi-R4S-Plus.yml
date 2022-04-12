@@ -157,36 +157,7 @@ jobs:
         rm -rf bin/targets/rockchip/armv8/packages-server.zip
         make checksum
         echo "::set-output name=GENERATE_STATUS::success"
-          
-    - name: Deploy Packages-Server
-      if: env.GENERATE_STATUS == 'success'
-      run: |
-        mkdir -p server/web/snapshots/targets/$TARGET/$SUBTARGET
-        cp -r $OPENWRTROOT/bin/packages server/web/snapshots
-        cp -r $OPENWRTROOT/bin/targets/$TARGET/$SUBTARGET/packages server/web/snapshots/targets/$TARGET/$SUBTARGET
-        mv server packages-server
-        zip -qrm packages-server.zip packages-server
-        mv packages-server.zip $OPENWRTROOT/bin/targets/$TARGET/$SUBTARGET
-    - name: Organize Files
-      id: organize
-      if: env.GENERATE_STATUS == 'success'
-      run: |
-          cd ${FIRMWARE}
-          rm -rf packages
-          cd $OPENWRTROOT/bin/targets/$TARGET/
-          curl -fsSL git.io/file-transfer | sh
-          df -hT $PWD
-          echo "::set-output name=ORGANIZE_STATUS::success"
-          
-    - name: Upload Firmware To WeTransfer
-      id: wetransfer
-      if: steps.organize.outputs.ORGANIZE_STATUS == 'success' && env.UPLOAD_WETRANSFER == 'true'
-      run: |
-          cd $OPENWRTROOT/bin/targets/$TARGET/
-          ./transfer wet -s -p 16 --no-progress ${FIRMWARE} 2>&1 | tee wetransfer.log
-          echo "::warning file=Firmware-Wetransfer.com::$(cat wetransfer.log | grep https)"
-          echo "::set-output name=url::$(cat wetransfer.log | grep https | cut -f3 -d" ")"
-          
+
     - name: Generate release tag
       id: tag
       if: env.UPLOAD_RELEASE == 'true' && !cancelled()
@@ -194,7 +165,7 @@ jobs:
           echo "::set-output name=release_tag::$(date +"%Y.%m.%d")-Lean3"
           echo "::set-output name=release_date::$(date +"%Y.%m.%d")"
           touch release.txt
-          [ $UPLOAD_WETRANSFER = true ] && echo "后台地址：192.168.11.1" >> release.txt
+          echo "后台地址：192.168.11.1" >> release.txt
           echo "::set-output name=status::success"
     - name: Upload firmware to release
       uses: softprops/action-gh-release@v1
