@@ -38,7 +38,7 @@ rm -rf ../../customfeeds/luci/applications/luci-app-netdata
 git clone --depth=1 https://github.com/sirpdboy/luci-app-netdata
 
 # Add luci-app-ssr-plus
-svn co https://github.com/DHDAXCW/openwrt-package/trunk/luci-app-ssr-plus
+git clone --depth=1 https://github.com/DHDAXCW/openwrt-ssrp
 
 # Add luci-app-unblockneteasemusic
 rm -rf ../../customfeeds/luci/applications/luci-app-unblockmusic
