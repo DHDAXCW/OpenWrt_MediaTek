@@ -10,9 +10,6 @@ wget -P ./target/linux/rockchip/armv8/base-files/usr/bin/ https://github.com/fri
 chmod 777 target/linux/rockchip/armv8/base-files/etc/init.d/fa-rk3399-pwmfan
 chmod 777 target/linux/rockchip/armv8/base-files/usr/bin/start-rk3399-pwm-fan.sh
 
-# Add luci-app-passwall
-git clone --depth=1 https://github.com/MilesPoupart/openwrt-passwall ./package/lean/openwrt-passwall
-
 rm -rf ./package/feeds/packages/baidupcs-web
 rm -rf ./package/feeds/luci/luci-app-baidupcs-web
 
