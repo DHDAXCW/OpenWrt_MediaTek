@@ -40,6 +40,7 @@ wget https://raw.githubusercontent.com/lone-wind/scripts/main/onlineupdate.sh &&
 23行 runs-on: self-hosted 改为 runs-on: ubuntu-20.04
 185行 runs-on: self-hosted 改为 runs-on: ubuntu-20.04
 ```
+另外，如果改上面的，那还要改编译线程，我默认是-j72
 改好就可以用github的机器编译了
 
 ## 鸣谢
