@@ -11,6 +11,11 @@ wget -P ./target/linux/rockchip/armv8/base-files/usr/bin/ https://github.com/fri
 chmod 777 target/linux/rockchip/armv8/base-files/etc/init.d/fa-rk3399-pwmfan
 chmod 777 target/linux/rockchip/armv8/base-files/usr/bin/start-rk3399-pwm-fan.sh
 
+# Addd mosdns
+svn export https://github.com/QiuSimons/openwrt-mos/trunk/mosdns ./package/lean/mosdns
+svn export https://github.com/QiuSimons/openwrt-mos/trunk/luci-app-mosdns ./package/lean/luci-app-mosdns
+svn export https://github.com/QiuSimons/openwrt-mos/trunk/v2ray-geodata ./package/lean/v2ray-geodata
+
 rm -rf ./package/feeds/packages/baidupcs-web
 rm -rf ./package/feeds/luci/luci-app-baidupcs-web
 
