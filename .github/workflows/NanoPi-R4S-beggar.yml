@@ -1,4 +1,4 @@
-name: NanoPi-R4S-Lite
+name: NanoPi-R4S-beggar
 
 on:
   repository_dispatch:
