@@ -18,11 +18,6 @@ svn export https://github.com/QiuSimons/openwrt-mos/trunk/v2ray-geodata ./packag
 rm -rf ./package/feeds/packages/baidupcs-web
 rm -rf ./package/feeds/luci/luci-app-baidupcs-web
 
-pushd target/linux/rockchip/image
-rm -rf armv8.mk
-wget https://raw.githubusercontent.com/DHDAXCW/lede/master/target/linux/rockchip/image/armv8.mk
-popd
-
 # Add cpufreq
 rm -rf ./feeds/luci/applications/luci-app-cpufreq 
 svn co https://github.com/immortalwrt/luci/trunk/applications/luci-app-cpufreq ./feeds/luci/applications/luci-app-cpufreq
