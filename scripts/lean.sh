@@ -10,11 +10,6 @@ wget -P ./target/linux/rockchip/armv8/base-files/usr/bin/ https://github.com/fri
 chmod 777 target/linux/rockchip/armv8/base-files/etc/init.d/fa-rk3399-pwmfan
 chmod 777 target/linux/rockchip/armv8/base-files/usr/bin/start-rk3399-pwm-fan.sh
 
-pushd ./target/linux/rockchip/image
-rm -rf armv8.mk
-wget https://raw.githubusercontent.com/DHDAXCW/lede/master/target/linux/rockchip/image/armv8.mk
-popd
-
 # Addd mosdns
 svn export https://github.com/QiuSimons/openwrt-mos/trunk/mosdns ./package/lean/mosdns
 svn export https://github.com/QiuSimons/openwrt-mos/trunk/luci-app-mosdns ./package/lean/luci-app-mosdns
