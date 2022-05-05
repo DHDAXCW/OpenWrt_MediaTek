@@ -1,9 +1,5 @@
 #!/bin/bash
 
-# fix netdata
-rm -rf ./feeds/packages/admin/netdata
-svn co https://github.com/DHDAXCW/packages/branches/ok/admin/netdata ./feeds/packages/admin/netdata
-
 #扎入风扇~
 wget -P ./target/linux/rockchip/armv8/base-files/etc/init.d/ https://github.com/friendlyarm/friendlywrt/raw/master-v19.07.1/target/linux/rockchip-rk3399/base-files/etc/init.d/fa-rk3399-pwmfan
 wget -P ./target/linux/rockchip/armv8/base-files/usr/bin/ https://github.com/friendlyarm/friendlywrt/raw/master-v19.07.1/target/linux/rockchip-rk3399/base-files/usr/bin/start-rk3399-pwm-fan.sh
@@ -40,10 +36,6 @@ svn co https://github.com/xiaorouji/openwrt-passwall/branches/luci/luci-app-pass
 git clone --depth=1 https://github.com/Lienol/openwrt-package
 rm -rf openwrt-package/verysync
 rm -rf openwrt-package/luci-app-verysync
-
-# Add luci-app-netdata
-rm -rf ../../customfeeds/luci/applications/luci-app-netdata
-git clone --depth=1 https://github.com/sirpdboy/luci-app-netdata
 
 # Add luci-app-ssr-plus
 git clone --depth=1 https://github.com/fw876/helloworld
@@ -124,11 +116,6 @@ svn co https://github.com/messense/aliyundrive-webdav/trunk/openwrt/aliyundrive-
 svn co https://github.com/messense/aliyundrive-webdav/trunk/openwrt/luci-app-aliyundrive-webdav
 popd
 
-# 动态DNS
-svn co https://github.com/QiuSimons/OpenWrt_luci-app/trunk/luci-app-tencentddns ./package/lean/luci-app-tencentddns
-svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-app-aliddns ./feeds/luci/applications/luci-app-aliddns
-ln -sf ./feeds/luci/applications/luci-app-aliddns ./package/feeds/luci/luci-app-aliddns
-
 # Add Pandownload
 pushd package/lean
 svn co https://github.com/immortalwrt/packages/trunk/net/pandownload-fake-server
@@ -141,12 +128,6 @@ sed -i '/18.06/d' zzz-default-settings
 export orig_version=$(cat "zzz-default-settings" | grep DISTRIB_REVISION= | awk -F "'" '{print $2}')
 export date_version=$(date -d "$(rdate -n -4 -p ntp.aliyun.com)" +'%Y-%m-%d')
 sed -i "s/${orig_version}/${orig_version} (${date_version})/g" zzz-default-settings
-popd
-
-# Use Lienol's https-dns-proxy package
-pushd feeds/packages/net
-rm -rf https-dns-proxy
-svn co https://github.com/Lienol/openwrt-packages/trunk/net/https-dns-proxy
 popd
 
 # Fix mt76 wireless driver
