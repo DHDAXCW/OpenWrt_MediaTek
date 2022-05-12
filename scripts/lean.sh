@@ -151,7 +151,8 @@ sed -i "s/OpenWrt /DHDAXCW @ FusionWrt /g" package/lean/default-settings/files/z
 #popd
 
 # 删除定时coremark
-rm -rf ./customfeeds/packages/utils/coremark/coremark
+rm -rf ./customfeeds/packages/utils/coremark
+svn co https://github.com/DHDAXCW/packages/trunk/utils/coremark customfeeds/packages/utils/coremark
 
 # Custom configs
 # git am $GITHUB_WORKSPACE/patches/lean/*.patch
