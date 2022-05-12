@@ -150,6 +150,9 @@ sed -i "s/OpenWrt /DHDAXCW @ FusionWrt /g" package/lean/default-settings/files/z
 #cp -f $GITHUB_WORKSPACE/scripts/patch/994-wode.patch 994-wode.patch
 #popd
 
+# 删除定时coremark
+rm -rf ./customfeeds/packages/utils/coremark/coremark
+
 # Custom configs
 # git am $GITHUB_WORKSPACE/patches/lean/*.patch
 # git am $GITHUB_WORKSPACE/patches/*.patch
