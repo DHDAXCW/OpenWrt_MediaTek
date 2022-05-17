@@ -96,9 +96,9 @@ svn co https://github.com/msylgj/OpenWrt_luci-app/trunk/luci-app-services-wolplu
 svn co https://github.com/openwrt/packages/trunk/utils/apk
 
 # Add luci-udptools
-svn co https://github.com/zcy85611/Openwrt-Package/trunk/luci-udptools
-svn co https://github.com/zcy85611/Openwrt-Package/trunk/udp2raw
-svn co https://github.com/zcy85611/Openwrt-Package/trunk/udpspeeder
+svn co https://github.com/zcy85611/Packages/trunk/luci-udptools
+svn co https://github.com/zcy85611/Packages/trunk/udp2raw
+svn co https://github.com/zcy85611/Packages/trunk/udpspeeder
 
 # Add luci-app-poweroff
 git clone --depth=1 https://github.com/esirplayground/luci-app-poweroff
