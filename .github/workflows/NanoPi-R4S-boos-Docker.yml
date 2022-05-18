@@ -138,7 +138,7 @@ jobs:
       env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-          name: ${{ steps.tag.outputs.release_date }} NanoPi-R4S-linux-5.10_全插件_超频
+          name: ${{ steps.tag.outputs.release_date }} NanoPi-R4S-linux-5.10_全插件_docker_超频
           tag_name: ${{ steps.tag.outputs.release_tag }}
           body_path: release.txt
           files: ${{ env.FIRMWARE }}/*
