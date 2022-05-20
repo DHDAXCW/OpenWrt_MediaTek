@@ -1,23 +1,5 @@
 #!/bin/bash
 
-rm -rf target/linux/rockchip
-svn co https://github.com/LPDDR6-10000MHz/lede/trunk/target/linux/rockchip target/linux/rockchip
-rm -rf package/boot
-svn co https://github.com/LPDDR6-10000MHz/lede/trunk/package/boot package/boot
-rm -rf include/u-boot.mk
-wget -P include https://raw.githubusercontent.com/LPDDR6-10000MHz/lede/flash/include/u-boot.mk
-rm -rf package/base-files/files/etc/shadow
-wget -P package/base-files/files/etc https://raw.githubusercontent.com/DHDAXCW/openwrt/master/package/base-files/files/etc/shadow
-rm -rf package/network/services/dnsmasq/files/dhcp.conf
-wget -P package/network/services/dnsmasq/files https://raw.githubusercontent.com/DHDAXCW/openwrt/master/package/network/services/dnsmasq/files/dhcp.conf
-
-rm -rf package/kernel/mac80211
-svn co https://github.com/immortalwrt/immortalwrt/branches/openwrt-18.06-k5.4/package/kernel/mac80211 package/kernel/mac80211
-
-## rtl8821cu
-rm -rf package/kernel/rtl8821cu
-svn co https://github.com/immortalwrt/immortalwrt/branches/master/package/kernel/rtl8821cu package/kernel/rtl8821cu
-
 # Add OpenClash
 rm -rf package/feeds/Boos/luci-app-clash
 rm -rf feeds/Boos/luci-app-clash
