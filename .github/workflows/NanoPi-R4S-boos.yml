@@ -9,7 +9,7 @@ on:
   #   types: started
 
 env:
-  REPO_URL: https://github.com/Boos4721/openwrt
+  REPO_URL: https://github.com/DHDAXCW/op
   REPO_BRANCH: master
   CONFIG_FILE: configs/boos/boos-s.config
   DIY_SH: scripts/boos.sh
