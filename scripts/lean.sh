@@ -6,11 +6,6 @@ wget -P ./target/linux/rockchip/armv8/base-files/usr/bin/ https://github.com/fri
 chmod 777 target/linux/rockchip/armv8/base-files/etc/init.d/fa-rk3399-pwmfan
 chmod 777 target/linux/rockchip/armv8/base-files/usr/bin/start-rk3399-pwm-fan.sh
 
-# Addd mosdns
-svn export https://github.com/QiuSimons/openwrt-mos/trunk/mosdns ./package/lean/mosdns
-svn export https://github.com/QiuSimons/openwrt-mos/trunk/luci-app-mosdns ./package/lean/luci-app-mosdns
-svn export https://github.com/QiuSimons/openwrt-mos/trunk/v2ray-geodata ./package/lean/v2ray-geodata
-
 # Add cpufreq
 rm -rf ./feeds/luci/applications/luci-app-cpufreq 
 svn co https://github.com/immortalwrt/luci/trunk/applications/luci-app-cpufreq ./feeds/luci/applications/luci-app-cpufreq
@@ -132,12 +127,6 @@ pushd package/kernel/mt76
 sed -i '/mt7662u_rom_patch.bin/a\\techo mt76-usb disable_usb_sg=1 > $\(1\)\/etc\/modules.d\/mt76-usb' Makefile
 popd
 
-# Add po2lmo
-git clone --depth=1 https://github.com/openwrt-dev/po2lmo.git
-pushd po2lmo
-make && sudo make install
-popd
-
 # Change default shell to zsh
 sed -i 's/\/bin\/ash/\/usr\/bin\/zsh/g' package/base-files/files/etc/passwd
 # sed -i 's/5.15/5.10/g' target/linux/rockchip/Makefile
@@ -146,16 +135,8 @@ sed -i 's/192.168.1.1/192.168.11.1/g' package/base-files/files/bin/config_genera
 sed -i '/uci commit system/i\uci set system.@system[0].hostname='FusionWrt'' package/lean/default-settings/files/zzz-default-settings
 sed -i "s/OpenWrt /DHDAXCW @ FusionWrt /g" package/lean/default-settings/files/zzz-default-settings
 
-#pushd target/linux/rockchip/patches-5.15
-#cp -f $GITHUB_WORKSPACE/scripts/patch/994-wode.patch 994-wode.patch
-#popd
-
 # 删除定时coremark
 rm -rf ./customfeeds/packages/utils/coremark
 svn co https://github.com/DHDAXCW/packages/trunk/utils/coremark customfeeds/packages/utils/coremark
-
-# Custom configs
-# git am $GITHUB_WORKSPACE/patches/lean/*.patch
-# git am $GITHUB_WORKSPACE/patches/*.patch
 
 echo -e " DHDAXCW's FusionWrt built on "$(date +%Y.%m.%d)"\n -----------------------------------------------------" >> package/base-files/files/etc/banner
