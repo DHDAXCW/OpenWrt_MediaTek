@@ -1,5 +1,4 @@
 #!/bin/bash
-#!/bin/bash
 #=================================================
 # File name: hook-feeds.sh
 # System Required: Linux
