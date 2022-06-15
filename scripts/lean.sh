@@ -7,11 +7,6 @@
 # Author: SuLingGG
 # Blog: https://mlapp.cn
 #=================================================
-#扎入风扇~
-wget -P ./target/linux/rockchip/armv8/base-files/etc/init.d/ https://github.com/friendlyarm/friendlywrt/raw/master-v19.07.1/target/linux/rockchip-rk3399/base-files/etc/init.d/fa-rk3399-pwmfan
-wget -P ./target/linux/rockchip/armv8/base-files/usr/bin/ https://github.com/friendlyarm/friendlywrt/raw/master-v19.07.1/target/linux/rockchip-rk3399/base-files/usr/bin/start-rk3399-pwm-fan.sh
-chmod 777 target/linux/rockchip/armv8/base-files/etc/init.d/fa-rk3399-pwmfan
-chmod 777 target/linux/rockchip/armv8/base-files/usr/bin/start-rk3399-pwm-fan.sh
 
 # Add cpufreq
 rm -rf ./feeds/luci/applications/luci-app-cpufreq 
