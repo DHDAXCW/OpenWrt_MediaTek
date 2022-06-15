@@ -22,6 +22,15 @@ sed -i 's,2016,2208,g' feeds/luci/applications/luci-app-cpufreq/root/etc/uci-def
 sed -i 's,1512,1608,g' feeds/luci/applications/luci-app-cpufreq/root/etc/uci-defaults/10-cpufreq
 rm -rf ./target/linux/rockchip/armv8/base-files/etc/hotplug.d/usb
 
+# 🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧
+rm -rf ./target/linux/rockchip/armv8/base-files/etc/hotplug.d/usb
+rm -rf package/kernel/mac80211
+svn co https://github.com/immortalwrt/immortalwrt/branches/openwrt-18.06-k5.4/package/kernel/mac80211 package/kernel/mac80211
+rm -rf package/kernel/rtl8821cu
+svn co https://github.com/immortalwrt/immortalwrt/branches/openwrt-18.06-k5.4/package/kernel/rtl8821cu package/kernel/rtl8821cu
+rm -rf package/kernel/mwlwifi
+svn co https://github.com/immortalwrt/immortalwrt/branches/openwrt-18.06-k5.4/package/kernel/mwlwifi package/kernel/mwlwifi
+
 # Clone community packages to package/community
 mkdir package/community
 pushd package/community
@@ -36,7 +45,8 @@ rm -rf openwrt-package/verysync
 rm -rf openwrt-package/luci-app-verysync
 
 # Add luci-app-ssr-plus
-git clone --depth=1 https://github.com/fw876/helloworld
+# git clone --depth=1 https://github.com/fw876/helloworld
+git clone --depth=1 https://github.com/DHDAXCW/helloworld
 
 # Add luci-app-unblockneteasemusic
 rm -rf ../../customfeeds/luci/applications/luci-app-unblockmusic
