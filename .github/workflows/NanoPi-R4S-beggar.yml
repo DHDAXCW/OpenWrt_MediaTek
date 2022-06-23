@@ -71,7 +71,6 @@ jobs:
         chmod +x scripts/*.sh
         cd $OPENWRTROOT
         ../$DIY_SH
-        ../scripts/preset-clash-core.sh armv8
         ../scripts/preset-terminal-tools.sh
         make defconfig
     - name: Download Package
