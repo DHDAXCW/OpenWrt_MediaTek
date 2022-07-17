@@ -34,6 +34,9 @@ pushd package/community
 git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall
 svn co https://github.com/xiaorouji/openwrt-passwall/branches/luci/luci-app-passwall
 
+# alist
+git clone https://github.com/sbwml/openwrt-alist --depth=1
+
 # Add Lienol's Packages
 git clone --depth=1 https://github.com/Lienol/openwrt-package
 rm -rf openwrt-package/verysync
