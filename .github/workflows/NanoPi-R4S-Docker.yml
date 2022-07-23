@@ -6,7 +6,7 @@
 # Blog: https://p3terx.com
 #=================================================
 
-name: NanoPi-R4S-Docker
+name: NanoPi-R4S-容器
 
 on:
   repository_dispatch:
@@ -159,7 +159,7 @@ jobs:
       env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-          name: ${{ steps.tag.outputs.release_date }} NanoPi-R4S-linux-5.15_Docker容器版_全插件
+          name: ${{ steps.tag.outputs.release_date }} NanoPi-R4S-linux-5.4_Docker容器版_全插件
           tag_name: ${{ steps.tag.outputs.release_tag }}
           body_path: release.txt
           files: ${{ env.FIRMWARE }}/*
