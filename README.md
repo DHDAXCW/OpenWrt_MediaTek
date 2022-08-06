@@ -16,7 +16,8 @@
 
 - 用户名：root 密码：password  管理IP：192.168.11.1
 - 下载地址： https://github.com/DHDAXCW/NanoPi-R4S-2021/releases
-- x86_64固件下载 https://github.com/DHDAXCW/lede/releases
+- x86_64固件下载 https://github.com/DHDAXCW/lede/releases、
+- 关于r4se刷机方法请参考dn2刷机 https://github.com/DHDAXCW/DoorNet2/blob/main/emmc.md
 ### - Docker：正式版带docker，有超频，带有docker插件。（对passwall的udp要求很高，不要刷docker版本）
 - 电报群：https://t.me/DHDAXCW
 - X86固件 ：[点击链接下载](https://github.com/DHDAXCW/lede/releases)
