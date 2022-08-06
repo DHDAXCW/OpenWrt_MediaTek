@@ -31,8 +31,9 @@ wget https://raw.githubusercontent.com/lone-wind/scripts/main/onlineupdate.sh &&
  
  ![image](https://user-images.githubusercontent.com/74764072/183227361-e8bdb023-5514-437d-97e8-e13ca4285035.png)
  
+### AES跑分
  ![image](https://user-images.githubusercontent.com/74764072/183227382-7dd4c7e9-b2b4-4471-b867-3963bdd6c7a2.png)
-
+### HTOP
  ![image](https://user-images.githubusercontent.com/74764072/183227388-8a51ed5f-282b-4154-9be2-3abe26387dd7.png)
 
 
