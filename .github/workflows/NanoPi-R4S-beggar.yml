@@ -156,7 +156,7 @@ jobs:
       env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-          name: ${{ steps.tag.outputs.release_date }} NanoPi-R4S-linux.5.4_乞丐版
+          name: ${{ steps.tag.outputs.release_date }} NanoPi-R4S-R4SE-linux.5.4_乞丐版
           tag_name: ${{ steps.tag.outputs.release_tag }}
           body_path: release.txt
           files: ${{ env.FIRMWARE }}/*
