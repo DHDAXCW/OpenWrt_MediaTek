@@ -85,6 +85,13 @@ git clone --depth=1 https://github.com/jerrykuku/luci-app-argon-config
 rm -rf ../../customfeeds/luci/themes/luci-theme-argon
 rm -rf ./luci-theme-argon/htdocs/luci-static/argon/img/bg1.jpg
 cp -f $GITHUB_WORKSPACE/data/bg1.jpg luci-theme-argon/htdocs/luci-static/argon/img/bg1.jpg
+git clone -b 18.06 https://github.com/kiddin9/luci-theme-edge package/luci-theme-edge
+svn co https://github.com/rosywrt/luci-theme-rosy/trunk/luci-theme-rosy package/luci-theme-rosy
+svn co https://github.com/haiibo/packages/trunk/luci-theme-atmaterial_new package/luci-theme-atmaterial_new
+svn co https://github.com/haiibo/packages/trunk/luci-theme-opentomcat package/luci-theme-opentomcat
+svn co https://github.com/haiibo/packages/trunk/luci-theme-netgear package/luci-theme-netgear
+git clone https://github.com/xiaoqingfengATGH/luci-theme-infinityfreedom package/luci-theme-infinityfreedom
+git clone https://github.com/thinktip/luci-theme-neobird package/luci-theme-neobird
 
 # Add subconverter
 git clone --depth=1 https://github.com/tindy2013/openwrt-subconverter
