@@ -1,6 +1,5 @@
 #!/bin/bash
 #=================================================
-# File name: lean.sh
 # System Required: Linux
 # Version: 1.0
 # Lisence: MIT
@@ -15,7 +14,6 @@ ln -sf ./feeds/luci/applications/luci-app-cpufreq ./package/feeds/luci/luci-app-
 sed -i 's,1608,1800,g' feeds/luci/applications/luci-app-cpufreq/root/etc/uci-defaults/10-cpufreq
 sed -i 's,2016,2208,g' feeds/luci/applications/luci-app-cpufreq/root/etc/uci-defaults/10-cpufreq
 sed -i 's,1512,1608,g' feeds/luci/applications/luci-app-cpufreq/root/etc/uci-defaults/10-cpufreq
-rm -rf ./target/linux/rockchip/armv8/base-files/etc/hotplug.d/usb
 # 🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧
 rm -rf ./target/linux/rockchip/armv8/base-files/etc/hotplug.d/usb
 rm -rf package/kernel/mac80211
@@ -25,25 +23,31 @@ svn co https://github.com/immortalwrt/immortalwrt/branches/openwrt-18.06-k5.4/pa
 rm -rf package/kernel/mwlwifi
 svn co https://github.com/immortalwrt/immortalwrt/branches/openwrt-18.06-k5.4/package/kernel/mwlwifi package/kernel/mwlwifi
 
-# Clone community packages to package/community
+# alist
+git clone https://github.com/sbwml/luci-app-alist package/alist
+pushd package/alist
+git reset --hard ee858b79c07af9994e4476dc7c08593c4610485d
+popd
+
+# Clone community packages
 mkdir package/community
 pushd package/community
-
-# Add luci-app-passwall
-git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall
-svn co https://github.com/xiaorouji/openwrt-passwall/branches/luci/luci-app-passwall
-
-# alist
-git clone https://github.com/sbwml/openwrt-alist --depth=1
 
 # Add Lienol's Packages
 git clone --depth=1 https://github.com/Lienol/openwrt-package
 rm -rf openwrt-package/verysync
 rm -rf openwrt-package/luci-app-verysync
 
+# Add luci-app-adguardhome
+svn co https://github.com/Lienol/openwrt-package/branches/other/luci-app-adguardhome
+
+# Add luci-app-passwall
+git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall
+svn co https://github.com/xiaorouji/openwrt-passwall/branches/luci/luci-app-passwall
+
 # Add luci-app-ssr-plus
-# git clone --depth=1 https://github.com/fw876/helloworld
-git clone --depth=1 https://github.com/DHDAXCW/helloworld
+git clone --depth=1 https://github.com/fw876/helloworld
+# git clone --depth=1 https://github.com/DHDAXCW/helloworld
 
 # Add luci-app-unblockneteasemusic
 rm -rf ../../customfeeds/luci/applications/luci-app-unblockmusic
@@ -59,9 +63,6 @@ git clone --depth=1 https://github.com/ysc3839/luci-proto-minieap
 # Add OpenClash
 svn co https://github.com/vernesong/OpenClash/trunk/luci-app-openclash
 
-# Add luci-app-adguardhome
-svn co https://github.com/Lienol/openwrt-package/branches/other/luci-app-adguardhome
-
 # Add ddnsto & linkease
 svn co https://github.com/linkease/nas-packages-luci/trunk/luci/luci-app-ddnsto
 svn co https://github.com/linkease/nas-packages/trunk/network/services/ddnsto
@@ -72,6 +73,15 @@ git clone --depth=1 https://github.com/rufengsuixing/luci-app-onliner
 # Add ServerChan
 git clone --depth=1 https://github.com/tty228/luci-app-serverchan
 
+# Add luci-app-diskman
+# git clone --depth=1 https://github.com/SuLingGG/luci-app-diskman
+# mkdir parted
+# cp luci-app-diskman/Parted.Makefile parted/Makefile
+
+# Add luci-app-ikoolproxy (godproxy)
+git clone --depth=1 https://github.com/iwrt/luci-app-ikoolproxy.git
+rm -rf ../../customfeeds/luci/applications/luci-app-kodexplorer
+
 # Add luci-app-dockerman
 rm -rf ../../customfeeds/luci/collections/luci-lib-docker
 rm -rf ../../customfeeds/luci/applications/luci-app-docker
@@ -79,12 +89,8 @@ rm -rf ../../customfeeds/luci/applications/luci-app-dockerman
 git clone --depth=1 https://github.com/lisaac/luci-app-dockerman
 git clone --depth=1 https://github.com/lisaac/luci-lib-docker
 
-# Add luci-theme-argon
-git clone --depth=1 -b 18.06 https://github.com/jerrykuku/luci-theme-argon
-git clone --depth=1 https://github.com/jerrykuku/luci-app-argon-config
-rm -rf ../../customfeeds/luci/themes/luci-theme-argon
-rm -rf ./luci-theme-argon/htdocs/luci-static/argon/img/bg1.jpg
-cp -f $GITHUB_WORKSPACE/data/bg1.jpg luci-theme-argon/htdocs/luci-static/argon/img/bg1.jpg
+# Add luci-theme
+git clone https://github.com/DHDAXCW/theme
 
 # Add subconverter
 git clone --depth=1 https://github.com/tindy2013/openwrt-subconverter
@@ -98,11 +104,6 @@ svn co https://github.com/msylgj/OpenWrt_luci-app/trunk/luci-app-services-wolplu
 # Add apk (Apk Packages Manager)
 svn co https://github.com/openwrt/packages/trunk/utils/apk
 
-# Add luci-udptools
-svn co https://github.com/zcy85611/Packages/trunk/luci-udptools
-svn co https://github.com/zcy85611/Packages/trunk/udp2raw
-svn co https://github.com/zcy85611/Packages/trunk/udpspeeder
-
 # Add luci-app-poweroff
 git clone --depth=1 https://github.com/esirplayground/luci-app-poweroff
 
@@ -115,6 +116,11 @@ rm -rf ../../customfeeds/luci/applications/aliyundrive-webdav
 svn co https://github.com/messense/aliyundrive-webdav/trunk/openwrt/aliyundrive-webdav
 svn co https://github.com/messense/aliyundrive-webdav/trunk/openwrt/luci-app-aliyundrive-webdav
 popd
+
+# Add extra wireless drivers
+svn co https://github.com/immortalwrt/immortalwrt/branches/openwrt-18.06-k5.4/package/kernel/rtl8812au-ac
+svn co https://github.com/immortalwrt/immortalwrt/branches/openwrt-18.06-k5.4/package/kernel/rtl8188eu
+svn co https://github.com/immortalwrt/immortalwrt/branches/openwrt-18.06-k5.4/package/kernel/rtl88x2bu
 
 # Add Pandownload
 pushd package/lean
@@ -137,7 +143,6 @@ popd
 
 # Change default shell to zsh
 sed -i 's/\/bin\/ash/\/usr\/bin\/zsh/g' package/base-files/files/etc/passwd
-# sed -i 's/5.15/5.10/g' target/linux/rockchip/Makefile
 
 # Modify default IP
 sed -i 's/192.168.1.1/192.168.11.1/g' package/base-files/files/bin/config_generate
@@ -145,10 +150,3 @@ sed -i 's/192.168.1.1/192.168.11.1/g' package/base-files/files/bin/config_genera
 # 删除定时coremark
 rm -rf ./customfeeds/packages/utils/coremark
 svn co https://github.com/DHDAXCW/packages/trunk/utils/coremark customfeeds/packages/utils/coremark
-
-# 风扇脚本
-wget -P target/linux/rockchip/armv8/base-files/etc/init.d/ https://github.com/friendlyarm/friendlywrt/raw/master-v19.07.1/target/linux/rockchip-rk3399/base-files/etc/init.d/fa-rk3399-pwmfan
-wget -P target/linux/rockchip/armv8/base-files/usr/bin/ https://github.com/friendlyarm/friendlywrt/raw/master-v19.07.1/target/linux/rockchip-rk3399/base-files/usr/bin/start-rk3399-pwm-fan.sh
-
-# 替换默认主题为 luci-theme-argon
-sed -i 's/luci-theme-bootstrap/luci-theme-argon/' feeds/luci/collections/luci/Makefile
