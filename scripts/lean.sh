@@ -25,9 +25,8 @@ svn co https://github.com/immortalwrt/immortalwrt/branches/openwrt-18.06-k5.4/pa
 
 # alist
 git clone https://github.com/sbwml/luci-app-alist package/alist
-pushd package/alist
-git reset --hard ee858b79c07af9994e4476dc7c08593c4610485d
-popd
+rm -rf feeds/packages/lang/golang
+svn export https://github.com/sbwml/packages_lang_golang/branches/19.x feeds/packages/lang/golang
 
 # Clone community packages
 mkdir package/community
