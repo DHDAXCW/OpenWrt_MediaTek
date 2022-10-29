@@ -109,11 +109,11 @@ jobs:
         cd $OPENWRTROOT/bin/packages/*
         PLATFORM=$(basename `pwd`)
         echo "PLATFORM=$PLATFORM" >> $GITHUB_ENV
-        echo "::set-output name=PLATFORM::$(echo $PLATFORM)"
+        echo "PLATFORM=$PLATFORM" >> $GITHUB_OUTPUT
         cd $OPENWRTROOT/bin/targets/*
         TARGET=$(basename `pwd`)
         echo "TARGET=$TARGET" >> $GITHUB_ENV
-        echo "::set-output name=TARGET::$(echo $TARGET)"
+        echo "TARGET=$TARGET" >> $GITHUB_OUTPUT
         cd *
         SUBTARGET=$(basename `pwd`)
         echo "SUBTARGET=$SUBTARGET" >> $GITHUB_ENV
@@ -154,7 +154,7 @@ jobs:
         rm -rf bin/targets/rockchip/armv8/config.buildinfo
         rm -rf bin/targets/rockchip/armv8/packages-server.zip
         make checksum
-        echo "::set-output name=GENERATE_STATUS::success"
+        echo "GENERATE_STATUS=success"  >> $GITHUB_OUTPUT
 
     - name: Generate release tag
       id: tag
