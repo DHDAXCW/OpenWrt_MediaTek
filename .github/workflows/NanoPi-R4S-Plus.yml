@@ -154,7 +154,7 @@ jobs:
         rm -rf bin/targets/rockchip/armv8/config.buildinfo
         rm -rf bin/targets/rockchip/armv8/packages-server.zip
         make checksum
-        echo "GENERATE_STATUS=success"  >> $GITHUB_OUTPUT
+        echo "GENERATE_STATUS=success" >> $GITHUB_OUTPUT
 
     - name: Generate release tag
       id: tag
