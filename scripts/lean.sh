@@ -150,4 +150,3 @@ wget -P target/linux/rockchip/armv8/base-files/usr/bin/ https://github.com/frien
 
 # Test kernel 5.15
 # sed -i 's/5.4/5.15/g' ./target/linux/rockchip/Makefile
-echo -e "   OpenWrt firmware built on "$(date +%Y.%m.%d)"\n -------------------------------------------------------------" >> package/base-files/files/etc/banner
