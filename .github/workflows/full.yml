@@ -162,7 +162,7 @@ jobs:
         popd
         make checksum
         mv bin/targets/rockchip/armv8/sha256sums bin/targets/rockchip/armv8/full-sha256sums
-        echo "GENERATE_STATUS=success"  >> $GITHUB_OUTPUT
+        echo "GENERATE_STATUS=success" >> $GITHUB_OUTPUT
         
     - name: Generate release tag
       id: tag
