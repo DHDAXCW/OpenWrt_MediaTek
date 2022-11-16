@@ -149,4 +149,4 @@ wget -P target/linux/rockchip/armv8/base-files/etc/init.d/ https://github.com/fr
 wget -P target/linux/rockchip/armv8/base-files/usr/bin/ https://github.com/friendlyarm/friendlywrt/raw/master-v19.07.1/target/linux/rockchip-rk3399/base-files/usr/bin/start-rk3399-pwm-fan.sh
 
 # Test kernel 5.15
-# sed -i 's/5.4/5.15/g' ./target/linux/rockchip/Makefile
+# sed -i 's/5.4/6.0/g' ./target/linux/rockchip/Makefile
