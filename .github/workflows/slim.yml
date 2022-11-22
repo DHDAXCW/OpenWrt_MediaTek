@@ -17,7 +17,7 @@ on:
   #   types: started
 
 env:
-  REPO_URL: https://github.com/DHDAXCW/lede-rockchip
+  REPO_URL: git@github.com:DHDAXCW/nonono.git
   REPO_BRANCH: stable
   CONFIG_FILE: configs/lean/lean_stable.config
   DIY_SH: scripts/lean.sh
