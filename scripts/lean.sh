@@ -64,7 +64,7 @@ svn export https://github.com/linkease/nas-packages/trunk/network/services/ddnst
 git clone --depth=1 https://github.com/rufengsuixing/luci-app-onliner
 
 # Add ServerChan
-git clone --depth=1 https://github.com/tty228/luci-app-serverchan
+# git clone --depth=1 https://github.com/tty228/luci-app-serverchan
 
 # Add luci-app-diskman
 # git clone --depth=1 https://github.com/SuLingGG/luci-app-diskman
