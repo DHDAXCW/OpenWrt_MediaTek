@@ -25,11 +25,6 @@ svn export https://github.com/sbwml/packages_lang_golang/branches/19.x feeds/pac
 mkdir package/community
 pushd package/community
 
-# Add Lienol's Packages
-#git clone --depth=1 https://github.com/Lienol/openwrt-package
-#rm -rf openwrt-package/verysync
-#rm -rf openwrt-package/luci-app-verysync
-
 # Add luci-app-passwall
 git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall
 git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall2
