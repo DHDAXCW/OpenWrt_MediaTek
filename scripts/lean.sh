@@ -10,12 +10,14 @@
 # Add cpufreq
 rm -rf ./feeds/luci/applications/luci-app-cpufreq 
 svn export https://github.com/DHDAXCW/luci-bt/trunk/applications/luci-app-cpufreq ./feeds/luci/applications/luci-app-cpufreq
+ls -lah ./feeds/luci/applications/luci-app-cpufreq/po/zh_Hans
+mv ./feeds/luci/applications/luci-app-cpufreq/po/zh_Hans ./feeds/luci/applications/luci-app-cpufreq/po/zh-cn
+ls -lah ./feeds/luci/applications/luci-app-cpufreq/po/zh-cn
 ln -sf ./feeds/luci/applications/luci-app-cpufreq ./package/feeds/luci/luci-app-cpufreq
 sed -i 's,1608,1800,g' feeds/luci/applications/luci-app-cpufreq/root/etc/uci-defaults/10-cpufreq
 sed -i 's,2016,2208,g' feeds/luci/applications/luci-app-cpufreq/root/etc/uci-defaults/10-cpufreq
 sed -i 's,1512,1608,g' feeds/luci/applications/luci-app-cpufreq/root/etc/uci-defaults/10-cpufreq
-# 🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧
-
+# 🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧
 # alist
 git clone https://github.com/sbwml/luci-app-alist package/alist
 rm -rf feeds/packages/lang/golang
@@ -35,12 +37,11 @@ git clone --depth=1 https://github.com/fw876/helloworld
 # git clone --depth=1 https://github.com/DHDAXCW/helloworld
 
 # Add luci-app-unblockneteasemusic
-rm -rf ../../customfeeds/luci/applications/luci-app-unblockmusic
 git clone --branch master https://github.com/UnblockNeteaseMusic/luci-app-unblockneteasemusic.git
 
 # Add luci-app-vssr <M>
 git clone --depth=1 https://github.com/jerrykuku/lua-maxminddb.git
-git clone --depth=1 https://github.com/jerrykuku/luci-app-vssr 
+git clone --depth=1 https://github.com/jerrykuku/luci-app-vssr
 
 # Add luci-proto-minieap
 git clone --depth=1 https://github.com/ysc3839/luci-proto-minieap
@@ -55,10 +56,8 @@ svn export https://github.com/linkease/nas-packages/trunk/network/services/ddnst
 # Add luci-app-onliner (need luci-app-nlbwmon)
 git clone --depth=1 https://github.com/rufengsuixing/luci-app-onliner
 
-# Add luci-app-diskman
-# git clone --depth=1 https://github.com/SuLingGG/luci-app-diskman
-# mkdir parted
-# cp luci-app-diskman/Parted.Makefile parted/Makefile
+# Add ServerChan
+git clone --depth=1 https://github.com/tty228/luci-app-serverchan
 
 # Add luci-app-ikoolproxy (godproxy)
 git clone --depth=1 https://github.com/iwrt/luci-app-ikoolproxy.git
@@ -95,7 +94,7 @@ git clone --depth=1 https://github.com/DHDAXCW/OpenAppFilter
 
 # Add luci-aliyundrive-webdav
 rm -rf ../../customfeeds/luci/applications/luci-app-aliyundrive-webdav 
-rm -rf ../../customfeeds/luci/applications/aliyundrive-webdav
+rm -rf ../../customfeeds/packages/multimedia/aliyundrive-webdav
 svn export https://github.com/messense/aliyundrive-webdav/trunk/openwrt/aliyundrive-webdav
 svn export https://github.com/messense/aliyundrive-webdav/trunk/openwrt/luci-app-aliyundrive-webdav
 
