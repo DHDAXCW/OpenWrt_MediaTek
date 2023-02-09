@@ -142,8 +142,8 @@ jobs:
         rm -rf openwrt-rockchip-armv8-rootfs.tar.gz
         rm -rf config.buildinfo
         rm -rf packages-server.zip
-        mv openwrt-rockchip-armv8-friendlyarm_nanopi-r4s-ext4-sysupgrade.img.gz docker-friendlyarm_nanopi-r4s-ext4-sysupgrade.img.gz 
-        mv openwrt-rockchip-armv8-friendlyarm_nanopi-r4se-ext4-sysupgrade.img.gz docker-friendlyarm_nanopi-r4se-ext4-sysupgrade.img.gz 
+        #mv openwrt-rockchip-armv8-friendlyarm_nanopi-r4s-ext4-sysupgrade.img.gz docker-friendlyarm_nanopi-r4s-ext4-sysupgrade.img.gz 
+        #mv openwrt-rockchip-armv8-friendlyarm_nanopi-r4se-ext4-sysupgrade.img.gz docker-friendlyarm_nanopi-r4se-ext4-sysupgrade.img.gz 
         mv openwrt-rockchip-armv8-friendlyarm_nanopi-r4s-squashfs-sysupgrade.img.gz docker-friendlyarm_nanopi-r4s-squashfs-sysupgrade.img.gz
         mv openwrt-rockchip-armv8-friendlyarm_nanopi-r4se-squashfs-sysupgrade.img.gz docker-friendlyarm_nanopi-r4se-squashfs-sysupgrade.img.gz
         popd
