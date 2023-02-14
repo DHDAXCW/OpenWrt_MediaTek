@@ -138,13 +138,13 @@ jobs:
         make package/install -j$(nproc) || make package/install -j1 V=s
         make target/install -j$(nproc) || make target/install -j1 V=s
         pushd bin/targets/rockchip/armv8
-        rm -rf **ext4**
+        #rm -rf **ext4**
         rm -rf openwrt-rockchip-armv8.manifest
         rm -rf openwrt-rockchip-armv8-rootfs.tar.gz
         rm -rf config.buildinfo
         rm -rf packages-server.zip
-        #mv openwrt-rockchip-armv8-friendlyarm_nanopi-r4s-ext4-sysupgrade.img.gz beggar-friendlyarm_nanopi-r4s-ext4-sysupgrade.img.gz 
-        #mv openwrt-rockchip-armv8-friendlyarm_nanopi-r4se-ext4-sysupgrade.img.gz beggar-friendlyarm_nanopi-r4se-ext4-sysupgrade.img.gz 
+        mv openwrt-rockchip-armv8-friendlyarm_nanopi-r4s-ext4-sysupgrade.img.gz beggar-friendlyarm_nanopi-r4s-ext4-sysupgrade.img.gz 
+        mv openwrt-rockchip-armv8-friendlyarm_nanopi-r4se-ext4-sysupgrade.img.gz beggar-friendlyarm_nanopi-r4se-ext4-sysupgrade.img.gz 
         mv openwrt-rockchip-armv8-friendlyarm_nanopi-r4s-squashfs-sysupgrade.img.gz beggar-friendlyarm_nanopi-r4s-squashfs-sysupgrade.img.gz
         mv openwrt-rockchip-armv8-friendlyarm_nanopi-r4se-squashfs-sysupgrade.img.gz beggar-friendlyarm_nanopi-r4se-squashfs-sysupgrade.img.gz
         popd
