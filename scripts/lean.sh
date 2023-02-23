@@ -42,6 +42,9 @@ cd ../
 git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall2
 svn export https://github.com/xiaorouji/openwrt-passwall/branches/luci/luci-app-passwall
 
+# Add luci-app-irqbalance by QiuSimons https://github.com/QiuSimons
+svn export https://github.com/QiuSimons/OpenWrt-Add/trunk/luci-app-irqbalance
+
 # Add luci-app-ssr-plus
 git clone --depth=1 https://github.com/fw876/helloworld
 # git clone --depth=1 https://github.com/DHDAXCW/helloworld
