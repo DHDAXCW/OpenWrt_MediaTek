@@ -26,7 +26,7 @@
 - 用户名：root 密码：password  管理IP：192.168.11.1
 - 下载地址：https://github.com/DHDAXCW/NanoPi-R4S-R4SE/releases
 - x86_64固件下载 https://github.com/DHDAXCW/OpenWRT_x86_x64/releases
-- 关于r4se刷机方法请参考dn2刷机 https://github.com/DHDAXCW/DoorNet2/blob/main/emmc.md
+- 关于r4se刷机方法请参考dn2刷机 https://github.com/DHDAXCW/DoorNet-1-2/blob/mere/emmc.md
 - 电报群：https://t.me/DHDAXCW
 
 ### 该升级支持4G版，1G版
