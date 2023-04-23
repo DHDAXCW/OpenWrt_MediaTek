@@ -47,14 +47,7 @@ wget https://raw.githubusercontent.com/lone-wind/scripts/main/onlineupdate.sh &&
 # [赏个鸡腿吧](https://afdian.net/@dhdaxcw/plan)
 ### https://afdian.net/@dhdaxcw/plan
 
-请不要fork我项目，因为yml文件中已托管到我本地服务器，目的是为了加速编译。
-如果想fork自己编译，那就请到yml文件中修改下面
-```bash
-23行 runs-on: self-hosted 改为 runs-on: ubuntu-20.04
-185行 runs-on: self-hosted 改为 runs-on: ubuntu-20.04
-```
-另外，如果改上面的，那还要改编译线程，我默认是-j72
-改好就可以用github的机器编译了
+## 未经许可不得用于任何商用用途。
 
 ## 鸣谢
 
