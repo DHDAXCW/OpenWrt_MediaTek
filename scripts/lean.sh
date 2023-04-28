@@ -99,8 +99,6 @@ svn export https://github.com/messense/aliyundrive-webdav/trunk/openwrt/aliyundr
 svn export https://github.com/messense/aliyundrive-webdav/trunk/openwrt/luci-app-aliyundrive-webdav
 
 # Add extra wireless drivers
-rm -rf package/kernel/mt76
-svn export https://github.com/immortalwrt/immortalwrt/branches/openwrt-18.06-k5.4/package/kernel/mt76
 svn export https://github.com/immortalwrt/immortalwrt/branches/openwrt-18.06-k5.4/package/kernel/rtl8812au-ac
 svn export https://github.com/immortalwrt/immortalwrt/branches/openwrt-18.06-k5.4/package/kernel/rtl8188eu
 svn export https://github.com/immortalwrt/immortalwrt/branches/openwrt-18.06-k5.4/package/kernel/rtl88x2bu
