@@ -131,5 +131,17 @@ wget -P target/linux/rockchip/armv8/base-files/usr/bin/ https://github.com/frien
 chmod u+x target/linux/rockchip/armv8/base-files/etc/init.d/fa-rk3399-pwmfan
 chmod u+x target/linux/rockchip/armv8/base-files/usr/bin/start-rk3399-pwm-fan.sh
 
+# 开启ARM KVM支持
+cat >> target/linux/rockchip/armv8/config-5.4 <<EOF
+CONFIG_VIRTUALIZATION=y
+CONFIG_KVM=y
+CONFIG_KVM_ARM_HOST=y
+CONFIG_KVM_GENERIC_DIRTYLOG_READ_PROTECT=y
+CONFIG_KVM_INDIRECT_VECTORS=y
+CONFIG_KVM_MMIO=y
+CONFIG_KVM_VFIO=y
+CONFIG_VHOST_NET=y
+EOF
+
 # Test kernel 5.15
 # sed -i 's/5.4/6.0/g' ./target/linux/rockchip/Makefile
