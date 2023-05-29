@@ -12,8 +12,8 @@
 # panfrost gpu
 rm ./target/linux/rockchip/modules.mk
 rm ./package/kernel/linux/modules/video.mk
-cp ../build/patch/modules-5.4/modules.mk ./target/linux/rockchip/modules.mk
-cp ../build/patch/modules-5.4/video.mk ./package/kernel/linux/modules/video.mk
+cp ../modules-5.4/modules.mk ./target/linux/rockchip/modules.mk
+cp ../modules-5.4/video.mk ./package/kernel/linux/modules/video.mk
 
 # alist
 git clone https://github.com/sbwml/luci-app-alist package/alist
