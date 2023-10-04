@@ -9,7 +9,6 @@
 
 # 🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧
 rm -rf customfeeds/luci/themes/luci-theme-argon
-cp -r "/home/d/clang-llvmorg-17-init-4759-g547e3456-1.tgz" "/home/d/actions/gl/_work/GL.iNet_GL-MT6000_lede/GL.iNet_GL-MT6000_lede/openwrt/dl/"
 # alist
 git clone https://github.com/sbwml/luci-app-alist package/alist
 rm -rf feeds/packages/lang/golang
