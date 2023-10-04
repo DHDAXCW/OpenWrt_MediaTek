@@ -8,7 +8,6 @@
 #=================================================
 
 # 🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧
-wget -P dl https://commondatastorage.googleapis.com/chromium-browser-clang/Linux_x64/clang-llvmorg-17-init-4759-g547e3456-1.tgz
 rm -rf customfeeds/luci/themes/luci-theme-argon
 
 # alist
