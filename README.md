@@ -1,5 +1,11 @@
 d
-启动日志：
+# 截图
+![image](https://github.com/DHDAXCW/GL.iNet_GL-MT6000_lede/assets/74764072/7536fbfa-cbaa-431b-a6cd-de5e69e0a682)
+![image](https://github.com/DHDAXCW/GL.iNet_GL-MT6000_lede/assets/74764072/0fc3fa19-b5ef-45d5-a5fe-c919ca8fc6e5)
+![image](https://github.com/DHDAXCW/GL.iNet_GL-MT6000_lede/assets/74764072/75d050e3-d574-491e-9c10-25d920c79baf)
+
+
+# 启动日志：
 ```
 [    0.000000] Booting Linux on physical CPU 0x0000000000 [0x410fd034]
 [    0.000000] Linux version 5.15.133 (d@d) (aarch64-openwrt-linux-musl-gcc (OpenWrt GCC 11.3.0 r6203-1413e13b5) 11.3.0, GNU ld (GNU Binutils) 2.37) #0 SMP Sat Oct 21 03:47:42 2023
