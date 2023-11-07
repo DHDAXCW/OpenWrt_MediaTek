@@ -1,8 +1,10 @@
 # 刷机
 进入不死uboot，使用固件名：```openwrt-mediatek-filogic-glinet_gl-mt6000-squashfs-sysupgrade.bin```丢进去刷入即可。
+```
 账号：root
 密码：password
 地址：192.168.11.1
+```
 # 截图
 ![image](https://github.com/DHDAXCW/GL.iNet_GL-MT6000_lede/assets/74764072/7536fbfa-cbaa-431b-a6cd-de5e69e0a682)
 ![image](https://github.com/DHDAXCW/GL.iNet_GL-MT6000_lede/assets/74764072/0fc3fa19-b5ef-45d5-a5fe-c919ca8fc6e5)
