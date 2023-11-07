@@ -33,7 +33,7 @@ svn export https://github.com/xiaorouji/openwrt-passwall/trunk/luci-app-passwall
 svn export https://github.com/QiuSimons/OpenWrt-Add/trunk/luci-app-irqbalance
 
 # Add luci-app-ssr-plus
-git clone --depth=1 https://github.com/fw876/helloworld
+git clone --depth=1 -b main https://github.com/fw876/helloworld
 # git clone --depth=1 https://github.com/DHDAXCW/helloworld
 
 # Add luci-app-unblockneteasemusic
