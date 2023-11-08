@@ -4,6 +4,8 @@
 账号：root
 密码：password
 地址：192.168.11.1
+WiFi：刷上默认开启WiFi
+WiFi信号：OpenWrt_2.4G/OpenWrt_5G 密码：无 可自己去设置
 ```
 # 截图
 ![image](https://github.com/DHDAXCW/GL.iNet_GL-MT6000_lede/assets/74764072/7536fbfa-cbaa-431b-a6cd-de5e69e0a682)
