@@ -136,7 +136,7 @@ jobs:
         rm -rf openwrt-mediatek-filogic-glinet_gl-mt6000-initramfs-kernel.bin
         rm -rf openwrt-mediatek-filogic-glinet_gl-mt6000-bl31-uboot.fip
         tar -zcvf packages.tar.gz ../../../packages
-        mv openwrt-mediatek-filogic-glinet_gl-mt6000-squashfs-sysupgrade.bin $(date +"%Y.%m.%d")-full-openwrt-mediatek-filogic-glinet_gl-mt6000-squashfs-sysupgrade.bin
+        tar -zcvf $(date +"%Y.%m.%d")-full-openwrt-mediatek-filogic-glinet_gl-mt6000-squashfs-sysupgrade.bin openwrt-mediatek-filogic-glinet_gl-mt6000-squashfs-sysupgrade.bin
         popd
         make checksum
         echo "GENERATE_STATUS=success" >> $GITHUB_OUTPUT
