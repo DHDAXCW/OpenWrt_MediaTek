@@ -6,9 +6,10 @@
 地址：192.168.11.1
 WiFi：刷上默认开启WiFi
 WiFi信号：OpenWrt_2.4G/OpenWrt_5G 密码：无 可自己去设置
+支持USB 5G模块
 ```
 # 截图
-![image](https://github.com/DHDAXCW/GL.iNet_GL-MT6000_lede/assets/74764072/7536fbfa-cbaa-431b-a6cd-de5e69e0a682)
+![image](https://github.com/DHDAXCW/GL.iNet_GL-MT6000_lede/assets/74764072/f25ae8f7-656e-4f91-a39e-01703cb6cd8f)
 ![image](https://github.com/DHDAXCW/GL.iNet_GL-MT6000_lede/assets/74764072/0fc3fa19-b5ef-45d5-a5fe-c919ca8fc6e5)
 ![image](https://github.com/DHDAXCW/GL.iNet_GL-MT6000_lede/assets/74764072/75d050e3-d574-491e-9c10-25d920c79baf)
 
