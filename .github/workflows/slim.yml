@@ -133,7 +133,7 @@ jobs:
         pushd bin/targets/mediatek/filogic
         rm -rf openwrt-mediatek-filogic-glinet_gl-mt6000.manifest
         rm -rf openwrt-mediatek-filogic-glinet_gl-mt6000-bl31-uboot.fip
-        tar -zcvf $(date +"%Y.%m.%d")-slim-openwrt-mediatek-filogic-glinet_gl-mt6000-squashfs-sysupgrade.tar.gz openwrt-mediatek-filogic-glinet_gl-mt6000-squashfs-sysupgrade.bin
+        tar -zcvf $(date +"%Y.%m.%d")-slim-openwrtglinet_gl-mt6000.tar.gz openwrt-mediatek-filogic-glinet_gl-mt6000-squashfs-sysupgrade.bin
         rm -rf *.bin
         popd
         make checksum
