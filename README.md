@@ -1,9 +1,9 @@
 # 刷机
 进入不死uboot，使用固件名：```openwrt-mediatek-filogic-glinet_gl-mt6000-squashfs-sysupgrade.bin```丢进去刷入即可。
-full = 全插件
-docker = 带docker
-slim = 精简版
-beggar = 乞丐版
+- full = 全插件
+- docker = 带docker
+- slim = 精简版
+- beggar = 乞丐版
 ```
 账号：root
 密码：password
