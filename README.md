@@ -10,8 +10,11 @@
 地址：192.168.11.1
 ```
 - WiFi：WiFi配置已设置好，首次刷入开机等待几秒出来信号。
-- WiFi信号：OpenWrt_2.4G/OpenWrt_5G 密码：无 可自己去设置
+- WiFi信号：OpenWrt 密码：无 可自己去设置
 - 支持USB3.0 5G上网模块。
+- 支持MESH插件
+- wifi firmware更新至20231024版本
+
 # 截图
 ![image](https://github.com/DHDAXCW/GL.iNet_GL-MT6000_lede/assets/74764072/f25ae8f7-656e-4f91-a39e-01703cb6cd8f)
 ![image](https://github.com/DHDAXCW/GL.iNet_GL-MT6000_lede/assets/74764072/0fc3fa19-b5ef-45d5-a5fe-c919ca8fc6e5)

@@ -42,6 +42,9 @@ git clone --depth=1 https://github.com/jerrykuku/luci-app-vssr
 # Add luci-proto-minieap
 git clone --depth=1 https://github.com/ysc3839/luci-proto-minieap
 
+# Add luci-app-easymesh
+git clone --depth=1 https://github.com/ntlf9t/luci-app-easymesh
+
 # Add OpenClash
 git clone --depth=1 https://github.com/vernesong/OpenClash
 
