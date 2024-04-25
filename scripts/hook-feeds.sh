@@ -1,13 +1,4 @@
 #!/bin/bash
-#=================================================
-# File name: hook-feeds.sh
-# System Required: Linux
-# Version: 1.0
-# Lisence: MIT
-# Author: SuLingGG
-# Blog: https://mlapp.cn
-#=================================================
-
 # Set to local feeds
 pushd customfeeds/packages
 export packages_feed="$(pwd)"
