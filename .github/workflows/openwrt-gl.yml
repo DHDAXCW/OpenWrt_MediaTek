@@ -17,8 +17,8 @@ on:
   #   types: started
 
 env:
-  REPO_URL: https://github.com/DHDAXCW/lede-rockchip
-  REPO_BRANCH: stable
+  REPO_URL: https://github.com/coolsnowwolf/lede
+  REPO_BRANCH: master
   CONFIG_FILE: configs/lede/full.config
   DIY_SH: scripts/lede.sh
   KMODS_IN_FIRMWARE: true
